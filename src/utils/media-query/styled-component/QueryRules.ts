@@ -14,10 +14,10 @@ export const viewPortOrPx = (value: ViewportBaseProps | number) => {
   return viewportsBase[value].width;
 };
 
-export const mediaMinWidth = <Props>(value: ViewportBaseProps | number, plus = 0) =>
+export const mediaMinWidth = (value: ViewportBaseProps | number, plus = 0) =>
   mediaQuery(`(min-width: ${viewPortOrPx(value) + plus}px)`);
 
-export const mediaMaxWidth = <Props>(value: ViewportBaseProps | number, plus = 0) => {
+export const mediaMaxWidth = (value: ViewportBaseProps | number, plus = 0) => {
   if (value === "isMobileOrTabletVertical") {
     return mediaQuery(
       `(max-width: ${viewPortOrPx(value) + plus}px) and (orientation: portrait), (max-width: ${
@@ -43,7 +43,7 @@ export const mediaMaxWidth = <Props>(value: ViewportBaseProps | number, plus = 0
   return mediaQuery(`(max-width: ${viewPortOrPx(value) + plus}px)`);
 };
 
-export const mediaBetween = <Props>(
+export const mediaBetween = (
   valueMin: ViewportBaseProps | number,
   valueMax: ViewportBaseProps | number,
   plusMin = 0,

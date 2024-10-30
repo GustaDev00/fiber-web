@@ -1,6 +1,5 @@
 import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import C from "./const";
 
 import * as S from "./styles";
 
@@ -11,7 +10,7 @@ interface CursorProps {
 export const Cursor: FC<CursorProps> = ({ children }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const innerDotRef = useRef<HTMLDivElement>(null);
-  const [isLink, setIsLink] = useState(false);
+  const [, setIsLink] = useState(false);
 
   const lastX = useRef(0);
   const lastY = useRef(0);
@@ -62,14 +61,6 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
           ease: "power2.out",
         });
       }
-    };
-
-    const handleFirstMouseEnterWindow = (event: MouseEvent) => {
-      if (cursorRef.current) {
-        gsap.to(cursorRef.current, { opacity: 1, duration: 0.1 });
-        document.removeEventListener("mousemove", handleFirstMouseEnterWindow);
-      }
-      handleMouseMove(event);
     };
 
     const handleMouseLeaveWindow = () => {

@@ -1,1 +1,3 @@
-export interface CircleGreenBlurProps {}
+export interface CircleGreenBlurProps {
+  className?: string;
+}

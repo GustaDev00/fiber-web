@@ -21,5 +21,8 @@ export type ColorFamily = keyof typeof theme;
 type Theme = typeof theme;
 
 declare module "styled-components" {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends Theme {
+    // Add a member to avoid the empty object type error
+    exampleMember?: string;
+  }
 }
