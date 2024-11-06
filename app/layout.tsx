@@ -9,6 +9,8 @@ import { GlobalStyles } from "@/styles/global";
 import { GSAPInitializer } from "@/components/atoms/gsap-initializer";
 import { Cursor } from "@/components/organisms/Cursor";
 import Nav from "@/shared/nav";
+import { BackgroundMove } from "@/components/atoms/background-move";
+import { Menu } from "@/shared/menu";
 
 const RootLayout = ({
   children,
@@ -26,8 +28,10 @@ const RootLayout = ({
             <main>
               <Suspense>
                 <Cursor>{children}</Cursor>
+                <BackgroundMove />
               </Suspense>
             </main>
+            <Menu />
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

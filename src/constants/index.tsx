@@ -55,6 +55,7 @@ export default {
         title: "Mobile Apps",
       },
     ],
+    buttons: [{ title: <>Kontaktieren Sie uns</>, href: "#" }],
   },
   header: {
     title: (
@@ -62,6 +63,25 @@ export default {
         <span>Creative</span> Webseiten <CustomBr byViewport="desktop" />
         Effektives <span>Marketing </span>
         <CustomBr byViewport="desktop" /> <span>Smarte</span> KI Lösungen
+      </>
+    ),
+
+    description: (
+      <>
+        FiberWeb ist eine führende Schweizer
+        <CustomBr byViewport="desktop" /> Webagentur, spezialisiert auf
+        <span>
+          Branding, <CustomBr byViewport="desktop" /> UI/UX-Design,
+        </span>
+        sowie{" "}
+        <span>
+          Web- und
+          <CustomBr byViewport="desktop" /> Mobile-Entwicklung.
+        </span>{" "}
+        Zudem bieten wir
+        <CustomBr byViewport="desktop" /> <span>KI-Lösungen</span> an, um die
+        Effizienz deines <CustomBr byViewport="desktop" /> Unternehmens zu
+        maximieren.
       </>
     ),
   },

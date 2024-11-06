@@ -16,13 +16,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
   const lastY = useRef(0);
 
   useEffect(() => {
-    document.body.style.cursor = "none";
-
     const interactiveElements = document.querySelectorAll("a, button");
-
-    interactiveElements.forEach((element: Element) => {
-      (element as HTMLElement).style.cursor = "none";
-    });
 
     const handleMouseEnter = () => {
       setIsLink(true);
@@ -35,13 +29,18 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
     const handleMouseMove = (event: MouseEvent) => {
       if (cursorRef.current) {
         const { clientX, clientY } = event;
-        gsap.to(cursorRef.current, { opacity: 1, duration: 0, left: clientX, top: clientY });
+        gsap.to(cursorRef.current, {
+          opacity: 1,
+          duration: 0,
+          left: clientX,
+          top: clientY,
+        });
 
         const deltaX = clientX - lastX.current;
         const deltaY = clientY - lastY.current;
 
-        const translateX = Math.max(-10, Math.min(10, deltaX / 2));
-        const translateY = Math.max(-10, Math.min(10, deltaY / 2));
+        const translateX = Math.max(-20, Math.min(20, deltaX / 1));
+        const translateY = Math.max(-20, Math.min(20, deltaY / 1));
 
         gsap.to(innerDotRef.current, {
           x: translateX,
@@ -56,9 +55,9 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
         gsap.to(innerDotRef.current, {
           x: 0,
           y: 0,
-          delay: 0.1,
+          delay: 0.3,
           duration: 0.3,
-          ease: "power2.out",
+          ease: "elastic.out(1, 0.3)",
         });
       }
     };

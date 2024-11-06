@@ -6,11 +6,10 @@ const { desktop1024, isMobileOrTabletVertical, desktop1920 } = viewportsBase;
 
 export const GlobalStyles = createGlobalStyle`
   * {
-    font-family: var(--instrumentSans);
+    font-family: var(--syne);
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    cursor: none;
   }
 
   ::-webkit-scrollbar {
@@ -59,6 +58,7 @@ export const GlobalStyles = createGlobalStyle`
 
   main{
     overflow: hidden;
+    height: 200vh;
   }
 
   li {

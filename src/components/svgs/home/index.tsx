@@ -1,4 +1,7 @@
-export const HomeIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+export const HomeIcon = ({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement>) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
@@ -13,6 +16,11 @@ export const HomeIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>)
       stroke="white"
       strokeWidth="1.5"
     />
-    <path d="M12 15.5L12 18.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M12 15.5L12 18.5"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );

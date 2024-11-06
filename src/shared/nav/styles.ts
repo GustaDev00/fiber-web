@@ -4,9 +4,10 @@ import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const Header = styled.header`
-  position: fixed;
-  top: 8.6rem;
+  position: absolute;
+  top: 5.6rem;
   width: 100%;
+  z-index: 10;
 
   ${mediaMaxWidth("mobile")`
     top: 2rem;
@@ -49,7 +50,9 @@ export const Menu = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -77,7 +80,7 @@ export const Modal = styled.div`
   position: absolute;
   width: 52.9rem;
   height: 80rem;
-  top: 4.8rem;
+  top: 1.8rem;
   border-radius: 1.2rem;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0rem 2.4rem 1.6rem 0rem rgba(0, 0, 0, 0.08);
@@ -241,7 +244,9 @@ export const Overlay = styled.div<{ $open: boolean }>`
   z-index: 20;
   opacity: ${({ $open }) => ($open ? 1 : 0)};
   visibility: ${({ $open }) => ($open ? "visible" : "hidden")};
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
 
   ${Modal} {
     right: ${({ $open }) => ($open ? "11.5rem" : "-100%")};
