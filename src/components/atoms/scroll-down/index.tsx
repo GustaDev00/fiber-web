@@ -149,7 +149,7 @@ export const ScrollDown = ({ className }: { className?: string }) => {
   const { circleRef } = useAnimation();
 
   return (
-    <S.ScrollDown className={className}>
+    <S.ScrollDown className={className} data-fs-animation-scroll={true}>
       <S.Circle ref={circleRef}>
         <CircleIcon />
       </S.Circle>

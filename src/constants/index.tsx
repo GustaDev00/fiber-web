@@ -55,7 +55,7 @@ export default {
         title: "Mobile Apps",
       },
     ],
-    buttons: [{ title: <>Kontaktieren Sie uns</>, href: "#" }],
+    buttons: { contact: { title: "Kontaktieren Sie uns", href: "#" } },
   },
   header: {
     title: (

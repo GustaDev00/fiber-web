@@ -1,3 +1,4 @@
+import { ButtonSlideArrow } from "@/components/atoms/button-slide-arrow";
 import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
 import { ScrollDown } from "@/components/atoms/scroll-down";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
@@ -11,12 +12,14 @@ export const Wrapper = styled(_Wrapper)`
   padding-top: 20.3rem;
 `;
 
-export const Article = styled.article`
+export const Content = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 `;
+
+export const Article = styled.article``;
 
 export const Title = styled.h1`
   color: #fff;
@@ -28,6 +31,8 @@ export const Title = styled.h1`
   }
 `;
 
+export const Description = styled.div``;
+
 export const Text = styled.p`
   margin-top: 2rem;
   opacity: 0.8;
@@ -35,11 +40,14 @@ export const Text = styled.p`
   font-size: 2rem;
   font-weight: 400;
   line-height: 3.2rem;
+  margin-bottom: 3.8rem;
 
   span {
     font-weight: 700;
   }
 `;
+
+export const Button = styled(ButtonSlideArrow)``;
 
 export const Scroll = styled(ScrollDown)`
   margin: 3rem 16.6rem 0 7.8rem;
