@@ -11,6 +11,7 @@ import { Cursor } from "@/components/organisms/Cursor";
 import Nav from "@/shared/nav";
 import { BackgroundMove } from "@/components/atoms/background-move";
 import { Menu } from "@/shared/menu";
+import { Loading } from "@/components/molecules/loading";
 
 const RootLayout = ({
   children,
@@ -25,11 +26,12 @@ const RootLayout = ({
             <GlobalStyles />
             <GSAPInitializer />
             <Nav />
+            <Suspense>
+              <Loading />
+            </Suspense>
             <main>
-              <Suspense>
-                <Cursor>{children}</Cursor>
-                <BackgroundMove />
-              </Suspense>
+              <Cursor>{children}</Cursor>
+              <BackgroundMove />
             </main>
             <Menu />
           </ThemeProvider>

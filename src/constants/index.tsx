@@ -57,6 +57,11 @@ export default {
     ],
     buttons: { contact: { title: "Kontaktieren Sie uns", href: "#" } },
   },
+  loading: [
+    { text: "Creative", img: "/imgs/loading/img1.png" },
+    { text: "Marketing", img: "/imgs/loading/img2.png" },
+    { text: "Webseiten", img: "/imgs/loading/img3.png" },
+  ],
   header: {
     title: (
       <>

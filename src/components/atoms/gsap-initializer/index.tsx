@@ -6,6 +6,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Draggable } from "gsap/Draggable";
 import { TextPlugin } from "gsap/TextPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { useGSAP } from "@gsap/react";
 
 export const GSAPInitializer = (): null => {
   useEffect(() => {
@@ -16,6 +17,7 @@ export const GSAPInitializer = (): null => {
       Draggable,
       TextPlugin,
       MotionPathPlugin,
+      useGSAP,
     );
 
     ScrollTrigger.defaults({

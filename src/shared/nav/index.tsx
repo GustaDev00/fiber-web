@@ -1,9 +1,11 @@
 import { useCallback, useState } from "react";
+import useAnimation from "./animation";
 import * as S from "./styles";
 import C from "@/constants";
 
 export default () => {
   const [open, setOpen] = useState(false);
+  const { ref } = useAnimation();
   const { navigation, social_share } = C.data;
 
   const handleClick = useCallback(() => {
@@ -11,7 +13,7 @@ export default () => {
   }, []);
 
   return (
-    <S.Header>
+    <S.Header ref={ref}>
       <S.Wrapper>
         <S.Logo />
         <S.Menu onClick={handleClick}>
