@@ -11,6 +11,7 @@ export const Menu = styled.div`
   border: 0.1rem solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(0.5rem);
+  z-index: 9;
 `;
 
 export const List = styled.ul`

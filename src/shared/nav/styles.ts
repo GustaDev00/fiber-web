@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   position: absolute;
-  top: 5.6rem;
+  top: 0;
+  padding-top: 5.6rem;
   width: 100%;
   z-index: 10;
   opacity: 0;

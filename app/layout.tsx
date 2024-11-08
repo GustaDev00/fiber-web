@@ -26,13 +26,13 @@ const RootLayout = ({
             <GlobalStyles />
             <GSAPInitializer />
             <Suspense>
-              <Nav />
               <Loading />
               <main>
+                <Nav />
                 <Cursor>{children}</Cursor>
                 <BackgroundMove />
+                <Menu />
               </main>
-              <Menu />
             </Suspense>
           </ThemeProvider>
         </StyledComponentsRegistry>

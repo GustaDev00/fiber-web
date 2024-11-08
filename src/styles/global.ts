@@ -54,10 +54,10 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: #151515;
     position: relative;
+    overflow-x: hidden;
   }
 
   main{
-    overflow: hidden;
     height: 200vh;
   }
 
