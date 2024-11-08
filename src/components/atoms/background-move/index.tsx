@@ -19,7 +19,6 @@ export const BackgroundMove = () => {
 
     let mouseX = 0;
     let smoothX = 0;
-    let lastSmoothX = 0;
 
     const numLines = 5;
     const lineSpacing = canvas.width / (numLines + 1);
@@ -56,7 +55,6 @@ export const BackgroundMove = () => {
         context.stroke();
       }
 
-      lastSmoothX = smoothX;
       requestAnimationFrame(drawLines);
     };
 
