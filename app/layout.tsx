@@ -28,12 +28,12 @@ const RootLayout = ({
             <Nav />
             <Suspense>
               <Loading />
+              <main>
+                <Cursor>{children}</Cursor>
+                <BackgroundMove />
+              </main>
+              <Menu />
             </Suspense>
-            <main>
-              <Cursor>{children}</Cursor>
-              <BackgroundMove />
-            </main>
-            <Menu />
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
