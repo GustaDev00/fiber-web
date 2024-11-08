@@ -11,11 +11,10 @@ export default () => {
     if (!ref.current) return;
 
     const tl = gsap.timeline({ paused: true });
-    tl.from(ref.current, {
-      y: 100,
-      opacity: 0,
+    tl.to(ref.current, {
+      y: 0,
+      opacity: 1,
       duration: 1,
-      stagger: 0.1,
     });
 
     if (progress) {
