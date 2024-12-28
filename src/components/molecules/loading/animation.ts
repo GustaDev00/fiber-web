@@ -40,8 +40,6 @@ export default () => {
     if (progress === 1) {
       stepsTimeline.kill();
       containerTimeline.play();
-
-      console.log(containerTimeline.totalDuration());
     } else {
       stepsTimeline.play();
     }

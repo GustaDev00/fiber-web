@@ -84,9 +84,79 @@ export default {
           <CustomBr byViewport="desktop" /> Mobile-Entwicklung.
         </span>{" "}
         Zudem bieten wir
-        <CustomBr byViewport="desktop" /> <span>KI-Lösungen</span> an, um die
-        Effizienz deines <CustomBr byViewport="desktop" /> Unternehmens zu
-        maximieren.
+        <CustomBr byViewport="desktop" /> <span>KI-Lösungen</span> an, um die Effizienz deines{" "}
+        <CustomBr byViewport="desktop" /> Unternehmens zu maximieren.
+      </>
+    ),
+  },
+  text: "Erfolge, die unsere Qualität unterstreichen.",
+  services: [
+    {
+      id: 1,
+      img: {
+        src: "/imgs/services/dac.png",
+        alt: "webdesign DAC Innenausbau GmbH",
+      },
+      link: {
+        href: "https://trockenbau-dac.ch/",
+        title: "trockenbau-dac.ch",
+        target: "_blank",
+        rel: "noopener noreferrer nofollow",
+      },
+      tags: ["Web-Design", "UX-UI Design"],
+    },
+    {
+      id: 2,
+      img: {
+        src: "/imgs/services/tech.png",
+        alt: "webdesign HA-Tech Gmbh",
+      },
+      link: {
+        href: "https://ha-tech.ch/",
+        title: "ha-tech.ch",
+        target: "_blank",
+        rel: "noopener noreferrer nofollow",
+      },
+      tags: ["Web-Design", "UX-UI Design"],
+    },
+    {
+      id: 3,
+      img: {
+        src: "/imgs/services/andrade.png",
+        alt: "webdesign Andrade Gipser + Maler GmbH",
+      },
+      link: {
+        href: "https://andrade-gipser.ch/",
+        title: "andrade-gipser.ch",
+        target: "_blank",
+        rel: "noopener noreferrer nofollow",
+      },
+      tags: ["Web-Design", "UX-UI Design"],
+    },
+  ],
+  video: {
+    src: "/videos/fiber.mp4",
+    type: "video/mp4",
+  },
+  philosofie: {
+    title: "Unsere Philosofie",
+    content: (
+      <>
+        <p>
+          Bei <span>FiberWeb</span> glauben wir an die Kraft der digitalen
+          <CustomBr byViewport="desktop" /> Innovation. Unsere Philosophie basiert auf einem tiefen
+          <CustomBr byViewport="desktop" /> Verständnis für die Bedürfnisse unserer Kunden und einem
+          <CustomBr byViewport="desktop" /> unermüdlichen Streben nach Perfektion. Wir verbinden
+          <CustomBr byViewport="desktop" /> Kreativität mit modernster Technologie, um persönliche
+          <CustomBr byViewport="desktop" /> Lösungen zu schaffen, die nicht nur beeindrucken,
+          <CustomBr byViewport="desktop" /> sondern auch echten Mehrwert bieten.
+        </p>
+        <p>
+          Unser Ziel ist es, Unternehmen durch durchdachtes
+          <CustomBr byViewport="desktop" /> Design und effiziente Prozesse zu stärken und ihre
+          digitale
+          <CustomBr byViewport="desktop" /> Präsenz nachhaltig zu verbessern.
+        </p>
       </>
     ),
   },

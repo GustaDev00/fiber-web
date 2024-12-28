@@ -9,7 +9,6 @@ import { GlobalStyles } from "@/styles/global";
 import { GSAPInitializer } from "@/components/atoms/gsap-initializer";
 import { Cursor } from "@/components/organisms/Cursor";
 import Nav from "@/shared/nav";
-import { BackgroundMove } from "@/components/atoms/background-move";
 import { Menu } from "@/shared/menu";
 import { Loading } from "@/components/molecules/loading";
 
@@ -25,12 +24,25 @@ const RootLayout = ({
           <ThemeProvider theme={theme}>
             <GlobalStyles />
             <GSAPInitializer />
-            <Suspense>
-              <Loading />
+            <Suspense
+              fallback={
+                <div
+                  style={{
+                    width: "100vw",
+                    height: "100vh",
+                    background: "#000",
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    zIndex: 9999,
+                  }}
+                ></div>
+              }
+            >
+              {/* <Loading /> */}
               <main>
                 <Nav />
                 <Cursor>{children}</Cursor>
-                <BackgroundMove />
                 <Menu />
               </main>
             </Suspense>

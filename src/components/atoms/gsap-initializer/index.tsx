@@ -19,10 +19,6 @@ export const GSAPInitializer = (): null => {
       MotionPathPlugin,
       useGSAP,
     );
-
-    ScrollTrigger.defaults({
-      scroller: "main",
-    });
   }, []);
 
   return null;

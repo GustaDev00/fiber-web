@@ -6,6 +6,11 @@ import styled from "styled-components";
 
 export const Header = styled.section`
   position: relative;
+  height: 100vh;
+
+  @supports (-webkit-touch-callout: none) {
+    height: 100svh;
+  }
 `;
 
 export const Wrapper = styled(_Wrapper)`
@@ -54,15 +59,22 @@ export const Scroll = styled(ScrollDown)`
 `;
 
 export const Circle2 = styled(CircleGreenBlur)`
-  top: 80rem;
-  right: 40rem;
+  top: 50rem;
+  right: 45rem;
+  width: 48.6rem;
+  height: 40.6rem;
+`;
+
+export const Circle3 = styled(CircleGreenBlur)`
+  top: 10rem;
+  right: -2rem;
   width: 38.6rem;
   height: 38.6rem;
 `;
 
 export const Circle = styled(CircleGreenBlur)`
-  top: 43rem;
-  left: -12rem;
-  width: 28.6rem;
-  height: 28.6rem;
+  top: 10rem;
+  left: -22rem;
+  width: 58.6rem;
+  height: 58.6rem;
 `;

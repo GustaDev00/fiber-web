@@ -52,13 +52,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: #151515;
+    background: #000;
     position: relative;
     overflow-x: hidden;
-  }
-
-  main{
-    height: 200vh;
   }
 
   li {
