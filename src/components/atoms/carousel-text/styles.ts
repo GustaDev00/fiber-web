@@ -36,7 +36,7 @@ export const Wrapper = styled.div`
     content: "";
     top: 0;
     display: block;
-    width: 50%;
+    width: 20%;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     z-index: 1;

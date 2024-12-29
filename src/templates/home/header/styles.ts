@@ -61,8 +61,8 @@ export const Scroll = styled(ScrollDown)`
 export const Circle2 = styled(CircleGreenBlur)`
   top: 50rem;
   right: 45rem;
-  width: 48.6rem;
-  height: 40.6rem;
+  width: 38.6rem;
+  height: 30.6rem;
 `;
 
 export const Circle3 = styled(CircleGreenBlur)`
@@ -75,6 +75,6 @@ export const Circle3 = styled(CircleGreenBlur)`
 export const Circle = styled(CircleGreenBlur)`
   top: 10rem;
   left: -22rem;
-  width: 58.6rem;
-  height: 58.6rem;
+  width: 38.6rem;
+  height: 38.6rem;
 `;
