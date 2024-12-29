@@ -18,12 +18,13 @@ const toPascalCase = (str) => {
 const folderNamePascalCase = toPascalCase(newFolder);
 
 const indexContent = `import * as S from "./styles";
-import C from './constants';
+import C from '@/constants';
 import useAnimation from "./animation";
 
 export const ${folderNamePascalCase} = () => {
-  useAnimation();
-  return <S.${folderNamePascalCase}>{C.test}</S.${folderNamePascalCase}>;
+  const { sectionRef } = useAnimation();
+
+  return <S.${folderNamePascalCase} ref={sectionRef}></S.${folderNamePascalCase}>;
 };
 `;
 
@@ -35,9 +36,26 @@ export const ${folderNamePascalCase} = styled.div\`\`;
 const propsContent = `export interface ${folderNamePascalCase}Props {}
 `;
 
-const animationContent = `import gsap from "gsap";
+const animationContent = `
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
-export default () => {};
+export default () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(()=>{
+    const ctx = gsap.context(()=>{
+      if(!sectionRef.current) return;
+
+    });
+
+    return () => {
+      ctx.kill();
+    }
+  },[])
+
+  return { sectionRef };
+};
 `;
 
 const constantsContent = `export default {
@@ -49,6 +67,6 @@ fs.writeFileSync(path.join(fullPath, "index.tsx"), indexContent);
 fs.writeFileSync(path.join(fullPath, "styles.ts"), stylesContent);
 fs.writeFileSync(path.join(fullPath, "props.ts"), propsContent);
 fs.writeFileSync(path.join(fullPath, "animation.ts"), animationContent);
-fs.writeFileSync(path.join(fullPath, "constants.tsx"), constantsContent);
+// fs.writeFileSync(path.join(fullPath, "constants.tsx"), constantsContent);
 
 console.log(`Componente criado com sucesso! '${newFolder}' e arquivos em '${fullPath}'`);

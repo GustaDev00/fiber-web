@@ -73,7 +73,6 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     padding: 0;
     font: inherit;
-    cursor: none;
     outline: inherit;
   }
 

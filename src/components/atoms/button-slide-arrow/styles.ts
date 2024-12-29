@@ -9,9 +9,7 @@ export const Icon = styled.div`
   border-radius: 12.2rem;
   display: flex;
   align-items: center;
-  transition:
-    width 0.8s ease,
-    background 0.8s ease;
+  transition: width 0.8s ease, background 0.8s ease;
   z-index: 2;
   overflow: hidden;
 
@@ -31,7 +29,7 @@ export const Span = styled.span`
   font-weight: 400;
 `;
 
-export const Text = styled.p`
+export const Text = styled.span`
   position: absolute;
   left: 4.9rem;
   color: #fff;
@@ -39,9 +37,7 @@ export const Text = styled.p`
   font-size: 1.8rem;
   font-weight: 400;
   width: 30rem;
-  transition:
-    opacity 0.8s ease,
-    visibility 0.8s ease;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 `;
 
 export const ButtonSlideArrow = styled.a`

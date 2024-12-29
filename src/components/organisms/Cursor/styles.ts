@@ -7,7 +7,7 @@ export const Cursor = styled.div`
   border: 0.2rem solid #ffffff26;
   position: fixed;
   pointer-events: none;
-  z-index: 12;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +40,5 @@ export const Dot = styled.div`
   height: 1rem;
   background: #29ff27;
   border-radius: 50%;
-  box-shadow:
-    0 0 0.5rem rgba(43, 178, 42, 0.45),
-    0 0 1rem rgba(43, 178, 42, 0.25);
+  box-shadow: 0 0 0.5rem rgba(43, 178, 42, 0.45), 0 0 1rem rgba(43, 178, 42, 0.25);
 `;

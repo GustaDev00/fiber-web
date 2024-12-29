@@ -2,15 +2,17 @@
 
 import { type FC } from "react";
 import Header from "./header";
-import { Services } from "@/components/organisms/services";
+import { Clients } from "@/components/organisms/Clients";
 import { Philosofie } from "@/components/organisms/philosofie";
+import { Vision } from "@/components/organisms/vision";
 
 export const HomeTemplate: FC = () => {
   return (
     <>
       <Header />
-      {/* <Services type={true} /> */}
+      <Clients type={true} />
       <Philosofie />
+      <Vision />
     </>
   );
 };

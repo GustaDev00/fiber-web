@@ -53,9 +53,7 @@ export const Menu = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  transition:
-    background 0.4s ease,
-    box-shadow 0.4s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -247,9 +245,7 @@ export const Overlay = styled.div<{ $open: boolean }>`
   z-index: 20;
   opacity: ${({ $open }) => ($open ? 1 : 0)};
   visibility: ${({ $open }) => ($open ? "visible" : "hidden")};
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 
   ${Modal} {
     right: ${({ $open }) => ($open ? "11.5rem" : "-100%")};

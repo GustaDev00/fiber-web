@@ -2,12 +2,12 @@ import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
 
-export const CardServices = () => {
-  const items = C.services;
+export const CardClients = () => {
+  const items = C.clients;
   const { servicesRef } = useAnimation();
 
   return (
-    <S.CardServices>
+    <S.CardClients>
       <S.Container>
         {items.map(({ img, link, tags, id }, index) => (
           <S.Card
@@ -32,6 +32,6 @@ export const CardServices = () => {
           </S.Card>
         ))}
       </S.Container>
-    </S.CardServices>
+    </S.CardClients>
   );
 };

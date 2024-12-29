@@ -1,7 +1,7 @@
 const replaceExtension = (value: string, type: string, onlyProduction = true) => {
-  const ext = value.slice(value.lastIndexOf('.'));
+  const ext = value.slice(value.lastIndexOf("."));
 
-  if (onlyProduction && process.env.NODE_ENV !== 'production') {
+  if (onlyProduction && process.env.NODE_ENV !== "production") {
     return [value, ext] as const;
   }
 

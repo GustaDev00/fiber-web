@@ -55,7 +55,16 @@ export default {
         title: "Mobile Apps",
       },
     ],
-    buttons: { contact: { title: "Kontaktieren Sie uns", href: "#" } },
+    buttons: {
+      contact: {
+        title: "Kontaktieren Sie uns",
+        href: "#",
+      },
+      whatsapp: {
+        title: "Lass uns loslegen",
+        href: "#",
+      },
+    },
   },
   loading: [
     { text: "Creative", img: "/imgs/loading/img1.png" },
@@ -90,7 +99,7 @@ export default {
     ),
   },
   text: "Erfolge, die unsere Qualität unterstreichen.",
-  services: [
+  clients: [
     {
       id: 1,
       img: {
@@ -159,5 +168,100 @@ export default {
         </p>
       </>
     ),
+  },
+  services: {
+    title: (
+      <>
+        Deine Vision.
+        <br />
+        Unsere Umsetzung.
+      </>
+    ),
+    items: [
+      {
+        title: "Webdesign",
+        subtitle: <>Webdesign & -entwicklung</>,
+        description: (
+          <>
+            Deine Website soll nicht nur beeindrucken, sondern ein
+            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
+            die <CustomBr byViewport="desktop" />
+            deine Besucher fesseln, begeistern und tief ins Herz deiner
+            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
+            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
+            sondern <CustomBr byViewport="desktop" />
+            immer wieder zurückkommen.
+          </>
+        ),
+        img: {
+          src: "/imgs/services/webdesign.png",
+          alt: "Webdesign",
+        },
+        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+      },
+      {
+        title: "Marketing",
+        subtitle: <>Webdesign & -entwicklung</>,
+        description: (
+          <>
+            Deine Website soll nicht nur beeindrucken, sondern ein
+            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
+            die <CustomBr byViewport="desktop" />
+            deine Besucher fesseln, begeistern und tief ins Herz deiner
+            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
+            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
+            sondern <CustomBr byViewport="desktop" />
+            immer wieder zurückkommen.
+          </>
+        ),
+        img: {
+          src: "/imgs/services/webdesign.png",
+          alt: "Marketing",
+        },
+        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+      },
+      {
+        title: "Künstliche Intelligenz",
+        subtitle: <>Webdesign & -entwicklung</>,
+        description: (
+          <>
+            Deine Website soll nicht nur beeindrucken, sondern ein
+            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
+            die <CustomBr byViewport="desktop" />
+            deine Besucher fesseln, begeistern und tief ins Herz deiner
+            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
+            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
+            sondern <CustomBr byViewport="desktop" />
+            immer wieder zurückkommen.
+          </>
+        ),
+        img: {
+          src: "/imgs/services/webdesign.png",
+          alt: "Künstliche Intelligenz",
+        },
+        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+      },
+      {
+        title: "Mobile Apps",
+        subtitle: <>Webdesign & -entwicklung</>,
+        description: (
+          <>
+            Deine Website soll nicht nur beeindrucken, sondern ein
+            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
+            die <CustomBr byViewport="desktop" />
+            deine Besucher fesseln, begeistern und tief ins Herz deiner
+            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
+            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
+            sondern <CustomBr byViewport="desktop" />
+            immer wieder zurückkommen.
+          </>
+        ),
+        img: {
+          src: "/imgs/services/webdesign.png",
+          alt: "Mobile Apps",
+        },
+        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+      },
+    ],
   },
 };

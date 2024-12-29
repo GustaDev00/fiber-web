@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { ButtonSlideArrow } from "@/components/atoms/button-slide-arrow";
 import { MagicSphere } from "@/components/atoms/magic-sphere";
+import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 
 export const Philosofie = styled.div``;
 
-export const Wrapper = styled.div`
-  display: flex;
+export const Wrapper = styled(_Wrapper)`
   justify-content: center;
   align-items: flex-start;
   gap: 20rem;

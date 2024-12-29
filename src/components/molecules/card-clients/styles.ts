@@ -1,7 +1,7 @@
 import { LazyImage } from "@/components/atoms/lazy-image";
 import styled from "styled-components";
 
-export const CardServices = styled.div`
+export const CardClients = styled.div`
   padding-bottom: 20rem;
 `;
 
