@@ -13,7 +13,9 @@ export const Header = styled.header`
   transform: translateY(-100%);
 
   ${mediaMaxWidth("mobile")`
-    top: 2rem;
+    position: fixed;
+    top: 0rem;
+    padding-top: 2.2rem;
   `}
 `;
 
@@ -22,6 +24,10 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    padding: 0 4rem;
+  `}
 
   ${mediaMaxWidth("mobile")`
     padding: 0 2.2rem;
@@ -205,7 +211,7 @@ export const Item = styled.a`
   }
 
   ${mediaMaxWidth("mobile")`
-    font-size: 3.6rem;
+    font-size: 3.2rem;
   `}
 `;
 
@@ -256,6 +262,6 @@ export const Overlay = styled.div<{ $open: boolean }>`
   }
 
   @supports (-webkit-touch-callout: none) {
-    height: 100svh; /* Ajusta para Safari */
+    height: 100svh;
   }
 `;

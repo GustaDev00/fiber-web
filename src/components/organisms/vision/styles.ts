@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
+import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Vision = styled.div`
   position: relative;
@@ -22,12 +23,20 @@ export const Title = styled.h2`
   color: #fff;
   font-size: 7rem;
   font-weight: 700;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    font-size: 5.6rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 2.8rem;
+  `}
 `;
 
 export const Line = styled.div`
   margin-top: 7.6rem;
   margin-bottom: 9.2rem;
-  height: 0.1rem;
+  height: 0.2rem;
   width: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(153, 153, 153, 0) 100%);
 `;
@@ -75,6 +84,14 @@ export const Button = styled.button`
   font-size: 7.6rem;
   font-weight: 700;
   z-index: 1;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    font-size: 6.4rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 3.2rem;
+  `}
 `;
 
 export const BlackBackground = styled.div<{ $open: boolean }>`

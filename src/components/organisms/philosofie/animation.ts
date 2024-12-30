@@ -8,6 +8,16 @@ gsap.registerPlugin(ScrollTrigger);
 const useAnimation = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Verifica o ambiente
+  const isDev = process.env.NODE_ENV === "development";
+  const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
+
+  // Configurações dos markers
+  const markerSettings =
+    isDev && markersEnabled
+      ? { startColor: "blue", endColor: "blue", fontSize: "12px", indent: 20 }
+      : false; // Em produção, desativa os markers
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!sectionRef.current) return;
@@ -23,7 +33,13 @@ const useAnimation = () => {
           start: "top 80%",
           end: "top 20%",
           scrub: 1,
-          markers: false,
+          markers: markerSettings,
+          id: "philosofie-animation",
+          onUpdate: (self) => {
+            if (isDev) {
+              console.log("Trigger updated:", self);
+            }
+          },
         },
       });
 

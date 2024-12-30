@@ -1,7 +1,12 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
-export default () => {
+interface AnimationProps {
+  isClosed: boolean;
+  setIsClosed: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default ({ isClosed, setIsClosed }: AnimationProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -14,16 +19,14 @@ export default () => {
       gsap.to(videoElement, {
         scrollTrigger: {
           trigger: video,
-          start: "top center+=257",
+          start: "top bottom",
           end: "bottom top",
+          markers: true,
           scrub: 1,
           onEnter: () => {
             gsap.set(videoElement, { position: "fixed" });
+            setIsClosed(false);
             if (video) video.play();
-          },
-          onLeaveBack: () => {
-            gsap.set(videoElement, { position: "absolute" });
-            if (video) video.pause();
           },
         },
       });

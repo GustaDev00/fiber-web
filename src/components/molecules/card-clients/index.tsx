@@ -6,6 +6,12 @@ export const CardClients = () => {
   const items = C.clients;
   const { servicesRef } = useAnimation();
 
+  const dimensions = [
+    { width: "87.1rem", height: "53.2rem" },
+    { width: "64.1rem", height: "53.2rem" },
+    { width: "153.4rem", height: "53.2rem" },
+  ];
+
   return (
     <S.CardClients>
       <S.Container>
@@ -13,12 +19,13 @@ export const CardClients = () => {
           <S.Card
             {...link}
             key={id}
+            $name={`card${index + 1}`}
             ref={(el) => {
               servicesRef.current[index] = el;
             }}
           >
             <S.Content>
-              <S.Image {...img} />
+              <S.Image {...img} {...dimensions[index]} />
               <S.Tag>
                 <S.List>
                   {tags.map((tag) => (

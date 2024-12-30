@@ -1,3 +1,4 @@
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled, { css } from "styled-components";
 
 export const Menu = styled.div`
@@ -12,6 +13,10 @@ export const Menu = styled.div`
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(0.5rem);
   z-index: 2;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    bottom: 4rem;
+  `}
 `;
 
 export const List = styled.ul`

@@ -7,4 +7,5 @@ export const CircleGreenBlur = styled.div`
   filter: blur(25rem);
   will-change: filter;
   opacity: 0.6;
+  z-index: 0;
 `;

@@ -10,6 +10,7 @@ import { GSAPInitializer } from "@/components/atoms/gsap-initializer";
 import { Cursor } from "@/components/organisms/Cursor";
 import Nav from "@/shared/nav";
 import { Menu } from "@/shared/menu";
+import { Footer } from "@/shared/footer";
 // import { Loading } from "@/components/molecules/loading";
 
 const RootLayout = ({
@@ -44,6 +45,7 @@ const RootLayout = ({
                 <Nav />
                 <Cursor>{children}</Cursor>
                 <Menu />
+                <Footer />
               </main>
             </Suspense>
           </ThemeProvider>

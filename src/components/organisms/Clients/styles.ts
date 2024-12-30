@@ -25,6 +25,6 @@ export const Circle = styled(CircleGreenBlur)`
 export const Circle2 = styled(CircleGreenBlur)`
   bottom: 25rem;
   right: -5.6rem;
-  width: 48.6rem;
-  height: 40.6rem;
+  width: 38.6rem;
+  height: 38.6rem;
 `;

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as S from "./styles";
 
-const lerp = (start: number, end: number, t: number) =>
-  start * (1 - t) + end * t;
+const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * t;
 
 export const BackgroundMove = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -46,12 +45,7 @@ export const BackgroundMove = () => {
 
         context.beginPath();
         context.moveTo(x, 0);
-        context.quadraticCurveTo(
-          x + offset,
-          canvas.height / 2,
-          x,
-          canvas.height,
-        );
+        context.quadraticCurveTo(x + offset, canvas.height / 2, x, canvas.height);
         context.stroke();
       }
 

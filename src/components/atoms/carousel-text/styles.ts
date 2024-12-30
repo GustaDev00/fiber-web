@@ -1,3 +1,4 @@
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const CarouselText = styled.div`
@@ -11,14 +12,24 @@ export const CarouselText = styled.div`
     margin: 4rem 0;
     content: "";
     width: 100%;
-    height: 0.1rem;
+    height: 0.2rem;
     background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0) 0.45%,
       rgba(230, 230, 230, 0.6) 69.56%,
       rgba(230, 230, 230, 0) 99.49%
     );
+
+    ${mediaMaxWidth("mobile")`
+      margin: 3rem 0;
+      width: 90%;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0.45%, rgba(230, 230, 230, 0.60) 49.56%, rgba(230, 230, 230, 0.00) 99.49%);
+    `}
   }
+
+  ${mediaMaxWidth("mobile")`
+    padding: 5rem 0 2rem;
+  `}
 `;
 
 export const Wrapper = styled.div`
@@ -54,5 +65,13 @@ export const Text = styled.p`
   font-size: 9.3rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6);
-  white-space: nowrap; /* Evitar quebra de linha no texto */
+  white-space: nowrap;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    font-size: 8.3rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 4.6rem;
+  `}
 `;

@@ -6,6 +6,20 @@ import { TwitterIcon } from "@/components/svgs/twitter";
 
 export default {
   data: {
+    footer: {
+      description: (
+        <>
+          Mit klarem Fokus auf Automatisierung und
+          <CustomBr byViewport="desktop" /> Kreativität verwandeln wir jede digitale
+          <CustomBr byViewport="desktop" /> Herausforderung in Chancen.
+        </>
+      ),
+      titles: {
+        services: "Dienstleistungen",
+        contacts: "Kontakt",
+      },
+    },
+
     navigation: [
       { title: "Home", href: "/", icon: HomeIcon },
       { title: "Dienstleistungen", href: "/dienstleistungen" },
@@ -22,6 +36,11 @@ export default {
         text: "E-Mail",
         content: "info@fiberweb.ch",
         link: "mailto:info@fiberweb.ch",
+      },
+      {
+        text: "Adresse",
+        content: "Sommerweg 27 8750 Glarus",
+        link: "https://maps.app.goo.gl/M3iAhhh5svGcWHZ5A",
       },
     ],
     social_share: [
@@ -148,7 +167,12 @@ export default {
     type: "video/mp4",
   },
   philosofie: {
-    title: "Unsere Philosofie",
+    title: (
+      <>
+        Unsere
+        <CustomBr byViewport="mobile" /> Philosofie
+      </>
+    ),
     content: (
       <>
         <p>
@@ -345,5 +369,19 @@ export default {
         alt: "Logo Andrade Gipser + Maler",
       },
     ],
+  },
+  transform: {
+    title: (
+      <>
+        Zeit für eine digitale <br />
+        <span>Transformation?</span>
+      </>
+    ),
+    description: (
+      <>
+        FiberWeb – das Sprungbrett für deine
+        <CustomBr byViewport="desktop" /> digitale Zukunft.
+      </>
+    ),
   },
 };

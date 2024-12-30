@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
 
 export const VideoFloat = () => {
   const { video } = C;
-  const { sectionRef } = useAnimation();
-  const [isClosed, setIsClosed] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isClosed, setIsClosed] = useState(true);
+  const [forceClose, setForceClose] = useState(false);
+  const { sectionRef } = useAnimation({ isClosed, setIsClosed });
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClose = () => {
-    setIsClosed(true);
+    setForceClose(true);
   };
 
   const handleOpen = () => {
     setOpen(!open);
+    if (videoRef.current) {
+      videoRef.current.muted = open;
+    }
   };
 
   return (
-    <S.VideoFloat ref={sectionRef} $isClosed={isClosed} $open={open}>
+    <S.VideoFloat ref={sectionRef} $isClosed={isClosed} $open={open} $forceClose={forceClose}>
       <S.Controls>
         <S.Open onClick={handleOpen}>
           <S.Arrow />
@@ -27,7 +32,7 @@ export const VideoFloat = () => {
           <S.CloseIcon />
         </S.Close>
       </S.Controls>
-      <S.Video src={video.src} muted loop playsInline>
+      <S.Video ref={videoRef} src={video.src} muted loop playsInline>
         <source {...video} />
       </S.Video>
     </S.VideoFloat>

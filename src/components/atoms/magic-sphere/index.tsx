@@ -11,7 +11,7 @@ export const MagicSphere = () => {
   };
 
   return (
-    <S.Main>
+    <S.Magic>
       <S.Wrapper ref={wrapperRef}>
         <S.SplineWrapper>
           <S.Suspense>
@@ -22,6 +22,6 @@ export const MagicSphere = () => {
           </S.Suspense>
         </S.SplineWrapper>
       </S.Wrapper>
-    </S.Main>
+    </S.Magic>
   );
 };

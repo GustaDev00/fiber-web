@@ -6,6 +6,7 @@ import { Clients } from "@/components/organisms/Clients";
 import { Philosofie } from "@/components/organisms/philosofie";
 import { Vision } from "@/components/organisms/vision";
 import { Together } from "@/components/organisms/together";
+import { Transform } from "@/components/organisms/transform";
 
 export const HomeTemplate: FC = () => {
   return (
@@ -15,6 +16,7 @@ export const HomeTemplate: FC = () => {
       <Philosofie />
       <Vision />
       <Together />
+      <Transform />
     </>
   );
 };

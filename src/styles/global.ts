@@ -54,6 +54,9 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: #000;
     position: relative;
+  }
+
+  main, body, html {
     overflow-x: hidden;
   }
 

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { lazy, Suspense as _Suspense } from "react";
+import { mediaMaxWidth } from "@/utils/media-query";
 
-export const Main = styled.main`
+export const Magic = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,20 +10,41 @@ export const Main = styled.main`
   height: 64rem;
   position: relative;
   overflow: hidden;
+
+  ${mediaMaxWidth(1600)`
+    height: 50rem;
+  `}
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    width: 40rem;
+    height: 40rem;
+  `}
 `;
 
 export const Wrapper = styled.div`
-  width: 74rem;
-  height: 74rem;
+  position: relative;
+  width: 64rem;
+  height: 64rem;
   mask-image: radial-gradient(circle, black 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
   mask-size: cover;
   -webkit-mask-size: cover;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    left: 6rem;
+    width: 50rem;
+    height: 50rem;
+  `}
 `;
 
 export const SplineWrapper = styled.div`
   width: 100%;
   height: 100%;
+
+  canvas {
+    width: 54rem !important;
+    height: 54rem !important;
+  }
 `;
 
 export const Spline = lazy(() => import("@splinetool/react-spline"));

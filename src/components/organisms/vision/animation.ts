@@ -5,6 +5,16 @@ import SplitType from "split-type";
 export default () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Verifica o ambiente
+  const isDev = process.env.NODE_ENV === "development";
+  const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
+
+  // Configurações dos markers
+  const markerSettings =
+    isDev && markersEnabled
+      ? { startColor: "red", endColor: "red", fontSize: "12px", indent: 20 }
+      : false; // Em produção, desativa os markers
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!sectionRef.current) return;
@@ -22,7 +32,13 @@ export default () => {
           start: "top 70%",
           end: "23% top",
           scrub: 1,
-          markers: false,
+          markers: markerSettings,
+          id: "vision-animation",
+          onUpdate: (self) => {
+            if (isDev) {
+              console.log("Trigger updated:", self);
+            }
+          },
         },
       });
 

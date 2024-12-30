@@ -1,3 +1,4 @@
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const CanvasBackground = styled.canvas`
@@ -8,4 +9,8 @@ export const CanvasBackground = styled.canvas`
   height: 90vh;
   pointer-events: none;
   z-index: -1;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    height: 60vh;
+  `}
 `;

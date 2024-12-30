@@ -1,42 +1,80 @@
 import { LazyImage } from "@/components/atoms/lazy-image";
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const CardClients = styled.div`
   padding-bottom: 20rem;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    padding-bottom: 10rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    padding-bottom: 0rem;
+  `}
 `;
 
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "card1 card2"
+    "card3 card3";
+  gap: 2rem 2.2rem;
   align-items: center;
   justify-content: center;
-  gap: 2rem 2.2rem;
+  z-index: 1;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    padding: 0 1.8rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    display: flex;
+    flex-direction: column;
+  `}
 `;
 
-export const Card = styled.a``;
+export const Card = styled.a<{ $name: string }>`
+  grid-area: ${({ $name }) => $name};
+`;
 
 export const Content = styled.div`
   position: relative;
 `;
 
-export const Image = styled(LazyImage)`
-  width: 100%;
-  height: 100%;
+export const Image = styled(LazyImage)<{ width: string; height: string }>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   background: rgba(211, 211, 211, 0.5);
   border-radius: 2rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.5);
   object-fit: cover;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    width: 100%;
+  `}
 `;
 
 export const Tag = styled.div`
   position: absolute;
   bottom: 2.1rem;
   left: 2.4rem;
+
+  ${mediaMaxWidth("mobile")`
+    bottom: 1.5rem;
+    left: 1.8rem;
+  `}
 `;
 
 export const List = styled.ul`
   display: flex;
   gap: 1.8rem;
+
+  ${mediaMaxWidth("mobile")`
+    flex-direction: column;
+    gap: 1.3rem;
+  `}
 `;
 
 export const Item = styled.li`
@@ -79,4 +117,9 @@ export const Text = styled.p`
   background: linear-gradient(90deg, #39b965 0%, rgba(94, 202, 131, 0.4) 100%);
   box-shadow: 0 0.4rem 1.6rem 0 rgba(0, 0, 0, 0.1);
   z-index: 1;
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 1.6rem;
+    padding: 1rem 4.3rem;
+  `}
 `;

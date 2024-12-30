@@ -4,7 +4,7 @@ import { LazyImage } from "@/components/atoms/lazy-image";
 import { SliderCard as _SliderCard } from "@/components/molecules/slider-card";
 
 export const Together = styled.div`
-  padding-bottom: 138rem;
+  padding-bottom: 48rem;
 `;
 
 export const Wrapper = styled(_Wrapper)`

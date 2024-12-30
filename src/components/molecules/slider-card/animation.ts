@@ -5,6 +5,16 @@ export default () => {
   const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
 
+  // Verifica o ambiente
+  const isDev = process.env.NODE_ENV === "development";
+  const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
+
+  // Configurações dos markers
+  const markerSettings =
+    isDev && markersEnabled
+      ? { startColor: "purple", endColor: "purple", fontSize: "12px", indent: 20 }
+      : false; // Em produção, desativa os markers
+
   useEffect(() => {
     const element = ref.current;
 
@@ -16,7 +26,13 @@ export default () => {
       onLeave: () => setIsInView(false),
       onEnterBack: () => setIsInView(true),
       onLeaveBack: () => setIsInView(false),
-      markers: true,
+      markers: markerSettings,
+      id: "slider-card-animation",
+      onUpdate: (self) => {
+        if (isDev) {
+          console.log("Trigger updated:", self);
+        }
+      },
     });
   }, []);
 

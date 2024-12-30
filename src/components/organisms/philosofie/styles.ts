@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ButtonSlideArrow } from "@/components/atoms/button-slide-arrow";
 import { MagicSphere } from "@/components/atoms/magic-sphere";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
+import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Philosofie = styled.div``;
 
@@ -9,6 +10,16 @@ export const Wrapper = styled(_Wrapper)`
   justify-content: center;
   align-items: flex-start;
   gap: 20rem;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    flex-direction: column;
+  `}
 `;
 
 export const Container = styled.div`
@@ -23,6 +34,10 @@ export const Container = styled.div`
     width: 0.2rem;
     height: 100%;
     background: rgba(255, 255, 255, 0.2);
+
+    ${mediaMaxWidth("isMobileOrTabletVertical")`
+      right: -5.9rem;
+    `}
   }
 `;
 
@@ -30,6 +45,14 @@ export const Title = styled.h2`
   color: #fff;
   font-size: 6.8rem;
   font-weight: 700;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    font-size: 4rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 3.2rem;
+  `}
 `;
 
 export const Sphere = styled(MagicSphere)``;
@@ -49,6 +72,14 @@ export const Content = styled.article`
       font-weight: 700;
     }
   }
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    width: 100%;
+
+    p {
+      font-size: 1.8rem;
+    }
+  `}
 `;
 
 export const Button = styled(ButtonSlideArrow)``;

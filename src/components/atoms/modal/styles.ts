@@ -9,7 +9,7 @@ export const Modal = styled.div<{ $open: boolean }>`
   left: 50%;
   width: ${({ $open }) => ($open ? "95vw" : "0")};
   height: 95vh;
-  background: linear-gradient(180deg, #151515 13.5%, #1a1a1a 52%, #000 90.5%);
+  background: linear-gradient(180deg, #151515 13.5%, #1a1a1a 62%, #000 99.5%);
   border-radius: 0.5rem;
   transform: translate(-50%, -50%);
   opacity: ${({ $open }) => ($open ? 1 : 0)};
@@ -93,9 +93,10 @@ export const Img = styled(LazyImage)`
 `;
 
 export const Circle = styled(CircleGreenBlur)`
+  filter: blur(10rem);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 38.6rem;
-  height: 48.6rem;
+  width: 10rem;
+  height: 18.6rem;
 `;
