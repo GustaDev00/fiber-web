@@ -25,8 +25,13 @@ export const Vision = () => {
           <S.Line data-timline="line" />
           <S.List data-timline="list">
             {items.map(({ title }, index) => (
-              <S.Item key={title} data-timline="item">
-                <S.Button onClick={() => handleItemClick(index)}>{title}</S.Button>
+              <S.Item key={index} data-timline="item">
+                <S.Button onClick={() => handleItemClick(index)}>
+                  {title}{" "}
+                  <S.Icon>
+                    <S.Arrow />
+                  </S.Icon>
+                </S.Button>
               </S.Item>
             ))}
           </S.List>

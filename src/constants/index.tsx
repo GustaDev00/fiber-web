@@ -23,8 +23,7 @@ export default {
     navigation: [
       { title: "Home", href: "/", icon: HomeIcon },
       { title: "Dienstleistungen", href: "/dienstleistungen" },
-      { title: "Portfolio", href: "/portfolio" },
-      { title: "Kontakt", href: "/kontakt" },
+      { title: "über uns", href: "/uber-uns" },
     ],
     contact: [
       {
@@ -91,29 +90,71 @@ export default {
     { text: "Webseiten", img: "/imgs/loading/img3.png" },
   ],
   header: {
+    home: {
+      title: (
+        <>
+          <span>Creative</span> Webseiten <CustomBr byViewport="desktop" />
+          Effektives <span>Marketing </span>
+          <CustomBr byViewport="desktop" /> <span>Smarte</span> KI Lösungen
+        </>
+      ),
+
+      description: (
+        <>
+          FiberWeb ist eine führende Schweizer
+          <CustomBr byViewport="desktop" /> Webagentur, spezialisiert auf
+          <span>
+            Branding, <CustomBr byViewport="desktop" /> UI/UX-Design,
+          </span>
+          sowie{" "}
+          <span>
+            Web- und
+            <CustomBr byViewport="desktop" /> Mobile-Entwicklung.
+          </span>{" "}
+          Zudem bieten wir
+          <CustomBr byViewport="desktop" /> <span>KI-Lösungen</span> an, um die Effizienz deines{" "}
+          <CustomBr byViewport="desktop" /> Unternehmens zu maximieren.
+        </>
+      ),
+    },
+    uber_uns: {
+      title: (
+        <>
+          Wir gestalten die digitale
+          <CustomBr byViewport="desktop" />
+          <span> Zukunft deiner Marke</span>
+        </>
+      ),
+
+      description: (
+        <>
+          Mit klarem Fokus auf Automatisierung und Kreativität verwandeln wir jede digitale
+          Herausforderung in Chancen. <CustomBr byViewport="desktop" /> Dein Erfolg ist unser
+          Antrieb: Wir machen deine Prozesse schlank, deine Online-Präsenz unschlagbar und dein
+          <CustomBr byViewport="desktop" /> Business bereit für die Zukunft.
+        </>
+      ),
+    },
+  },
+  innovation: {
     title: (
       <>
-        <span>Creative</span> Webseiten <CustomBr byViewport="desktop" />
-        Effektives <span>Marketing </span>
-        <CustomBr byViewport="desktop" /> <span>Smarte</span> KI Lösungen
+        Innovation <span>beginnt hier</span>
       </>
     ),
-
     description: (
       <>
-        FiberWeb ist eine führende Schweizer
-        <CustomBr byViewport="desktop" /> Webagentur, spezialisiert auf
-        <span>
-          Branding, <CustomBr byViewport="desktop" /> UI/UX-Design,
-        </span>
-        sowie{" "}
-        <span>
-          Web- und
-          <CustomBr byViewport="desktop" /> Mobile-Entwicklung.
-        </span>{" "}
-        Zudem bieten wir
-        <CustomBr byViewport="desktop" /> <span>KI-Lösungen</span> an, um die Effizienz deines{" "}
-        <CustomBr byViewport="desktop" /> Unternehmens zu maximieren.
+        Wir machen deine digitale Vision greifbar – selbst,
+        <CustomBr byViewport="desktop" /> wenn du sie dir noch nicht vorstellen kannst. Unser
+        <CustomBr byViewport="desktop" /> Ziel ist es, dein Unternehmen optimal für die
+        <CustomBr byViewport="desktop" /> Zukunft abzusichern, indem wir deine
+        <CustomBr byViewport="desktop" /> Einzigartigkeit online sichtbar machen. Mit
+        <CustomBr byViewport="desktop" /> authentischen Lösungen sorgen wir dafür, dass du
+        <CustomBr byViewport="desktop" /> dich rundum versorgt fühlst. Unser Anspruch? Eine
+        <CustomBr byViewport="desktop" /> Zusammenarbeit, die sich wie eine Freundschaft
+        <CustomBr byViewport="desktop" /> anfühlt und dir das beruhigende Gefühl gibt, die
+        <CustomBr byViewport="desktop" /> beste Entscheidung getroffen zu haben – heute
+        <CustomBr byViewport="desktop" /> und in Zukunft.
       </>
     ),
   },
@@ -203,7 +244,7 @@ export default {
     ),
     items: [
       {
-        title: "Webdesign",
+        title: <>Webdesign</>,
         subtitle: <>Webdesign & -entwicklung</>,
         description: (
           <>
@@ -224,7 +265,7 @@ export default {
         list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
       },
       {
-        title: "Marketing",
+        title: <>Marketing</>,
         subtitle: <>Webdesign & -entwicklung</>,
         description: (
           <>
@@ -245,7 +286,12 @@ export default {
         list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
       },
       {
-        title: "Künstliche Intelligenz",
+        title: (
+          <>
+            Künstliche
+            <CustomBr byViewport="mobile" /> Intelligenz
+          </>
+        ),
         subtitle: <>Webdesign & -entwicklung</>,
         description: (
           <>
@@ -266,7 +312,7 @@ export default {
         list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
       },
       {
-        title: "Mobile Apps",
+        title: <>Mobile Apps</>,
         subtitle: <>Webdesign & -entwicklung</>,
         description: (
           <>
@@ -292,7 +338,8 @@ export default {
     title: (
       <>
         Gemeinsam
-        <br /> erreichen wir Grosses
+        <br /> erreichen wir
+        <CustomBr byViewport="mobile" /> Grosses
       </>
     ),
     mensages: [

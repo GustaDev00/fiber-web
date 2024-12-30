@@ -2,9 +2,14 @@ import styled from "styled-components";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { LazyImage } from "@/components/atoms/lazy-image";
 import { SliderCard as _SliderCard } from "@/components/molecules/slider-card";
+import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Together = styled.div`
   padding-bottom: 48rem;
+
+  ${mediaMaxWidth("mobile")`
+    padding-bottom: 24rem;
+  `}
 `;
 
 export const Wrapper = styled(_Wrapper)`
@@ -18,11 +23,23 @@ export const Title = styled.h2`
   text-align: center;
   font-size: 7rem;
   font-weight: 700;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    font-size: 4.6rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 3.2rem;
+  `}
 `;
 
 export const Container = styled.div`
   position: relative;
   margin-top: 26rem;
+
+  ${mediaMaxWidth("mobile")`
+    margin-top: 6rem;
+  `}
 `;
 
 export const SliderCard = styled(_SliderCard)``;
@@ -33,6 +50,10 @@ export const SliderLogo = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  ${mediaMaxWidth("mobile")`
+    margin-top: 6rem;
+  `}
 `;
 
 export const BgList = styled.div`

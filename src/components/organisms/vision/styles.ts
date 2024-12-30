@@ -2,10 +2,15 @@ import styled from "styled-components";
 import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
+import { ArrowInclineIcon } from "@/components/svgs/arrow-incline";
 
 export const Vision = styled.div`
   position: relative;
   padding: 10rem 0 18rem;
+
+  ${mediaMaxWidth("mobile")`
+  padding: 10rem 0;
+  `}
 `;
 
 export const Circle = styled(CircleGreenBlur)`
@@ -13,6 +18,14 @@ export const Circle = styled(CircleGreenBlur)`
   right: -10rem;
   width: 38.6rem;
   height: 38.6rem;
+
+  ${mediaMaxWidth("mobile")`
+    top: 40rem;
+    right: -15rem;
+    width: 58.6rem;
+    height: 58.6rem;
+    filter: blur(30rem);
+  `}
 `;
 
 export const Wrapper = styled(_Wrapper)`
@@ -30,6 +43,7 @@ export const Title = styled.h2`
 
   ${mediaMaxWidth("mobile")`
     font-size: 2.8rem;
+    text-align: center;
   `}
 `;
 
@@ -39,6 +53,11 @@ export const Line = styled.div`
   height: 0.2rem;
   width: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(153, 153, 153, 0) 100%);
+
+  ${mediaMaxWidth("mobile")`
+    margin-top: 2.2rem;
+    margin-bottom: 4.2rem;
+  `}
 `;
 
 export const List = styled.div``;
@@ -47,6 +66,7 @@ export const Item = styled.div`
   padding: 3.9rem 4.4rem;
   transition: padding-left 0.4s ease;
   position: relative;
+  text-align: center;
 
   &::before {
     opacity: 0;
@@ -76,6 +96,13 @@ export const Item = styled.div`
       visibility: visible;
     }
   }
+
+  ${mediaMaxWidth("mobile")`
+    padding: 3.9rem 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
 `;
 
 export const Button = styled.button`
@@ -90,8 +117,31 @@ export const Button = styled.button`
   `}
 
   ${mediaMaxWidth("mobile")`
-    font-size: 3.2rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
   `}
+`;
+
+export const Icon = styled.div`
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #fff;
+`;
+
+export const Arrow = styled(ArrowInclineIcon)`
+  width: 1.4rem;
+  height: 1.4rem;
+
+  path {
+    stroke: #000;
+  }
 `;
 
 export const BlackBackground = styled.div<{ $open: boolean }>`

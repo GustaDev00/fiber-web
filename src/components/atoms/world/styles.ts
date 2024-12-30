@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { lazy, Suspense as _Suspense } from "react";
 import { mediaMaxWidth } from "@/utils/media-query";
 
-export const Magic = styled.div`
+export const World = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64rem;
-  height: 64rem;
+  width: 100%;
+  height: 51rem;
   position: relative;
   overflow: hidden;
 
@@ -23,8 +23,6 @@ export const Magic = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
-  width: 64rem;
-  height: 64rem;
   mask-image: radial-gradient(circle, black 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
   mask-size: cover;
@@ -46,8 +44,8 @@ export const SplineWrapper = styled.div`
   height: 100%;
 
   canvas {
-    width: 54rem !important;
-    height: 54rem !important;
+    width: 64rem !important;
+    height: 64rem !important;
   }
 `;
 

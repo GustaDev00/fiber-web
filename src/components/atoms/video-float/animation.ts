@@ -20,7 +20,7 @@ export default ({ setIsClosed }: AnimationProps) => {
           trigger: video,
           start: "top bottom",
           end: "bottom top",
-          markers: true,
+          markers: false,
           scrub: 1,
           onEnter: () => {
             gsap.set(videoElement, { position: "fixed" });

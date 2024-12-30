@@ -1,5 +1,6 @@
 import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const Transform = styled.div`
@@ -20,6 +21,10 @@ export const Title = styled.h2`
   span {
     color: #5eca83;
   }
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 2.9rem;
+  `}
 `;
 
 export const Description = styled.p`
@@ -28,6 +33,11 @@ export const Description = styled.p`
   font-size: 3.8rem;
   font-weight: 400;
   line-height: 4.2rem;
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 2.2rem;
+    line-height: 3.6rem;
+  `}
 `;
 
 export const Link = styled.a`
@@ -46,6 +56,11 @@ export const Link = styled.a`
   &:hover {
     opacity: 0.6;
   }
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 2rem;
+    padding: 1.2rem 2.8rem;
+  `}
 `;
 
 export const Line = styled.div`
@@ -60,6 +75,10 @@ export const Circle1 = styled(CircleGreenBlur)`
   left: -10rem;
   width: 30rem;
   height: 30rem;
+
+  ${mediaMaxWidth("mobile")`
+    top: 10rem;
+  `}
 `;
 
 export const Circle2 = styled(CircleGreenBlur)`
@@ -67,4 +86,11 @@ export const Circle2 = styled(CircleGreenBlur)`
   right: -10rem;
   width: 30rem;
   height: 30rem;
+
+  ${mediaMaxWidth("mobile")`
+    top: -30rem;
+    right: -10rem;
+    width: 40rem;
+    height: 40rem;
+  `}
 `;

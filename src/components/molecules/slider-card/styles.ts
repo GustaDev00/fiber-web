@@ -1,6 +1,7 @@
 import { ProgressBar } from "@/components/atoms/progress-bar";
 import { ProgressFill } from "@/components/atoms/progress-bar/styles";
 import { DoubleMarksIcon } from "@/components/svgs/double-marks";
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const SliderCard = styled.div`
@@ -41,6 +42,20 @@ export const SliderCard = styled.div`
 
   .swiper-slide-next {
   }
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    width: 48.4rem;
+    height: 38.2rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    width: 80%;
+    height: 28.8rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  `}
 `;
 
 export const Container = styled.div`
@@ -49,6 +64,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    padding: 2.8rem 2.9rem;
+  `}
+
+  ${mediaMaxWidth("mobile")`
+    padding: 1rem 2rem 2rem;
+  `}
 `;
 
 export const Wrapper = styled.div``;
@@ -59,11 +82,26 @@ export const Text = styled.p`
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 4.2rem;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")``}
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 1.6rem;
+    line-height: 3.4rem;
+    margin-top: 2.5rem;
+  `}
 `;
 
 export const Icon = styled(DoubleMarksIcon)`
   width: 4.3rem;
   height: 4.3rem;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")``}
+
+  ${mediaMaxWidth("mobile")`
+    width: 2.4rem;
+    height: 1.7rem;
+  `}
 `;
 
 export const Progress = styled(ProgressBar)`

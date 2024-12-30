@@ -11,7 +11,7 @@ export default () => {
     title,
     description,
     buttons: { contact },
-  } = { ...C.header.home, ...C.data };
+  } = { ...C.header, ...C.data };
 
   return (
     <S.Header ref={ref}>

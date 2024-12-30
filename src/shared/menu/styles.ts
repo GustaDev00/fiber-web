@@ -17,6 +17,12 @@ export const Menu = styled.div`
   ${mediaMaxWidth("isMobileOrTabletVertical")`
     bottom: 4rem;
   `}
+
+  ${mediaMaxWidth("mobile")`
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  `}
 `;
 
 export const List = styled.ul`

@@ -14,11 +14,12 @@ export const Wrapper = styled(_Wrapper)`
   ${mediaMaxWidth("isMobileOrTabletVertical")`
     flex-direction: row;
     justify-content: space-between;
-    gap: 10rem;
+    gap: 9rem;
   `}
 
   ${mediaMaxWidth("mobile")`
     flex-direction: column;
+    gap: 2rem;
   `}
 `;
 
@@ -36,7 +37,11 @@ export const Container = styled.div`
     background: rgba(255, 255, 255, 0.2);
 
     ${mediaMaxWidth("isMobileOrTabletVertical")`
-      right: -5.9rem;
+      right: -4rem;
+    `}
+
+    ${mediaMaxWidth("mobile")`
+      display: none;
     `}
   }
 `;
@@ -75,6 +80,8 @@ export const Content = styled.article`
 
   ${mediaMaxWidth("isMobileOrTabletVertical")`
     width: 100%;
+    opacity: 0.8;
+    gap: 2.2rem;
 
     p {
       font-size: 1.8rem;

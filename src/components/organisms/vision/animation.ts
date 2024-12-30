@@ -26,11 +26,13 @@ export default () => {
 
       console.log(Items);
 
+      const isMobile = window.innerWidth <= 768;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 70%",
-          end: "23% top",
+          start: isMobile ? "top 90%" : "top 70%",
+          end: isMobile ? "30% center" : "23% top",
           scrub: 1,
           markers: markerSettings,
           id: "vision-animation",
