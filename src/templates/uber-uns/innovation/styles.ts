@@ -5,30 +5,13 @@ import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
-export const Header = styled.section`
+export const Section = styled.section`
   position: relative;
-  height: 100vh;
-
-  @supports (-webkit-touch-callout: none) {
-    height: 100svh;
-  }
-
-  ${mediaMaxWidth("isMobileOrTabletVertical")`
-    height: 70vh;
-  `}
-
-  ${mediaMaxWidth("mobile")`
-    height: auto;
-  `}
 `;
 
 export const Wrapper = styled(_Wrapper)`
-  padding-top: 20.3rem;
+  padding-top: 0;
   align-items: flex-end;
-
-  ${mediaMaxWidth("mobile")`
-    padding-top: 14rem; 
-  `}
 `;
 
 export const Content = styled.div`
@@ -42,8 +25,6 @@ export const Content = styled.div`
     flex-direction: column;
   `}
 `;
-
-export const Article = styled.article``;
 
 export const Title = styled.h1`
   display: flex;
@@ -66,8 +47,6 @@ export const Title = styled.h1`
   `}
 `;
 
-export const Description = styled.div``;
-
 export const Text = styled.p`
   opacity: 0.8;
   color: #fff;
@@ -79,56 +58,5 @@ export const Text = styled.p`
   ${mediaMaxWidth("isMobileOrTabletVertical")`
     font-size: 1.8rem;
     line-height: 3.2rem;
-  `}
-`;
-
-export const Button = styled(ButtonSlideArrow)``;
-
-export const Scroll = styled(ScrollDown)`
-  margin: 3rem 16.6rem 0 7.8rem;
-
-  ${mediaMaxWidth("isMobileOrTabletVertical")`
-    font-size: 3.8rem;
-    margin: 3rem 7rem 0 7rem;
-  `}
-
-  ${mediaMaxWidth("mobile")`
-    display: none;
-  `}
-`;
-
-export const Circle2 = styled(CircleGreenBlur)`
-  top: 50rem;
-  right: 45rem;
-  width: 38.6rem;
-  height: 30.6rem;
-
-  ${mediaMaxWidth("mobile")`
-    width: 26rem;
-    height: 26rem;
-  `}
-`;
-
-export const Circle3 = styled(CircleGreenBlur)`
-  top: 10rem;
-  right: -2rem;
-  width: 38.6rem;
-  height: 38.6rem;
-
-  ${mediaMaxWidth("mobile")`
-    width: 26rem;
-    height: 26rem;
-  `}
-`;
-
-export const Circle = styled(CircleGreenBlur)`
-  top: 10rem;
-  left: -22rem;
-  width: 38.6rem;
-  height: 38.6rem;
-
-  ${mediaMaxWidth("mobile")`
-    width: 26rem;
-    height: 26rem;
   `}
 `;

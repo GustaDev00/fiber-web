@@ -69,7 +69,7 @@ export const Content = styled.article`
 
   p {
     color: #fff;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     font-weight: 500;
     line-height: 4.2rem;
 

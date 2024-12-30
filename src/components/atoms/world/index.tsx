@@ -1,24 +1,12 @@
 import { useRef } from "react";
 import * as S from "./styles";
 
-export const World = () => {
-  const splineRef = useRef<HTMLDivElement | null>(null);
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const canvas = splineRef.current;
-    if (canvas) {
-      console.log("Mouse position:", event.clientX, event.clientY);
-    }
-  };
-
+export const World = ({ ...props }) => {
   return (
-    <S.World onMouseMove={handleMouseMove}>
+    <S.World {...props}>
       <S.Wrapper>
         <S.SplineWrapper>
-          <S.Spline
-            ref={splineRef}
-            scene="https://prod.spline.design/nDb6OwlS1RuRhCXW/scene.splinecode"
-          />
+          <S.Spline scene="https://prod.spline.design/nDb6OwlS1RuRhCXW/scene.splinecode" />
         </S.SplineWrapper>
       </S.Wrapper>
     </S.World>

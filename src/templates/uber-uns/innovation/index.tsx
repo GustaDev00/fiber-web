@@ -5,19 +5,19 @@ import { Stars } from "@/components/atoms/stars";
 import { World } from "@/components/atoms/world";
 
 export default () => {
-  const { ref } = useAnimation();
+  const { sectionRef } = useAnimation();
   const { title, description } = C.innovation;
 
   return (
-    <S.Header ref={ref}>
+    <S.Section ref={sectionRef}>
       <S.Wrapper>
         <S.Content>
-          <Stars />
+          <Stars data-timeline="stars" />
           <S.Title>{title}</S.Title>
           <S.Text>{description}</S.Text>
         </S.Content>
-        <World />
+        <World data-timeline="world" />
       </S.Wrapper>
-    </S.Header>
+    </S.Section>
   );
 };

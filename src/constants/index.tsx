@@ -158,6 +158,125 @@ export default {
       </>
     ),
   },
+  story: {
+    title: (
+      <>
+        Die Story hinter <br />
+        <span>FiberWeb</span>
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          Es begann mit einer gemeinsamen Vision. Elita, mit einer Leidenschaft für Webdesign und
+          Entwicklung, und Patrick, mit einer Expertise im Marketing, wollten unseren eigenen Stil
+          in die digitale Welt bringen. Anfang dieses Jahres haben wir uns zusammengetan und
+          FiberWeb gegründet, um Unternehmen dabei zu helfen, sich digital zu transformieren. Schon
+          bald haben wir uns auf die Zusammenarbeit mit Unternehmen aus der Finanz- und
+          Treuhandbranche spezialisiert.
+        </p>
+        <p>
+          Unser junges, dynamisches Team wächst stetig. Heute arbeiten neben uns auch ein
+          Projektleiter, ein Designer, drei Programmierer und drei Ads Manager bei FiberWeb – das
+          Herzstück unserer Agentur.
+        </p>
+        <p>
+          Unser Ziel? Coole, authentische Webseiten und Online-Marketing, das unsere kreativen
+          Strategien widerspiegelt. Mit innovativen AI-Services wollen wir unsere Kunden auf die
+          nächste Stufe bringen, denn die Zukunft verlangt nach Automatisierung und smarten
+          Lösungen.
+        </p>
+        <p>
+          Wir sind mutig, flexibel und stecken Herzblut in jedes Projekt. FiberWeb ist nicht nur
+          unser Unternehmen – es ist Ausdruck unserer Leidenschaft für das Digitale.
+        </p>
+      </>
+    ),
+    video1: {
+      src: "/videos/video01.mp4",
+      type: "video/mp4",
+    },
+    video2: {
+      src: "/videos/video02.mp4",
+      type: "video/mp4",
+    },
+  },
+  team: {
+    title: (
+      <>
+        Lernen Sie unser <CustomBr byViewport="desktop" />
+        <span>Team kennen</span>
+      </>
+    ),
+    people: [
+      {
+        name: "Kaique Fernandes",
+        role: "UX Designer",
+        text: (
+          <>Visionär am Bildschirm – verwandelt Ideen in visuelle Erlebnisse, die begeistern.</>
+        ),
+        img: {
+          src: "/imgs/team/kaique.png",
+          alt: "Kaique Fernandes",
+        },
+      },
+      {
+        name: "Kaique Fernandes",
+        role: "UX Designer",
+        text: (
+          <>Visionär am Bildschirm – verwandelt Ideen in visuelle Erlebnisse, die begeistern.</>
+        ),
+        img: {
+          src: "/imgs/team/kaique.png",
+          alt: "Kaique Fernandes",
+        },
+      },
+      {
+        name: "Kaique Fernandes",
+        role: "UX Designer",
+        text: (
+          <>Visionär am Bildschirm – verwandelt Ideen in visuelle Erlebnisse, die begeistern.</>
+        ),
+        img: {
+          src: "/imgs/team/kaique.png",
+          alt: "Kaique Fernandes",
+        },
+      },
+      {
+        name: "Kaique Fernandes",
+        role: "UX Designer",
+        text: (
+          <>Visionär am Bildschirm – verwandelt Ideen in visuelle Erlebnisse, die begeistern.</>
+        ),
+        img: {
+          src: "/imgs/team/kaique.png",
+          alt: "Kaique Fernandes",
+        },
+      },
+      {
+        name: "Kaique Fernandes",
+        role: "UX Designer",
+        text: (
+          <>Visionär am Bildschirm – verwandelt Ideen in visuelle Erlebnisse, die begeistern.</>
+        ),
+        img: {
+          src: "/imgs/team/kaique.png",
+          alt: "Kaique Fernandes",
+        },
+      },
+      {
+        name: "Kaique Fernandes",
+        role: "UX Designer",
+        text: (
+          <>Visionär am Bildschirm – verwandelt Ideen in visuelle Erlebnisse, die begeistern.</>
+        ),
+        img: {
+          src: "/imgs/team/kaique.png",
+          alt: "Kaique Fernandes",
+        },
+      },
+    ],
+  },
   text: "Erfolge, die unsere Qualität unterstreichen.",
   clients: [
     {

@@ -1,37 +1,31 @@
-import { Abstract3d } from "@/components/atoms/abstract-3d";
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { BackgroundMove } from "@/components/atoms/background-move";
 
 export default () => {
-  const { ref } = useAnimation();
-
-  const {
-    title,
-    description,
-    buttons: { contact },
-  } = { ...C.header, ...C.data };
+  const { sectionRef } = useAnimation();
+  const { title, content, video1, video2, whatsapp } = { ...C.story, ...C.data.buttons };
 
   return (
-    <S.Header ref={ref}>
+    <S.Section ref={sectionRef}>
       <S.Wrapper>
         <S.Content>
-          <S.Article>
-            <S.Title>{title}</S.Title>
-            <Abstract3d />
-          </S.Article>
-          <S.Scroll />
-          <S.Description>
-            <S.Text>{description}</S.Text>
-            <S.Button {...contact} />
-          </S.Description>
+          <S.Title>{title}</S.Title>
+          <S.Video1 id="video1" autoPlay loop muted playsInline controls={false} preload="auto">
+            <source {...video1} />
+            Seu navegador não suporta vídeos.
+          </S.Video1>
+          <S.Container>
+            <S.Video2 id="video2" autoPlay loop muted playsInline controls={false} preload="auto">
+              <source {...video2} />
+              Seu navegador não suporta vídeos.
+            </S.Video2>
+            <S.Button {...whatsapp}>{whatsapp.title}</S.Button>
+          </S.Container>
         </S.Content>
+        <S.Article>{content}</S.Article>
       </S.Wrapper>
-      <S.Circle3 />
-      <S.Circle2 />
       <S.Circle />
-      <BackgroundMove />
-    </S.Header>
+    </S.Section>
   );
 };

@@ -66,7 +66,6 @@ export const Item = styled.div`
   padding: 3.9rem 4.4rem;
   transition: padding-left 0.4s ease;
   position: relative;
-  text-align: center;
 
   &::before {
     opacity: 0;
@@ -98,6 +97,7 @@ export const Item = styled.div`
   }
 
   ${mediaMaxWidth("mobile")`
+    text-align: center;
     padding: 3.9rem 3.4rem;
     display: flex;
     align-items: center;
@@ -126,13 +126,16 @@ export const Button = styled.button`
 
 export const Icon = styled.div`
   display: none;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   background-color: #fff;
+
+  ${mediaMaxWidth("mobile")`
+    display: flex;
+  `}
 `;
 
 export const Arrow = styled(ArrowInclineIcon)`

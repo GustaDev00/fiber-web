@@ -11,13 +11,9 @@ export const Star = styled.div`
   position: relative;
   overflow: hidden;
 
-  ${mediaMaxWidth(1600)`
-    height: 50rem;
-  `}
-
   ${mediaMaxWidth("isMobileOrTabletVertical")`
-    width: 40rem;
-    height: 40rem;
+    width: 24rem;
+    height: 24rem;
   `}
 `;
 
@@ -29,13 +25,7 @@ export const Wrapper = styled.div`
   -webkit-mask-size: cover;
 
   ${mediaMaxWidth("isMobileOrTabletVertical")`
-    left: 6rem;
-    width: 50rem;
-    height: 50rem;
-  `}
-
-  ${mediaMaxWidth("mobile")`
-    left: -4rem;
+    left: 0rem;
   `}
 `;
 

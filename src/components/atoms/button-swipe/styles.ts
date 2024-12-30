@@ -56,6 +56,7 @@ const swipeStyles = css`
 
   ${mediaMaxWidth("mobile")`
     padding: 1.7rem 7rem;
+      font-size: 2rem;
   `}
 `;
 

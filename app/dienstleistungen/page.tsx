@@ -1,6 +1,6 @@
+import { DienstleistungenTemplate } from "@/templates/dienstleistungen";
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
-import { HomeTemplate } from "@/templates/home";
 
 export const metadata: Metadata = {
   title: "Fiber web - Creative Webseiten",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const Home = (): ReactNode => {
-  return <HomeTemplate />;
+  return <DienstleistungenTemplate />;
 };
 
 export default Home;

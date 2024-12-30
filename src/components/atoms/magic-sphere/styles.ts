@@ -6,8 +6,8 @@ export const Magic = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64rem;
-  height: 64rem;
+  width: 54rem;
+  height: 46rem;
   position: relative;
   overflow: hidden;
 
@@ -24,7 +24,7 @@ export const Magic = styled.div`
 export const Wrapper = styled.div`
   position: relative;
   width: 64rem;
-  height: 64rem;
+  height: 46rem;
   mask-image: radial-gradient(circle, black 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
   mask-size: cover;

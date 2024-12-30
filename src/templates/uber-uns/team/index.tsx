@@ -1,37 +1,37 @@
-import { Abstract3d } from "@/components/atoms/abstract-3d";
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { BackgroundMove } from "@/components/atoms/background-move";
 
 export default () => {
-  const { ref } = useAnimation();
-
-  const {
-    title,
-    description,
-    buttons: { contact },
-  } = { ...C.header, ...C.data };
+  const { sectionRef } = useAnimation();
+  const { title, people } = C.team;
 
   return (
-    <S.Header ref={ref}>
+    <S.Section ref={sectionRef}>
       <S.Wrapper>
-        <S.Content>
-          <S.Article>
-            <S.Title>{title}</S.Title>
-            <Abstract3d />
-          </S.Article>
-          <S.Scroll />
-          <S.Description>
-            <S.Text>{description}</S.Text>
-            <S.Button {...contact} />
-          </S.Description>
-        </S.Content>
+        <S.Title>{title}</S.Title>
+        <S.List>
+          {people.map(({ name, text, img, role }, index) => (
+            <S.Item key={index}>
+              <S.Img {...img} />
+              <S.Container>
+                <S.Text>{text}</S.Text>
+              </S.Container>
+              <S.Content>
+                <S.Name>{name}</S.Name>
+                <S.Role>{role}</S.Role>
+              </S.Content>
+            </S.Item>
+          ))}
+        </S.List>
       </S.Wrapper>
-      <S.Circle3 />
+      <S.Circle1 />
       <S.Circle2 />
-      <S.Circle />
-      <BackgroundMove />
-    </S.Header>
+      <S.Circle3 />
+      <S.Bg>
+        <S.Line1 />
+        <S.Line2 />
+      </S.Bg>
+    </S.Section>
   );
 };

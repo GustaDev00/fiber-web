@@ -1,52 +1,97 @@
-import { ButtonSlideArrow } from "@/components/atoms/button-slide-arrow";
+import { ButtonSwipe } from "@/components/atoms/button-swipe";
 import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
-import { ScrollDown } from "@/components/atoms/scroll-down";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
 
-export const Header = styled.section`
+export const Section = styled.section`
   position: relative;
-  height: 100vh;
-
-  @supports (-webkit-touch-callout: none) {
-    height: 100svh;
-  }
-
-  ${mediaMaxWidth("isMobileOrTabletVertical")`
-    height: 70vh;
-  `}
-
-  ${mediaMaxWidth("mobile")`
-    height: auto;
-  `}
 `;
 
 export const Wrapper = styled(_Wrapper)`
-  padding-top: 20.3rem;
+  align-items: flex-start;
 
   ${mediaMaxWidth("mobile")`
-    padding-top: 14rem; 
+    gap: 3rem;
   `}
 `;
 
 export const Content = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
 
+  &::after {
+    content: "";
+    position: absolute;
+    right: 9rem;
+    width: 0.15rem;
+    height: 90%;
+    top: 5%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
   ${mediaMaxWidth("mobile")`
     flex-direction: column;
+
+    &::after {
+      display: none;
+    }
   `}
 `;
 
-export const Article = styled.article``;
+export const Container = styled.div`
+  position: relative;
+`;
+
+export const Button = styled(ButtonSwipe)`
+  position: absolute;
+  bottom: 4rem;
+  left: 4rem;
+
+  ${mediaMaxWidth("mobile")`
+    bottom: 2rem;
+    left: 2rem;
+  `}
+`;
+
+const Video = styled.video`
+  border-radius: 1.8rem;
+  width: 58.2rem;
+  height: 42.9rem;
+  object-fit: cover;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+    width: 100%;
+    height: 34.8rem;
+    object-fit: cover;
+  `}
+`;
+
+export const Video1 = styled(Video)`
+  margin-top: 6.9rem;
+  margin-bottom: 2rem;
+`;
+
+export const Video2 = styled(Video)`
+  width: 58.2rem;
+  height: 26.6rem;
+
+  ${mediaMaxWidth("isMobileOrTabletVertical")`
+      width: 100%;
+      height: 20rem;
+  `}
+`;
 
 export const Title = styled.h1`
+  flex-direction: column;
   color: #fff;
   font-size: 6.7rem;
   font-weight: 700;
+  margin: 9rem 0 4.6rem;
 
   span {
     color: #5eca83;
@@ -61,75 +106,32 @@ export const Title = styled.h1`
   `}
 `;
 
-export const Description = styled.div``;
+export const Article = styled.article`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 
-export const Text = styled.p`
-  margin-top: 2rem;
-  opacity: 0.8;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 3.2rem;
-  margin-bottom: 3.8rem;
-
-  span {
-    font-weight: 700;
+  p {
+    color: #c2c2c2;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 4.2rem;
   }
 
-  ${mediaMaxWidth("isMobileOrTabletVertical")`
-    font-size: 1.8rem;
-    line-height: 3.2rem;
-    margin-top: 5rem;
-  `}
-`;
-
-export const Button = styled(ButtonSlideArrow)``;
-
-export const Scroll = styled(ScrollDown)`
-  margin: 3rem 16.6rem 0 7.8rem;
-
-  ${mediaMaxWidth("isMobileOrTabletVertical")`
-    font-size: 3.8rem;
-    margin: 3rem 7rem 0 7rem;
-  `}
-
   ${mediaMaxWidth("mobile")`
-    display: none;
-  `}
-`;
+    gap: 2rem;
 
-export const Circle2 = styled(CircleGreenBlur)`
-  top: 50rem;
-  right: 45rem;
-  width: 38.6rem;
-  height: 30.6rem;
-
-  ${mediaMaxWidth("mobile")`
-    width: 26rem;
-    height: 26rem;
-  `}
-`;
-
-export const Circle3 = styled(CircleGreenBlur)`
-  top: 10rem;
-  right: -2rem;
-  width: 38.6rem;
-  height: 38.6rem;
-
-  ${mediaMaxWidth("mobile")`
-    width: 26rem;
-    height: 26rem;
+    p {
+      font-size: 1.8rem;
+      line-height: 3.6rem;
+    }
   `}
 `;
 
 export const Circle = styled(CircleGreenBlur)`
-  top: 10rem;
-  left: -22rem;
   width: 38.6rem;
   height: 38.6rem;
-
-  ${mediaMaxWidth("mobile")`
-    width: 26rem;
-    height: 26rem;
-  `}
+  top: -5rem;
+  left: -10rem;
 `;
