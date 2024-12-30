@@ -20,7 +20,7 @@ export default () => {
           start: "top 70%",
           end: "top 10%",
           scrub: 1,
-          markers: true,
+          markers: false,
         },
       });
 

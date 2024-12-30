@@ -288,6 +288,25 @@ export default {
         Innovation ist nicht nur ein Ziel, sondern unser Weg. Mit <strong>FiberWeb</strong>{" "}
         gestalten wir die digitale Zukunft gemeinsam.
       </>,
+
+      // repeat
+
+      <>
+        Bei <strong>FiberWeb</strong> glauben wir an die Kraft der digitalen Innovation. Unsere
+        Philosophie basiert auf einem tiefen Verständnis.
+      </>,
+      <>
+        Bei <strong>FiberWeb</strong> steht der Mensch im Mittelpunkt unserer Technologie. Unsere
+        Mission ist es, digitale Erlebnisse zu schaffen, die das Leben bereichern.
+      </>,
+      <>
+        Unsere Stärke liegt in der Verbindung von Kreativität und Technologie.{" "}
+        <strong>FiberWeb</strong> setzt neue Maßstäbe in der digitalen Transformation.
+      </>,
+      <>
+        Innovation ist nicht nur ein Ziel, sondern unser Weg. Mit <strong>FiberWeb</strong>{" "}
+        gestalten wir die digitale Zukunft gemeinsam.
+      </>,
     ],
 
     logos: [

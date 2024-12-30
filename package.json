@@ -30,6 +30,7 @@
     "react-responsive": "^10.0.0",
     "split-type": "^0.3.4",
     "styled-components": "^6.1.13",
+    "swiper": "^11.1.15",
     "three": "^0.170.0",
     "three-x3": "^0.0.10",
     "yarn": "^1.22.22",

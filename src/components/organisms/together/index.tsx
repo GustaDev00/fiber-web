@@ -14,6 +14,7 @@ export const Together = () => {
         </S.Content>
       </S.Wrapper>
       <S.Container>
+        <S.SliderCard content={mensages} />
         <S.SliderLogo data-timeline="slilder-logo">
           <S.BgList data-timeline="bgList">
             {logos.map((bg, index) => (
