@@ -46,9 +46,7 @@ export const Modal: FC<ModalProps> = ({
                     setOpen(false);
                   }}
                 />
-                <S.Button {...link} target="_blank">
-                  {link.title}
-                </S.Button>
+                <S.Button {...link}>{link.title}</S.Button>
               </>
             )}
           </S.Container>
