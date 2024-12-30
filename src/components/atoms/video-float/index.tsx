@@ -8,7 +8,7 @@ export const VideoFloat = () => {
   const [open, setOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
   const [forceClose, setForceClose] = useState(false);
-  const { sectionRef } = useAnimation({ isClosed, setIsClosed });
+  const { sectionRef } = useAnimation({ setIsClosed });
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClose = () => {
