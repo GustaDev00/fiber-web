@@ -2,11 +2,10 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 interface AnimationProps {
-  isClosed: boolean;
   setIsClosed: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default ({ isClosed, setIsClosed }: AnimationProps) => {
+export default ({ setIsClosed }: AnimationProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
