@@ -40,7 +40,12 @@ export const Modal: FC<ModalProps> = ({
               </S.Link>
             ) : (
               <>
-                <S.Img {...img} />
+                <S.Img
+                  {...img}
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                />
                 <S.Button {...link} target="_blank">
                   {link.title}
                 </S.Button>

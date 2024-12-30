@@ -6,7 +6,7 @@ import { ArrowDownIcon } from "@/components/svgs/arrow-down";
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const ButtonSwipe = ({ href, className, onClick, children, ...props }: ButtonSwipeProps) => {
+export const ButtonSwipe = ({ href, className, children, ...props }: ButtonSwipeProps) => {
   const handleClick = (
     e:
       | React.MouseEvent<HTMLAnchorElement, MouseEvent>
