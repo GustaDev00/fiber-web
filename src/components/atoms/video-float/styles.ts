@@ -1,8 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { mediaMaxWidth } from "@/utils/media-query";
 import { GoArrowUpLeft } from "react-icons/go";
 import { MdClose } from "react-icons/md";
-import { MdArrowOutward } from "react-icons/md";
 
 export const Controls = styled.div`
   position: absolute;

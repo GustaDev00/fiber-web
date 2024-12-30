@@ -1,7 +1,7 @@
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-export default ({ open }: { open: boolean }) => {
+export default () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

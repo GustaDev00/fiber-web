@@ -15,7 +15,7 @@ export const Modal: FC<ModalProps> = ({
   client,
   ...props
 }) => {
-  const { sectionRef } = useAnimation({ open });
+  const { sectionRef } = useAnimation();
 
   return (
     <>
