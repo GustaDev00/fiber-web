@@ -15,11 +15,7 @@ export const Loading = () => {
         {loading.map((step, index) => (
           <S.Step key={index} data-fs-step={++index} $index={index}>
             <S.Text>{step.text}</S.Text>
-            <S.Img
-              src={step.img}
-              alt={`Loading img ${index + 1}`}
-              notLazy={true}
-            />
+            <S.Img src={step.img} alt={`Loading img ${index + 1}`} notLazy={true} />
           </S.Step>
         ))}
       </S.Wrapper>

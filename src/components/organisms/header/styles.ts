@@ -4,9 +4,9 @@ import { ScrollDown } from "@/components/atoms/scroll-down";
 import { ArrowInclineDownIcon } from "@/components/svgs/arrow-incline-down";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Header = styled.section`
+export const Header = styled.section<{ $active?: boolean }>`
   position: relative;
   height: 100vh;
 
@@ -18,8 +18,19 @@ export const Header = styled.section`
     height: 70vh;
   `}
 
-  ${mediaMaxWidth("mobile")`
+  ${({ $active }) => mediaMaxWidth("mobile")`
     height: auto;
+
+    ${
+      $active &&
+      css`
+        height: 100vh;
+
+        @supports (-webkit-touch-callout: none) {
+          height: 100svh;
+        }
+      `
+    }
   `}
 `;
 
@@ -42,11 +53,13 @@ export const Content = styled.div`
   `}
 `;
 
-export const Article = styled.article`
-  ${mediaMaxWidth("mobile")`
+export const Article = styled.article<{ $active?: boolean }>`
+  ${({ $active }) => mediaMaxWidth("mobile")`
     display: flex;
     flex-direction: column;
-    gap: 20rem;
+    gap: ${$active ? "2rem" : "20rem"};
+    align-items: flex-start;
+    
   `}
 `;
 
@@ -109,7 +122,7 @@ export const Text = styled.p`
 
 export const Button = styled(ButtonSlideArrow)``;
 
-export const Scroll = styled(ScrollDown)`
+export const Scroll = styled(ScrollDown)<{ $active?: boolean }>`
   margin: 3rem 16.6rem 0 7.8rem;
 
   ${mediaMaxWidth("isMobileOrTabletVertical")`
@@ -117,7 +130,8 @@ export const Scroll = styled(ScrollDown)`
     margin: 3rem 7rem 0 7rem;
   `}
 
-  ${mediaMaxWidth("mobile")`
+  ${({ $active }) => mediaMaxWidth("mobile")`
+    display: ${$active ? "none" : "block"};
     position: absolute;
     top: 30rem;
     left: -4rem;

@@ -11,7 +11,7 @@ import { Cursor } from "@/components/organisms/Cursor";
 import Nav from "@/shared/nav";
 import { Menu } from "@/shared/menu";
 import { Footer } from "@/shared/footer";
-// import { Loading } from "@/components/molecules/loading";
+import { Loading } from "@/components/molecules/loading";
 
 const RootLayout = ({
   children,
@@ -40,7 +40,7 @@ const RootLayout = ({
                 ></div>
               }
             >
-              {/* <Loading /> */}
+              <Loading />
               <main>
                 <Nav />
                 <Cursor>{children}</Cursor>

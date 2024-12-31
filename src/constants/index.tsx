@@ -1,7 +1,9 @@
 import { CustomBr } from "@/components/atoms/custom-br";
+import { AboutUsIcon } from "@/components/svgs/about-us";
 import { FacebookIcon } from "@/components/svgs/facebook";
 import { HomeIcon } from "@/components/svgs/home";
 import { InstagramIcon } from "@/components/svgs/instagram";
+import { ServicesIcon } from "@/components/svgs/services";
 import { TwitterIcon } from "@/components/svgs/twitter";
 
 export default {
@@ -22,8 +24,8 @@ export default {
 
     navigation: [
       { title: "Home", href: "/", icon: HomeIcon },
-      { title: "Dienstleistungen", href: "/dienstleistungen" },
-      { title: "über uns", href: "/uber-uns" },
+      { title: "Dienstleistungen", href: "/dienstleistungen", icon: ServicesIcon },
+      { title: "über uns", href: "/uber-uns", icon: AboutUsIcon },
     ],
     contact: [
       {
@@ -741,7 +743,8 @@ export default {
               <>
                 Eine Webseite sollte wie ein klarer <CustomBr byViewport="desktop" />
                 blauer Himmel wirken, bei dem alles <CustomBr byViewport="desktop" />
-                auf den ersten Blick erkennbar und übersichtlich ist.
+                auf den ersten Blick erkennbar und
+                <CustomBr byViewport="desktop" /> übersichtlich ist.
               </>
             ),
           },
@@ -805,7 +808,7 @@ export default {
           {
             title: "Künstliche Intelligenz (KI)",
             img: {
-              src: "/imgs/services/online-marketing.png",
+              src: "/imgs/services/ki.png",
               alt: "Online Marketing",
             },
             tags: ["AI-Agent", "AI-Blog"],

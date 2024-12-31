@@ -6,7 +6,10 @@ import C from "@/constants";
 export default () => {
   const [open, setOpen] = useState(false);
   const { ref } = useAnimation();
-  const { navigation, social_share } = C.data;
+  const {
+    pages,
+    data: { social_share, navigation },
+  } = C;
 
   const handleClick = useCallback(() => {
     setOpen((prev) => !prev);
@@ -30,7 +33,19 @@ export default () => {
               </S.HeaderModal>
               <S.MainModal>
                 <S.List>
-                  {navigation.map(({ title, href }) => (
+                  {navigation.slice(0, 1).map(({ title, href }) => (
+                    <S.Item key={title} href={href}>
+                      {title} <S.Arrow />
+                    </S.Item>
+                  ))}
+
+                  {pages.map(({ title, link }) => (
+                    <S.Item key={title} href={`/${link}`}>
+                      {title} <S.Arrow />
+                    </S.Item>
+                  ))}
+
+                  {navigation.slice(2, 3).map(({ title, href }) => (
                     <S.Item key={title} href={href}>
                       {title} <S.Arrow />
                     </S.Item>

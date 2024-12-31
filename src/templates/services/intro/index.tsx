@@ -11,14 +11,16 @@ export default ({ title, description, img, link, items }: IntroProps) => {
         <S.Wrapper>
           <S.Article>
             <S.Title>{title}</S.Title>
-            <S.Description>{description}</S.Description>
-            <S.Img {...img} />
-            <S.Link {...link}>{link.title}</S.Link>
+            <S.Description data-timeline="description">{description}</S.Description>
+            <S.Img data-timeline="img" {...img} />
+            <S.Link data-timeline="link" {...link}>
+              {link.title}
+            </S.Link>
           </S.Article>
           <S.Content>
             <S.List>
               {items.map(({ title, text }, index) => (
-                <S.Item key={index}>
+                <S.Item key={index} data-timeline="item">
                   <S.Subtitle>
                     {title}
                     <svg

@@ -16,10 +16,10 @@ export const Header = ({
   const { ref } = useAnimation();
 
   return (
-    <S.Header ref={ref} {...props}>
+    <S.Header $active={!!breadcrumb} ref={ref} {...props}>
       <S.Wrapper>
         <S.Content>
-          <S.Article>
+          <S.Article $active={!!breadcrumb}>
             {breadcrumb && (
               <S.Breadcrumb>
                 {breadcrumb} <S.Icon />
@@ -28,7 +28,7 @@ export const Header = ({
             <S.Title>{title}</S.Title>
             {description && <S.Text>{description}</S.Text>}
           </S.Article>
-          <S.Scroll />
+          <S.Scroll $active={!!breadcrumb} />
         </S.Content>
       </S.Wrapper>
       <S.Circle />

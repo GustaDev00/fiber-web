@@ -8,7 +8,7 @@ export const Loading = styled.div`
   background: none;
   width: 100vw;
   height: 100vh;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,9 +34,7 @@ export const Wrapper = styled.div<{ $progress: number }>`
   position: absolute;
   width: 100%;
   height: 100%;
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 
   ${({ $progress }) => css`
     opacity: ${$progress === 1 ? 0 : 1};

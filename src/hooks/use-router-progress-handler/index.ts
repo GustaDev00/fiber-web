@@ -25,17 +25,12 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
   };
 
   const handleRouteChangeComplete = (): void => {
-    const images = document.querySelectorAll<HTMLImageElement>(
-      'img[loading="eager"]',
-    );
+    const images = document.querySelectorAll<HTMLImageElement>('img[loading="eager"]');
     // const videos = document.querySelectorAll<HTMLVideoElement>('video:not(.lazy)');
-    const fonts = document.querySelectorAll<HTMLStyleElement>(
-      "link[rel=stylesheet]",
-    );
+    const fonts = document.querySelectorAll<HTMLStyleElement>("link[rel=stylesheet]");
     const backgrounds = getBackgroundImages();
 
-    const mediaCount =
-      images.length /*+ videos.length */ + fonts.length + backgrounds.length;
+    const mediaCount = images.length /*+ videos.length */ + fonts.length + backgrounds.length;
 
     if (mediaCount === 0) {
       setPercentage(1);
@@ -44,7 +39,9 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
 
     const onLoadMedia = (): void => {
       loadedMedia++;
-      setPercentage(loadedMedia / mediaCount);
+      setTimeout(() => {
+        setPercentage(loadedMedia / mediaCount);
+      }, 2000);
     };
 
     images.forEach((image) => {
@@ -85,9 +82,7 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
 
   const getBackgroundImages = (): string[] => {
     const array: string[] = [];
-    const backgroundImages = document.querySelectorAll<HTMLElement>(
-      '[data-lazy="false"]',
-    );
+    const backgroundImages = document.querySelectorAll<HTMLElement>('[data-lazy="false"]');
 
     backgroundImages.forEach((bg) => {
       const urls = [

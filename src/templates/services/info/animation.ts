@@ -21,12 +21,9 @@ export default () => {
 
       const section = sectionRef.current;
       const Title = section.querySelector("h2");
-      const Description = section.querySelector("[data-timeline='description']");
-      const Img = section.querySelector("[data-timeline='img']");
-      const Link = section.querySelector("[data-timeline='link']") as HTMLElement;
+      const AbstractItem = section.querySelector("[data-timeline='abstract']");
+      const Button = section.querySelector("[data-timeline='link']");
       const Items = section.querySelectorAll("[data-timeline='item']");
-
-      console.log(Link);
 
       const isMobile = window.innerWidth <= 768;
 
@@ -34,7 +31,7 @@ export default () => {
         scrollTrigger: {
           trigger: section,
           start: isMobile ? "top 90%" : "top 70%",
-          end: isMobile ? "center-=200px top" : "23% center",
+          end: isMobile ? "center-=200px top" : "40% center",
           scrub: 1,
           markers: markerSettings,
           id: "vision-service-animation",
@@ -60,59 +57,44 @@ export default () => {
         }
       }
 
-      if (Description) {
+      if (AbstractItem) {
         tl.from(
-          Description,
+          AbstractItem,
           {
             y: 50,
             opacity: 0,
-            duration: 1,
+            duration: 0.8,
             ease: "power3.out",
           },
           "-=0.5",
         );
       }
 
-      if (Img) {
+      if (Button) {
         tl.from(
-          Img,
-          {
-            scale: 0.8,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=0.5",
-        );
-      }
-
-      if (Link) {
-        tl.fromTo(
-          Link,
-          { y: 50, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=0.5",
-        );
-      }
-
-      if (Items.length) {
-        tl.from(
-          Items,
+          Button,
           {
             y: 50,
             opacity: 0,
-            duration: 1,
-            stagger: 0.2,
+            duration: 0.8,
             ease: "power3.out",
           },
           "-=0.5",
         );
       }
+
+      Items.forEach((item) => {
+        tl.from(
+          item,
+          {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.5",
+        );
+      });
     });
 
     return () => {
