@@ -1,7 +1,6 @@
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { useState } from "react";
 
 export const VisionService = () => {
   const { sectionRef } = useAnimation();

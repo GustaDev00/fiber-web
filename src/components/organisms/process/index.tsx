@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { useState, useEffect, useCallback, memo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export const Process = () => {

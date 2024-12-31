@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
-import { ArrowInclineIcon } from "@/components/svgs/arrow-incline";
 import { LazyImage } from "@/components/atoms/lazy-image";
 
 export const Intro = styled.section`

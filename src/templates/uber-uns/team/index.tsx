@@ -1,13 +1,11 @@
 import * as S from "./styles";
 import C from "@/constants";
-import useAnimation from "./animation";
 
 export default () => {
-  const { sectionRef } = useAnimation();
   const { title, people } = C.team;
 
   return (
-    <S.Section ref={sectionRef}>
+    <S.Section>
       <S.Wrapper>
         <S.Title>{title}</S.Title>
         <S.List>

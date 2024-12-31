@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
-import { useRouterLoadingHandler } from "@/hooks/use-router-progress-handler";
 
 export default () => {
   const sectionRef = useRef<HTMLDivElement>(null);

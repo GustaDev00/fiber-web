@@ -1,6 +1,3 @@
-import { ButtonSlideArrow } from "@/components/atoms/button-slide-arrow";
-import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
-import { ScrollDown } from "@/components/atoms/scroll-down";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
