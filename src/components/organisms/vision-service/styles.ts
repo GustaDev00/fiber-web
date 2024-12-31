@@ -6,7 +6,7 @@ import { ArrowInclineIcon } from "@/components/svgs/arrow-incline";
 
 export const Vision = styled.div`
   position: relative;
-  padding: 10rem 0 18rem;
+  padding: 10rem 0;
 
   ${mediaMaxWidth("mobile")`
   padding: 10rem 0;
@@ -14,7 +14,7 @@ export const Vision = styled.div`
 `;
 
 export const Circle = styled(CircleGreenBlur)`
-  top: 21.8rem;
+  top: 40%;
   right: -10rem;
   width: 38.6rem;
   height: 38.6rem;
@@ -60,55 +60,36 @@ export const Line = styled.div`
   `}
 `;
 
-export const List = styled.div``;
-
-export const Item = styled.div`
-  padding: 3.9rem 4.4rem;
-  transition: padding-left 0.4s ease;
-  position: relative;
-
-  &::before {
-    opacity: 0;
-    visibility: hidden;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    border-radius: 938px;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(43, 179, 42, 0.4) 0%,
-      rgba(94, 202, 131, 0.06) 100%
-    );
-    filter: blur(3.9rem);
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-    z-index: 0;
-  }
-
-  &:hover {
-    padding-left: 8rem;
-
-    &::before {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  ${mediaMaxWidth("mobile")`
-    text-align: center;
-    padding: 3.9rem 3.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `}
+export const List = styled.div`
+  margin-top: 6rem;
 `;
 
-export const Button = styled.button`
+export const Item = styled.div`
+  display: flex;
+  padding: 3.9rem 4.4rem;
+  position: relative;
+  gap: 5.8rem;
+`;
+
+export const Container = styled.div``;
+
+export const Content = styled.div``;
+
+export const Description = styled.p`
+  color: #fff;
+  font-family: Syne;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+`;
+
+export const Text = styled.h3`
+  margin-bottom: 3rem;
+  width: 40rem;
   position: relative;
   color: #fff;
-  font-size: 7.6rem;
+  font-size: 5.8rem;
   font-weight: 700;
   z-index: 1;
 
@@ -124,18 +105,31 @@ export const Button = styled.button`
   `}
 `;
 
-export const Icon = styled.div`
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: #fff;
+export const Link = styled.a`
+  border-radius: 122px;
+  padding: 1.2rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: opacity 0.4s ease;
 
-  ${mediaMaxWidth("mobile")`
-    display: flex;
-  `}
+  svg {
+    margin-left: 1rem;
+    path {
+      stroke: white;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 export const Arrow = styled(ArrowInclineIcon)`

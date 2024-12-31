@@ -21,7 +21,6 @@ export default () => {
 
       const section = sectionRef.current;
       const Title = section.querySelector("h2");
-      const Line = section.querySelector("[data-timline='line']");
       const Items = section.querySelectorAll("[data-timline='item']");
 
       console.log(Items);
@@ -56,14 +55,6 @@ export default () => {
             ease: "power3.out",
           });
         }
-      }
-
-      if (Line) {
-        tl.from(Line, {
-          width: 0,
-          duration: 1,
-          ease: "power3.out",
-        });
       }
 
       if (Items.length > 0) {

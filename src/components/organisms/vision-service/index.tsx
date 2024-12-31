@@ -1,16 +1,15 @@
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { Fragment, useState } from "react";
-import { Modal } from "@/components/atoms/modal";
+import { useState } from "react";
 
-export const Vision = () => {
+export const VisionService = () => {
   const [openModalIndex, setOpenModalIndex] = useState<number | boolean>(false);
   const { sectionRef } = useAnimation();
   const {
     title,
     items,
-    buttons: { whatsapp },
+    buttons: { contact },
   } = { ...C.services, ...C.data };
 
   const handleItemClick = (index: number) => {
@@ -22,37 +21,25 @@ export const Vision = () => {
       <S.Vision ref={sectionRef}>
         <S.Wrapper>
           <S.Title>{title}</S.Title>
-          <S.Line data-timline="line" />
           <S.List data-timline="list">
-            {items.map(({ title }, index) => (
+            {items.map(({ title, description }, index) => (
               <S.Item key={index} data-timline="item">
-                <S.Button onClick={() => handleItemClick(index)}>
-                  {title}{" "}
-                  <S.Icon>
+                <S.Container>
+                  <S.Text>{title}</S.Text>
+                  <S.Link href={contact.href} target="_blank">
+                    {contact.title}
                     <S.Arrow />
-                  </S.Icon>
-                </S.Button>
+                  </S.Link>
+                </S.Container>
+                <S.Content>
+                  <S.Description>{description}</S.Description>
+                </S.Content>
               </S.Item>
             ))}
           </S.List>
         </S.Wrapper>
         <S.Circle />
       </S.Vision>
-      {items.map((item, index) => (
-        <Modal
-          {...item}
-          link={whatsapp}
-          open={openModalIndex === index}
-          setOpen={setOpenModalIndex}
-          key={index}
-        />
-      ))}
-      <S.BlackBackground
-        onClick={() => {
-          setOpenModalIndex(false);
-        }}
-        $open={openModalIndex !== false}
-      />
     </>
   );
 };

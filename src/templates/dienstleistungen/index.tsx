@@ -5,6 +5,8 @@ import { Clients } from "@/components/organisms/Clients";
 import { Together } from "@/components/organisms/together";
 import { Transform } from "@/components/organisms/transform";
 import { Header } from "@/components/organisms/header";
+import { VisionService } from "@/components/organisms/vision-service";
+import { Process } from "@/components/organisms/process";
 
 export const DienstleistungenTemplate: FC = () => {
   const title = (
@@ -29,7 +31,9 @@ export const DienstleistungenTemplate: FC = () => {
   return (
     <>
       <Header title={title} description={description} />
-      <Clients type={true} />
+      <VisionService />
+      <Process />
+      <Clients />
       <Together />
       <Transform />
     </>

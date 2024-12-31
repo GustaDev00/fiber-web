@@ -353,6 +353,75 @@ export default {
       </>
     ),
   },
+  process: {
+    title: (
+      <>
+        Unser <span>Prozess</span>
+      </>
+    ),
+    items: [
+      {
+        id: 1,
+        title: "Gemeinsame Vision entwickeln",
+        text: (
+          <>
+            In einem ersten Gespräch hören wir dir aufmerksam zu und tauchen in
+            <CustomBr byViewport="desktop" /> deine Ziele ein. Gemeinsam entwickeln wir kreative
+            Ideen, die deine <CustomBr byViewport="desktop" /> Vision widerspiegeln. Hier werden
+            alle Wünsche besprochen und der <CustomBr byViewport="desktop" /> Grundstein für dein
+            Projekt gelegt.
+          </>
+        ),
+      },
+      {
+        id: 2,
+        title: "Dein Konzept zum Leben erwecken",
+        text: (
+          <>
+            Nach der Ideenfindung setzen wir uns daran, dein Konzept in die Realität umzusetzen. Wir
+            arbeiten eng mit dir zusammen, um sicherzustellen, dass jede Phase des Projekts deinen
+            Erwartungen entspricht. Unser Ziel ist es, deine Vision mit innovativen Lösunge und
+            modernster Technologie zum Leben zu erwecken.
+          </>
+        ),
+      },
+      {
+        id: 3,
+        title: "Pixelperfektion umsetzen",
+        text: (
+          <>
+            Mit einem Auge für Details und einem hohen Anspruch an Qualität setzen wir dein Projekt
+            pixelgenau um. Jedes Element wird sorgfältig gestaltet und entwickelt, um ein
+            beeindruckendes und funktionales Endprodukt zu gewährleisten.Deine Zufriedenheit steht
+            dabei stets im Mittelpunkt.
+          </>
+        ),
+      },
+      {
+        id: 4,
+        title: "Feinschliff und Begleitung",
+        text: (
+          <>
+            Nach der Umsetzung folgt der Feinschliff. Wir optimieren und testen dein Projekt, um
+            sicherzustellen, dass alles reibungslos funktioniert. Auch nach dem Launch stehen wir
+            dir zur Seite und begleiten dich, um langfristigen Erfolg zu gewährleisten. Dein Erfolg
+            ist unser Antrieb.
+          </>
+        ),
+      },
+    ],
+    description: (
+      <>
+        Unser Prozess bietet dir eine klare und strukturierte Herangehensweise, um deine Vision
+        Wirklichkeit werden zu lassen. Wir begleiten dich durch jede Phase, von der ersten Idee bis
+        zur finalen Umsetzung, mit höchster Präzision und einem Blick für Details.
+      </>
+    ),
+    video: {
+      src: "/videos/process.mp4",
+      type: "video/mp4",
+    },
+  },
   services: {
     title: (
       <>
