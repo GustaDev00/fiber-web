@@ -1,4 +1,5 @@
 import { LazyImage } from "@/components/atoms/lazy-image";
+import { mediaMaxWidth } from "@/utils/media-query";
 import styled, { css } from "styled-components";
 
 export const Loading = styled.div`
@@ -28,6 +29,10 @@ export const Logo = styled(LazyImage)`
   height: 5.7rem;
   object-fit: contain;
   z-index: 2;
+
+  ${mediaMaxWidth("mobile")`
+    height: 4rem;
+  `}
 `;
 
 export const Wrapper = styled.div<{ $progress: number }>`
@@ -58,6 +63,10 @@ export const Text = styled.p`
   font-size: 8.2rem;
   font-weight: 700;
   z-index: 10;
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 5.4rem;
+  `}
 `;
 
 export const Img = styled(LazyImage)`
