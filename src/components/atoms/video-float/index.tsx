@@ -13,6 +13,10 @@ export const VideoFloat = () => {
 
   const handleClose = () => {
     setForceClose(true);
+
+    if (videoRef.current) {
+      videoRef.current.muted = open;
+    }
   };
 
   const handleOpen = () => {
