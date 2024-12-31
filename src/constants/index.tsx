@@ -983,7 +983,7 @@ export default {
           {
             title: "Web-Design UX-UI Design",
             img: {
-              src: "/imgs/services/ux-ui.png",
+              src: "/imgs/services/online-marketing.png",
               alt: "Web-Design UX-UI Design",
             },
             tags: ["Webdesign", "UX-UI Design"],
@@ -997,7 +997,7 @@ export default {
           {
             title: "Künstliche Intelligenz (KI)",
             img: {
-              src: "/imgs/services/ai.png",
+              src: "/imgs/services/ki.png",
               alt: "Künstliche Intelligenz (KI)",
             },
             tags: ["AI-Agent", "AI-Blog"],
@@ -1181,7 +1181,7 @@ export default {
           {
             title: "Mobile Apps",
             img: {
-              src: "/imgs/services/mobile-apps.png",
+              src: "/imgs/services/ki.png",
               alt: "Mobile Apps",
             },
             tags: ["Konzept & Strategie", "Launch"],
@@ -1351,7 +1351,7 @@ export default {
           {
             title: "Web-Design UX-UI Design",
             img: {
-              src: "/imgs/services/ux-ui.png",
+              src: "/imgs/services/online-marketing.png",
               alt: "Web-Design UX-UI Design",
             },
             tags: ["Webdesign", "UX-UI Design"],
@@ -1365,7 +1365,7 @@ export default {
           {
             title: "Künstliche Intelligenz (KI)",
             img: {
-              src: "/imgs/services/ai.png",
+              src: "/imgs/services/ki.png",
               alt: "Künstliche Intelligenz (KI)",
             },
             tags: ["AI-Agent", "AI-Blog"],
