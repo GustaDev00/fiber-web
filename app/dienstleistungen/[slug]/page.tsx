@@ -58,8 +58,6 @@ const Page = async ({ params }: PageProps) => {
   const { pages } = C;
   const page = pages.find(({ link }) => link === slug);
 
-  console.log("page2", page, slug);
-
   if (!page) {
     notFound();
     return null;

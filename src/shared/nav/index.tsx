@@ -40,7 +40,7 @@ export default () => {
                   ))}
 
                   {pages.map(({ title, link }) => (
-                    <S.Item key={title} href={`/${link}`}>
+                    <S.Item key={title} href={`/dienstleistungen/${link}`}>
                       {title} <S.Arrow />
                     </S.Item>
                   ))}
