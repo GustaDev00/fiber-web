@@ -1,17 +1,39 @@
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export const Process = () => {
   const [selected, setSelected] = useState(1);
   const { sectionRef, isInView } = useAnimation();
   const { title, description, video, items } = C.process;
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
+  const scrollToSlider = useCallback(() => {
+    const slider = document.querySelector("#slider");
+
+    if (slider) {
+      const offset = 300;
+      const topPosition = slider.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: topPosition, behavior: "smooth" });
+    }
+  }, []);
+
+  const handleOptionClick = useCallback(
+    (id: number) => {
+      setSelected(id);
+
+      if (isMobile) {
+        scrollToSlider();
+      }
+    },
+    [isMobile, scrollToSlider],
+  );
 
   useEffect(() => {
     const startAutoplay = () => {
       return setInterval(() => {
-        console.log("teste");
         setSelected((prevSelected) => {
           const nextSelected = prevSelected === items.length ? 1 : prevSelected + 1;
           return nextSelected;
@@ -38,7 +60,7 @@ export const Process = () => {
           <S.Description>{description}</S.Description>
           <S.List>
             {items.map(({ id, title }) => (
-              <S.Options key={id} onClick={() => setSelected(id)} $selected={selected === id}>
+              <S.Options key={id} onClick={() => handleOptionClick(id)} $selected={selected === id}>
                 <S.Number>{id.toString().padStart(2, "0")}</S.Number>
                 <S.Text>{title}</S.Text>
                 <S.Icon />
@@ -46,7 +68,7 @@ export const Process = () => {
             ))}
           </S.List>
         </S.Content>
-        <S.Container>
+        <S.Container id="slider">
           <S.Slider>
             {items.map(({ id, text }) => (
               <S.Item key={id} $selected={selected === id}>

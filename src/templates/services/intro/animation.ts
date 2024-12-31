@@ -29,7 +29,7 @@ export default () => {
         scrollTrigger: {
           trigger: section,
           start: isMobile ? "top 90%" : "top 70%",
-          end: isMobile ? "top top" : "23% top",
+          end: isMobile ? "top top" : "23% center",
           scrub: 1,
           markers: markerSettings,
           id: "vision-service-animation",

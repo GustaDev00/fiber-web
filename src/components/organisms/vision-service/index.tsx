@@ -4,17 +4,12 @@ import useAnimation from "./animation";
 import { useState } from "react";
 
 export const VisionService = () => {
-  const [openModalIndex, setOpenModalIndex] = useState<number | boolean>(false);
   const { sectionRef } = useAnimation();
   const {
     title,
     items,
     buttons: { contact },
   } = { ...C.services, ...C.data };
-
-  const handleItemClick = (index: number) => {
-    setOpenModalIndex(index);
-  };
 
   return (
     <>

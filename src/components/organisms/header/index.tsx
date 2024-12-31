@@ -6,10 +6,12 @@ import SimpleVideoBackground from "@/components/atoms/simple-video-background";
 export const Header = ({
   title,
   description,
+  breadcrumb,
   ...props
 }: {
   title: ReactNode;
-  description: ReactNode;
+  description?: ReactNode;
+  breadcrumb?: string;
 }) => {
   const { ref } = useAnimation();
 
@@ -18,8 +20,13 @@ export const Header = ({
       <S.Wrapper>
         <S.Content>
           <S.Article>
+            {breadcrumb && (
+              <S.Breadcrumb>
+                {breadcrumb} <S.Icon />
+              </S.Breadcrumb>
+            )}
             <S.Title>{title}</S.Title>
-            <S.Text>{description}</S.Text>
+            {description && <S.Text>{description}</S.Text>}
           </S.Article>
           <S.Scroll />
         </S.Content>

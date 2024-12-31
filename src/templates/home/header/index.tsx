@@ -1,4 +1,4 @@
-import { Abstract3d } from "@/components/atoms/abstract-3d";
+import { Abstract } from "@/components/atoms/abstract-3d";
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
@@ -19,7 +19,7 @@ export default () => {
         <S.Content>
           <S.Article>
             <S.Title>{title}</S.Title>
-            <Abstract3d />
+            <Abstract />
           </S.Article>
           <S.Scroll />
           <S.Description>

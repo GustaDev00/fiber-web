@@ -1,4 +1,3 @@
-import { Abstract3d } from "@/components/atoms/abstract-3d";
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";

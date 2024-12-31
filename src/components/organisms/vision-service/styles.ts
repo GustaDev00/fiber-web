@@ -62,6 +62,12 @@ export const Line = styled.div`
 
 export const List = styled.div`
   margin-top: 6rem;
+
+  ${mediaMaxWidth("mobile")`
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  `}
 `;
 
 export const Item = styled.div`
@@ -69,6 +75,11 @@ export const Item = styled.div`
   padding: 3.9rem 4.4rem;
   position: relative;
   gap: 5.8rem;
+
+  ${mediaMaxWidth("mobile")`
+    flex-direction: column;
+    padding: 0;
+  `}
 `;
 
 export const Container = styled.div``;

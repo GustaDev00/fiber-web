@@ -1,6 +1,7 @@
 import { ButtonSlideArrow } from "@/components/atoms/button-slide-arrow";
 import { CircleGreenBlur } from "@/components/atoms/circle-green-blur";
 import { ScrollDown } from "@/components/atoms/scroll-down";
+import { ArrowInclineDownIcon } from "@/components/svgs/arrow-incline-down";
 import { Wrapper as _Wrapper } from "@/styles/components/wrapper";
 import { mediaMaxWidth } from "@/utils/media-query";
 import styled from "styled-components";
@@ -50,6 +51,7 @@ export const Article = styled.article`
 `;
 
 export const Title = styled.h1`
+  margin-top: 5rem;
   color: #fff;
   font-size: 6.7rem;
   font-weight: 700;
@@ -65,6 +67,22 @@ export const Title = styled.h1`
   ${mediaMaxWidth("mobile")`
     font-size: 3.8rem;
   `}
+`;
+
+export const Breadcrumb = styled.a`
+  padding: 1.2rem 2.4rem;
+  border-radius: 12.2rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+`;
+
+export const Icon = styled(ArrowInclineDownIcon)`
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 1rem;
 `;
 
 export const Description = styled.div``;
