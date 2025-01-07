@@ -7,25 +7,13 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const ButtonSwipe = ({ href, className, children, ...props }: ButtonSwipeProps) => {
-  const handleClick = (
-    e:
-      | React.MouseEvent<HTMLAnchorElement, MouseEvent>
-      | React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => {
-    e.preventDefault();
-
-    const chatButton = document.querySelector("#chatbase-bubble-button");
-    if (chatButton) {
-      (chatButton as HTMLButtonElement).click();
-    }
-  };
   return href ? (
     <S.LinkSwipe
       className={className}
       {...(props as LinkProps)}
       href={href}
-      onClick={handleClick}
       data-fs-link="hover"
+      target="_blank"
     >
       <S.Span>{children}</S.Span>
       <S.Icon>
