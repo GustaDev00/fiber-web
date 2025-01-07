@@ -7,7 +7,7 @@ export default () => {
 
   // Verifica o ambiente
   const isDev = process.env.NODE_ENV === "development";
-  const markersEnabled = true;
+  const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
 
   // Configurações dos markers
   const markerSettings =

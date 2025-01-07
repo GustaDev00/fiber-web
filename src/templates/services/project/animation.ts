@@ -25,7 +25,6 @@ export default () => {
       const Description = section.querySelector("[data-timeline='description']");
       const Img = section.querySelector("[data-timeline='img']");
       const Link = section.querySelector("[data-timeline='link']") as HTMLElement;
-      const Items = section.querySelectorAll("[data-timeline='item']");
 
       const isMobile = window.innerWidth <= 768;
 
