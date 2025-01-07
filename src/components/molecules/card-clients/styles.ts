@@ -35,21 +35,30 @@ export const Container = styled.div`
   `}
 `;
 
+export const Image = styled(LazyImage)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale 0.5s ease;
+`;
+
 export const Card = styled.a<{ $name: string }>`
   grid-area: ${({ $name }) => $name};
+
+  &:hover {
+    ${Image} {
+      scale: 1.1;
+    }
+  }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<{ width: string; height: string }>`
   position: relative;
-`;
-
-export const Image = styled(LazyImage)<{ width: string; height: string }>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  background: rgba(211, 211, 211, 0.5);
   border-radius: 2rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.5);
-  object-fit: cover;
+  overflow: hidden;
 
   ${mediaMaxWidth("isMobileOrTabletVertical")`
     width: 100%;

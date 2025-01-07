@@ -16,7 +16,7 @@ export const VisionService = () => {
         <S.Wrapper>
           <S.Title>{title}</S.Title>
           <S.List data-timline="list">
-            {items.map(({ title, description }, index) => (
+            {items.map(({ title, description, img }, index) => (
               <S.Item key={index} data-timline="item">
                 <S.Container>
                   <S.Text>{title}</S.Text>
@@ -28,6 +28,7 @@ export const VisionService = () => {
                 <S.Content>
                   <S.Description>{description}</S.Description>
                 </S.Content>
+                <S.Image {...img} />
               </S.Item>
             ))}
           </S.List>

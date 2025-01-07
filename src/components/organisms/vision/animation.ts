@@ -24,8 +24,6 @@ export default () => {
       const Line = section.querySelector("[data-timline='line']");
       const Items = section.querySelectorAll("[data-timline='item']");
 
-      console.log(Items);
-
       const isMobile = window.innerWidth <= 768;
 
       const tl = gsap.timeline({
@@ -36,11 +34,6 @@ export default () => {
           scrub: 1,
           markers: markerSettings,
           id: "vision-animation",
-          onUpdate: (self) => {
-            if (isDev) {
-              console.log("Trigger updated:", self);
-            }
-          },
         },
       });
 

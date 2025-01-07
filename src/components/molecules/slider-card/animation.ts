@@ -28,11 +28,6 @@ export default () => {
       onLeaveBack: () => setIsInView(false),
       markers: markerSettings,
       id: "slider-card-animation",
-      onUpdate: (self) => {
-        if (isDev) {
-          console.log("Trigger updated:", self);
-        }
-      },
     });
   }, []);
 

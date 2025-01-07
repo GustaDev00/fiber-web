@@ -2,6 +2,7 @@ import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 import * as S from "./styles";
+import C from "@/constants";
 
 interface CursorProps {
   children: ReactNode;
@@ -11,19 +12,27 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const innerDotRef = useRef<HTMLDivElement>(null);
   const [, setIsLink] = useState(false);
+  const [linkType, setLinkType] = useState<string | null>(null);
+  const { items } = C.services;
 
   const lastX = useRef(0);
   const lastY = useRef(0);
 
   useEffect(() => {
-    const interactiveElements = document.querySelectorAll("a, button");
+    const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
 
-    const handleMouseEnter = () => {
-      setIsLink(true);
+    const handleMouseEnter = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (target) {
+        console.log("caiu aqui dentro", target.getAttribute("data-fs-link"));
+        setIsLink(true);
+        setLinkType(target.getAttribute("data-fs-link"));
+      }
     };
 
     const handleMouseLeave = () => {
       setIsLink(false);
+      setLinkType(null);
     };
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -79,7 +88,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
     document.addEventListener("mouseenter", handleMouseEnterWindow);
 
     interactiveElements.forEach((element: Element) => {
-      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseenter", handleMouseEnter as EventListener);
       element.addEventListener("mouseleave", handleMouseLeave);
     });
 
@@ -89,18 +98,67 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
       document.removeEventListener("mouseenter", handleMouseEnterWindow);
 
       interactiveElements.forEach((element: Element) => {
-        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseenter", handleMouseEnter as EventListener);
         element.removeEventListener("mouseleave", handleMouseLeave);
-        (element as HTMLElement).style.cursor = "";
       });
+
+      // Cleanup gsap animations
+      gsap.killTweensOf(cursorRef.current);
+      gsap.killTweensOf(innerDotRef.current);
     };
   }, []);
 
   return (
     <>
       {children}
-      <S.Cursor ref={cursorRef}>
+      <S.Cursor ref={cursorRef} $type={linkType} $images={items.map(({ img }) => img.alt)}>
         <S.Dot ref={innerDotRef} />
+
+        {items.map(({ img }) => (
+          <S.Image data-fs-image={img.alt} key={img.alt} $src={img.src} />
+        ))}
+
+        <S.Services>
+          Ver
+          <br />
+          Serviço
+          <br />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M3.5 10.5L10.5 3.5M10.5 3.5H5.25M10.5 3.5V8.75"
+              stroke="black"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </S.Services>
+
+        <S.Project>
+          Ver
+          <br />
+          Projeto
+          <br />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M3.5 10.5L10.5 3.5M10.5 3.5H5.25M10.5 3.5V8.75"
+              stroke="black"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </S.Project>
       </S.Cursor>
     </>
   );

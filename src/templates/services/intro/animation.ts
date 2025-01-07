@@ -26,8 +26,6 @@ export default () => {
       const Link = section.querySelector("[data-timeline='link']") as HTMLElement;
       const Items = section.querySelectorAll("[data-timeline='item']");
 
-      console.log(Link);
-
       const isMobile = window.innerWidth <= 768;
 
       const tl = gsap.timeline({
@@ -38,11 +36,6 @@ export default () => {
           scrub: 1,
           markers: markerSettings,
           id: "vision-service-animation",
-          onUpdate: (self) => {
-            if (isDev) {
-              console.log("Trigger updated:", self);
-            }
-          },
         },
       });
 

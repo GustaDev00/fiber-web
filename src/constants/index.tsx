@@ -40,7 +40,7 @@ export default {
       },
       {
         text: "Adresse",
-        content: "Sommerweg 27 8750 Glarus",
+        content: "Sommerweg 27, 8750 Glarus",
         link: "https://maps.app.goo.gl/M3iAhhh5svGcWHZ5A",
       },
     ],
@@ -64,25 +64,29 @@ export default {
     services: [
       {
         title: "Webdesign",
+        link: "/dienstleistungen/webdesign/",
       },
       {
         title: "Marketing",
+        link: "/dienstleistungen/marketing",
       },
       {
-        title: "Intelligenz",
+        title: "Künstliche Intelligenz",
+        link: "/dienstleistungen/kuenstliche-intelligenz",
       },
       {
         title: "Mobile Apps",
+        link: "/dienstleistungen/mobile-apps",
       },
     ],
     buttons: {
       contact: {
         title: "Kontaktieren Sie uns",
-        href: "#",
+        href: "https://web.whatsapp.com/send?phone=+41765398750",
       },
       whatsapp: {
         title: "Lass uns loslegen",
-        href: "#",
+        href: "https://web.whatsapp.com/send?phone=+41765398750",
       },
     },
   },
@@ -282,9 +286,27 @@ export default {
   text: "Erfolge, die unsere Qualität unterstreichen.",
   clients: [
     {
+      subtitle: (
+        <>
+          Noser Treuhand
+          <CustomBr byViewport="desktop" /> GmbH
+        </>
+      ),
+      description: (
+        <>
+          Für unseren Kunden haben wir einen modernen, dunklen
+          <CustomBr byViewport="desktop" /> Website-Auftritt mit neon-grünen Akzenten geschaffen,
+          <CustomBr byViewport="desktop" /> der sich perfekt mit ihrer Marke und Vision verbindet.
+          Das <CustomBr byViewport="desktop" />
+          Ziel war es, eine digitale Plattform zu entwickeln, die nicht
+          <CustomBr byViewport="desktop" /> nur visuell beeindruckt, sondern auch Funktionalität und
+          <CustomBr byViewport="desktop" /> Nutzerfreundlichkeit in den Vordergrund stellt.
+        </>
+      ),
+      list: ["Web design", "Marketing", "2024"],
       id: 1,
       img: {
-        src: "/imgs/services/dac.png",
+        src: "/imgs/services/noser.png",
         alt: "webdesign DAC Innenausbau GmbH",
       },
       link: {
@@ -296,6 +318,24 @@ export default {
       tags: ["Web-Design", "UX-UI Design"],
     },
     {
+      subtitle: (
+        <>
+          HA-Tech
+          <CustomBr byViewport="desktop" /> GmbH
+        </>
+      ),
+      description: (
+        <>
+          Für unseren Kunden haben wir einen modernen, dunklen
+          <CustomBr byViewport="desktop" /> Website-Auftritt mit neon-grünen Akzenten geschaffen,
+          <CustomBr byViewport="desktop" /> der sich perfekt mit ihrer Marke und Vision verbindet.
+          Das <CustomBr byViewport="desktop" />
+          Ziel war es, eine digitale Plattform zu entwickeln, die nicht
+          <CustomBr byViewport="desktop" /> nur visuell beeindruckt, sondern auch Funktionalität und
+          <CustomBr byViewport="desktop" /> Nutzerfreundlichkeit in den Vordergrund stellt.
+        </>
+      ),
+      list: ["Web design", "Marketing", "2024"],
       id: 2,
       img: {
         src: "/imgs/services/tech.png",
@@ -310,9 +350,27 @@ export default {
       tags: ["Web-Design", "UX-UI Design"],
     },
     {
+      subtitle: (
+        <>
+          Büro im
+          <CustomBr byViewport="desktop" /> Flow
+        </>
+      ),
+      description: (
+        <>
+          Für unseren Kunden haben wir einen modernen, dunklen
+          <CustomBr byViewport="desktop" /> Website-Auftritt mit neon-grünen Akzenten geschaffen,
+          <CustomBr byViewport="desktop" /> der sich perfekt mit ihrer Marke und Vision verbindet.
+          Das <CustomBr byViewport="desktop" />
+          Ziel war es, eine digitale Plattform zu entwickeln, die nicht
+          <CustomBr byViewport="desktop" /> nur visuell beeindruckt, sondern auch Funktionalität und
+          <CustomBr byViewport="desktop" /> Nutzerfreundlichkeit in den Vordergrund stellt.
+        </>
+      ),
+      list: ["Web design", "Marketing", "2024"],
       id: 3,
       img: {
-        src: "/imgs/services/andrade.png",
+        src: "/imgs/services/burow.png",
         alt: "webdesign Andrade Gipser + Maler GmbH",
       },
       link: {
@@ -456,24 +514,29 @@ export default {
       },
       {
         title: <>Marketing</>,
-        subtitle: <>Webdesign & -entwicklung</>,
+        subtitle: (
+          <>
+            Online
+            <br />
+            Marketing
+          </>
+        ),
         description: (
           <>
-            Deine Website soll nicht nur beeindrucken, sondern ein
-            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
-            die <CustomBr byViewport="desktop" />
-            deine Besucher fesseln, begeistern und tief ins Herz deiner
-            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
-            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
-            sondern <CustomBr byViewport="desktop" />
-            immer wieder zurückkommen.
+            Es geht um mehr als nur Reichweite – deine Marke
+            <CustomBr byViewport="desktop" /> verdient Gespräche, Vertrauen und echte Verbindungen.
+            <CustomBr byViewport="desktop" /> Unsere kreativen Kampagnen stellen sicher, dass du
+            nicht <CustomBr byViewport="desktop" />
+            nur gesehen, sondern auch gehört wirst. Wir platzieren <CustomBr byViewport="desktop" />
+            dich strategisch und mit einem Wow-Effekt, der deine <CustomBr byViewport="desktop" />
+            Zielgruppe begeistert und nachhaltig Eindruck hinterlässt.
           </>
         ),
         img: {
-          src: "/imgs/services/webdesign.png",
+          src: "/imgs/services/marketing.png",
           alt: "Marketing",
         },
-        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+        list: ["Google Ads, Google Analytics", "Facebook Ads Manager", "Social Media Marketing"],
       },
       {
         title: (
@@ -482,45 +545,64 @@ export default {
             <CustomBr byViewport="mobile" /> Intelligenz
           </>
         ),
-        subtitle: <>Webdesign & -entwicklung</>,
+        subtitle: (
+          <>
+            Künstliche
+            <br />
+            Intelligenz
+          </>
+        ),
         description: (
           <>
-            Deine Website soll nicht nur beeindrucken, sondern ein
-            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
-            die <CustomBr byViewport="desktop" />
-            deine Besucher fesseln, begeistern und tief ins Herz deiner
-            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
-            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
-            sondern <CustomBr byViewport="desktop" />
-            immer wieder zurückkommen.
+            Künstliche Intelligenz sollte keine Kopfschmerzen bereiten,
+            <CustomBr byViewport="desktop" /> sondern dir den Rücken freihalten und alles schneller
+            und <CustomBr byViewport="desktop" />
+            smarter machen. Wir bringen dir AI-Lösungen, die wie für
+            <CustomBr byViewport="desktop" /> dich gemacht sind – sie übernehmen die Routine,
+            optimieren <CustomBr byViewport="desktop" />
+            Abläufe und sorgen dafür, dass du dich voll auf dein Business
+            <CustomBr byViewport="desktop" /> konzentrieren kannst.
           </>
         ),
         img: {
-          src: "/imgs/services/webdesign.png",
+          src: "/imgs/services/intelligenz.png",
           alt: "Künstliche Intelligenz",
         },
-        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+        list: ["AI-Blog", "AI-Agent", "AI-Coach"],
       },
       {
         title: <>Mobile Apps</>,
-        subtitle: <>Webdesign & -entwicklung</>,
+        subtitle: (
+          <>
+            Mobile
+            <br />
+            Apps
+          </>
+        ),
         description: (
           <>
-            Deine Website soll nicht nur beeindrucken, sondern ein
-            <CustomBr byViewport="desktop" /> echtes Erlebnis bieten. Wir kreieren digitale Welten,
-            die <CustomBr byViewport="desktop" />
-            deine Besucher fesseln, begeistern und tief ins Herz deiner
-            <CustomBr byViewport="desktop" /> Marke eintauchen lassen. Einzigartig, intuitiv und so
-            <CustomBr byViewport="desktop" /> gestaltet, dass deine Nutzer nicht nur klicken,
-            sondern <CustomBr byViewport="desktop" />
-            immer wieder zurückkommen.
+            Apps, die begeistern, bleiben. Mit einem Erlebnis, das einfach
+            <CustomBr byViewport="desktop" /> funktioniert und begeistert, wird deine Marke zum
+            ständigen <CustomBr byViewport="desktop" />
+            Begleiter deiner Kunden, den sie nicht mehr missen möchten.
+            <CustomBr byViewport="desktop" /> Sie öffnet Türen zu neuen Möglichkeiten und schafft
+            eine <CustomBr byViewport="desktop" />
+            Verbindung, die deine Nutzer täglich aufs Neue überzeugt.
           </>
         ),
         img: {
-          src: "/imgs/services/webdesign.png",
+          src: "/imgs/services/mobile.pngmobile.png",
           alt: "Mobile Apps",
         },
-        list: ["Innovatives Design", "SEO-Strategien", "100% responsive Website"],
+        list: [
+          "Konzept & Strategie",
+          "User Experience & Interface Design",
+          "Entwicklung & Technologie",
+        ],
+        link: {
+          title: "mobile apps",
+          href: "/dienstleistungen/mobile-apps/",
+        },
       },
     ],
   },
@@ -662,7 +744,7 @@ export default {
         },
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         items: [
           {
@@ -733,7 +815,7 @@ export default {
         ),
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         item: [
           {
@@ -799,7 +881,7 @@ export default {
             },
             tags: ["Social Media", "Google Ads"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/marketing/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -813,7 +895,7 @@ export default {
             },
             tags: ["AI-Agent", "AI-Blog"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/kuenstliche-intelligenz/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -822,7 +904,7 @@ export default {
         ],
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
       },
     },
@@ -844,7 +926,7 @@ export default {
         title: (
           <>
             Boost Your
-            <CustomBr byViewport="desktop" />
+            <br />
             <span> Business</span>
           </>
         ),
@@ -861,12 +943,12 @@ export default {
           </>
         ),
         img: {
-          src: "/imgs/pages/marketing.png",
+          src: "/imgs/pages/webdesign.png",
           alt: "Marketing",
         },
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         items: [
           {
@@ -922,7 +1004,7 @@ export default {
         ),
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         item: [
           {
@@ -988,7 +1070,7 @@ export default {
             },
             tags: ["Webdesign", "UX-UI Design"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/webdesign/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -1002,7 +1084,7 @@ export default {
             },
             tags: ["AI-Agent", "AI-Blog"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/kuenstliche-intelligenz/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -1011,7 +1093,7 @@ export default {
         ],
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
       },
     },
@@ -1021,7 +1103,7 @@ export default {
         "Stell dir vor, deine täglichen Aufgaben laufen wie von selbst – eine unsichtbare Maschine, die unermüdlich für dich arbeitet. KI setzt dein Business auf Autopilot, während du das Steuer in Richtung Wachstum lenkst. Routine wird zur Vergangenheit, und der Weg zur Dominanz ist frei. Automatisiere heute und beherrsche morgen – die Zukunft wartet auf dich.",
       link: "kuenstliche-intelligenz",
       header: {
-        breadcrumb: "Intelligenz",
+        breadcrumb: "Künstliche Intelligenz",
         title: (
           <>
             <span>Automatisiere heute,</span>
@@ -1032,9 +1114,8 @@ export default {
       intro: {
         title: (
           <>
-            Work smart,
-            <CustomBr byViewport="desktop" />
-            <span> not hard!</span>
+            Work smart, <br />
+            <span>not hard!</span>
           </>
         ),
         description: (
@@ -1047,12 +1128,12 @@ export default {
           </>
         ),
         img: {
-          src: "/imgs/pages/ai.png",
+          src: "/imgs/pages/webdesign.png",
           alt: "Künstliche Intelligenz",
         },
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         items: [
           {
@@ -1108,7 +1189,7 @@ export default {
         ),
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         item: [
           {
@@ -1172,7 +1253,7 @@ export default {
             },
             tags: ["Social Media", "Google Ads"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/marketing/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -1181,12 +1262,12 @@ export default {
           {
             title: "Mobile Apps",
             img: {
-              src: "/imgs/services/ki.png",
+              src: "/imgs/services/mobile-apps.png",
               alt: "Mobile Apps",
             },
             tags: ["Konzept & Strategie", "Launch"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/mobile-apps/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -1195,7 +1276,7 @@ export default {
         ],
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
       },
     },
@@ -1234,12 +1315,12 @@ export default {
           </>
         ),
         img: {
-          src: "/imgs/pages/mobile-apps.png",
+          src: "/imgs/pages/webdesign.png",
           alt: "Mobile Apps",
         },
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         items: [
           {
@@ -1293,7 +1374,7 @@ export default {
         ),
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
         item: [
           {
@@ -1356,7 +1437,7 @@ export default {
             },
             tags: ["Webdesign", "UX-UI Design"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/webdesign/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -1370,7 +1451,7 @@ export default {
             },
             tags: ["AI-Agent", "AI-Blog"],
             link: {
-              href: "#",
+              href: "/dienstleistungen/kuenstliche-intelligenz/",
               title: "Mehr erfahren",
               target: "_blank",
               rel: "noopener noreferrer nofollow",
@@ -1379,7 +1460,191 @@ export default {
         ],
         link: {
           title: "Lass uns loslegen",
-          href: "#",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
+        },
+      },
+    },
+    {
+      title: "Mobile Apps",
+      description:
+        "Deine App, dein direkter Draht zu Kunden – immer dabei, immer relevant. Mit einer einzigartigen mobilen Experience bringst du deine Marke ins tägliche Leben deiner Nutzer. Begeistere mit jedem Klick und baue Verbindungen auf, die langfristig wirken. Deine App ist mehr als Technik – sie ist das Herzstück deines digitalen Erfolgs.",
+      link: "mobile-apps",
+      header: {
+        breadcrumb: "Mobile Apps",
+        title: (
+          <>
+            <span>Deine App,</span>
+            <CustomBr byViewport="desktop" /> grenzenlose Möglichkeiten.
+          </>
+        ),
+      },
+      intro: {
+        title: (
+          <>
+            Perfekt auf dich
+            <CustomBr byViewport="desktop" />
+            <span> abgestimmt</span>
+          </>
+        ),
+        description: (
+          <>
+            Deine App, dein direkter Draht zu Kunden – immer dabei,
+            <CustomBr byViewport="desktop" /> immer relevant. Mit einer einzigartigen mobilen
+            Experience
+            <CustomBr byViewport="desktop" /> bringst du deine Marke ins tägliche Leben deiner
+            Nutzer.
+            <CustomBr byViewport="desktop" /> Begeistere mit jedem Klick und baue Verbindungen auf,
+            die
+            <CustomBr byViewport="desktop" /> langfristig wirken.
+          </>
+        ),
+        img: {
+          src: "/imgs/pages/mobile-apps.png",
+          alt: "Mobile Apps",
+        },
+        link: {
+          title: "Lass uns loslegen",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
+        },
+        items: [
+          {
+            title: <>Konzept & Strategie</>,
+            text: (
+              <>
+                Von der Idee zur App: Wir entwickeln eine klare
+                <CustomBr byViewport="desktop" /> Strategie, die deine Vision in eine mobile
+                <CustomBr byViewport="desktop" /> Realität verwandelt.
+              </>
+            ),
+          },
+          {
+            title: <>User Experience & Interface Design</>,
+            text: (
+              <>
+                Wir kreieren intuitive Designs, die deine Nutzer
+                <CustomBr byViewport="desktop" /> begeistern und die Bedienung deiner App
+                <CustomBr byViewport="desktop" /> zum Vergnügen machen.
+              </>
+            ),
+          },
+          {
+            title: <>Entwicklung & Technologie</>,
+            text: (
+              <>
+                Mit modernsten Technologien entwickeln wir Apps,
+                <CustomBr byViewport="desktop" /> die stabil, sicher und leistungsstark sind.
+              </>
+            ),
+          },
+          {
+            title: <>Launch & Optimierung</>,
+            text: (
+              <>
+                Wir sorgen für einen reibungslosen Launch und
+                <CustomBr byViewport="desktop" /> optimieren deine App kontinuierlich
+                <CustomBr byViewport="desktop" /> für maximale Performance.
+              </>
+            ),
+          },
+        ],
+      },
+      info: {
+        title: (
+          <>
+            Unsere Kriterien für eine
+            <CustomBr byViewport="desktop" />
+            <span> aussergewöhnlich App</span>
+          </>
+        ),
+        link: {
+          title: "Lass uns loslegen",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
+        },
+        item: [
+          {
+            id: 1,
+            title: <>Rasante Geschwindigkeit</>,
+            text: (
+              <>
+                Deine App muss sich wie ein Hochgeschwindigkeitszug
+                <CustomBr byViewport="desktop" /> anfühlen – schnell, reibungslos und
+                <CustomBr byViewport="desktop" /> immer einsatzbereit.
+              </>
+            ),
+          },
+          {
+            id: 2,
+            title: <>Erlebnis auf den Punkt</>,
+            text: (
+              <>
+                Jede Berührung zählt. Wir gestalten deine App so,
+                <CustomBr byViewport="desktop" /> dass sie sofort begeistert und deine
+                <CustomBr byViewport="desktop" /> Nutzer ans Ziel bringt.
+              </>
+            ),
+          },
+          {
+            id: 3,
+            title: <>Sicherheit als Standard</>,
+            text: (
+              <>
+                Deine App ist eine Festung – maximale Sicherheit
+                <CustomBr byViewport="desktop" /> steht an erster Stelle.
+              </>
+            ),
+          },
+          {
+            id: 4,
+            title: <>Grenzenloses Wachstum</>,
+            text: (
+              <>
+                Egal, wie groß dein Business wird, deine App wächst
+                <CustomBr byViewport="desktop" /> mit und bleibt bereit für alles, was kommt.
+              </>
+            ),
+          },
+        ],
+      },
+      project: {
+        title: (
+          <>
+            Sehen Sie sich weitere unserer
+            <CustomBr byViewport="desktop" /> <span>Dienstleistungen an</span>
+          </>
+        ),
+        imgs: [
+          {
+            title: "Web-Design UX-UI Design",
+            img: {
+              src: "/imgs/services/online-marketing.png",
+              alt: "Web-Design UX-UI Design",
+            },
+            tags: ["Webdesign", "UX-UI Design"],
+            link: {
+              href: "/dienstleistungen/webdesign/",
+              title: "Mehr erfahren",
+              target: "_blank",
+              rel: "noopener noreferrer nofollow",
+            },
+          },
+          {
+            title: "Künstliche Intelligenz (KI)",
+            img: {
+              src: "/imgs/services/ki.png",
+              alt: "Künstliche Intelligenz (KI)",
+            },
+            tags: ["AI-Agent", "AI-Blog"],
+            link: {
+              href: "/dienstleistungen/kuenstliche-intelligenz/",
+              title: "Mehr erfahren",
+              target: "_blank",
+              rel: "noopener noreferrer nofollow",
+            },
+          },
+        ],
+        link: {
+          title: "Lass uns loslegen",
+          href: "https://web.whatsapp.com/send?phone=+41765398750",
         },
       },
     },

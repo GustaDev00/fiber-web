@@ -27,11 +27,6 @@ export default () => {
       onLeaveBack: () => setIsInView(false),
       markers: markerSettings,
       id: "Process",
-      onUpdate: (self) => {
-        if (isDev) {
-          console.log("Trigger updated:", self);
-        }
-      },
     });
   }, []);
 

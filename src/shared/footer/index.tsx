@@ -21,9 +21,18 @@ export const Footer = () => {
             <S.Column>
               <S.Title>{titles.services}</S.Title>
               <S.List>
-                {services.map(({ title }) => (
-                  <S.Item key={title}>{title}</S.Item>
+                {services.map(({ title, link }) => (
+                  <S.Item key={title}>
+                    <S.Link href={link} data-fs-link="hover">
+                      {title}
+                    </S.Link>
+                  </S.Item>
                 ))}
+                <S.Item>
+                  <S.Link href="/dienstleistungen/" data-fs-link="hover">
+                    alle Dienstleistungen
+                  </S.Link>
+                </S.Item>
               </S.List>
             </S.Column>
 
@@ -33,7 +42,9 @@ export const Footer = () => {
               <S.List>
                 {contact.map(({ text, content, link }) => (
                   <S.Item key={text}>
-                    <S.Link href={link}>{content}</S.Link>
+                    <S.Link href={link} data-fs-link="hover">
+                      {content}
+                    </S.Link>
                   </S.Item>
                 ))}
               </S.List>

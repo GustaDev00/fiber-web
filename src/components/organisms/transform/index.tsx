@@ -3,12 +3,12 @@ import C from "@/constants";
 import useAnimation from "./animation";
 
 export const Transform = () => {
+  const { sectionRef } = useAnimation();
   const {
     title,
     description,
     buttons: { whatsapp },
   } = { ...C.transform, ...C.data };
-  const { sectionRef } = useAnimation();
 
   return (
     <S.Transform ref={sectionRef}>
@@ -17,7 +17,7 @@ export const Transform = () => {
       <S.Wrapper>
         <S.Title>{title}</S.Title>
         <S.Description>{description}</S.Description>
-        <S.Link {...whatsapp} target="_blank" rel="noreferrer">
+        <S.Link {...whatsapp} target="_blank" rel="noreferrer" data-fs-link="hover">
           {whatsapp.title}
         </S.Link>
         <S.Line />

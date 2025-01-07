@@ -39,9 +39,7 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
 
     const onLoadMedia = (): void => {
       loadedMedia++;
-      setTimeout(() => {
-        setPercentage(loadedMedia / mediaCount);
-      }, 2000);
+      setPercentage(loadedMedia / mediaCount);
     };
 
     images.forEach((image) => {

@@ -35,11 +35,6 @@ const useAnimation = () => {
           scrub: 1,
           markers: markerSettings,
           id: "philosofie-animation",
-          onUpdate: (self) => {
-            if (isDev) {
-              console.log("Trigger updated:", self);
-            }
-          },
         },
       });
 

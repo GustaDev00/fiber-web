@@ -2,6 +2,7 @@ import * as S from "./styles";
 import useAnimation from "./animation";
 import { FC } from "react";
 import { ModalProps } from "./props";
+import { IoMdClose } from "react-icons/io";
 
 export const Modal: FC<ModalProps> = ({
   open = false,
@@ -21,6 +22,9 @@ export const Modal: FC<ModalProps> = ({
     <>
       <S.Modal $open={open} ref={sectionRef} {...props}>
         <S.Wrapper>
+          <S.Close onClick={() => setOpen(false)} data-fs-link="hover">
+            <IoMdClose />
+          </S.Close>
           <S.Content>
             <S.Subtitle>{subtitle}</S.Subtitle>
             <S.Text>{description}</S.Text>
@@ -35,17 +39,21 @@ export const Modal: FC<ModalProps> = ({
           </S.Content>
           <S.Container>
             {client ? (
-              <S.Link {...link} target="_blank">
-                <S.Img {...img} />
+              <S.Link {...link} target="_blank" data-fs-link="hover">
+                <S.Zoom>
+                  <S.Img {...img} />
+                </S.Zoom>
               </S.Link>
             ) : (
               <>
-                <S.Img
-                  {...img}
-                  onClick={() => {
-                    setOpen(false);
-                  }}
-                />
+                <S.Zoom>
+                  <S.Img
+                    {...img}
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                  />
+                </S.Zoom>
                 <S.Button {...link}>{link.title}</S.Button>
               </>
             )}

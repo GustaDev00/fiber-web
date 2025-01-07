@@ -6,6 +6,7 @@ import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Footer = styled.footer`
   position: relative;
+  z-index: 1;
 `;
 
 const Circle = styled(CircleGreenBlur)`

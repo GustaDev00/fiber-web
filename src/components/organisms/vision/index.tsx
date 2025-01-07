@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import C from "@/constants";
 import useAnimation from "./animation";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Modal } from "@/components/atoms/modal";
 
 export const Vision = () => {
@@ -24,9 +24,9 @@ export const Vision = () => {
           <S.Title>{title}</S.Title>
           <S.Line data-timline="line" />
           <S.List data-timline="list">
-            {items.map(({ title }, index) => (
+            {items.map(({ title, img: { alt } }, index) => (
               <S.Item key={index} data-timline="item">
-                <S.Button onClick={() => handleItemClick(index)}>
+                <S.Button onClick={() => handleItemClick(index)} data-fs-link={alt}>
                   {title}{" "}
                   <S.Icon>
                     <S.Arrow />
@@ -47,12 +47,6 @@ export const Vision = () => {
           key={index}
         />
       ))}
-      <S.BlackBackground
-        onClick={() => {
-          setOpenModalIndex(false);
-        }}
-        $open={openModalIndex !== false}
-      />
     </>
   );
 };

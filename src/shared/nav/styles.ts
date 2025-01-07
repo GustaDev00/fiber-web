@@ -8,7 +8,7 @@ export const Header = styled.header`
   top: 0;
   padding-top: 5.6rem;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   opacity: 0;
   transform: translateY(-100%);
 
@@ -164,11 +164,7 @@ export const ButtonClose = styled(Menu)`
 `;
 
 export const MainModal = styled.main`
-  margin-top: 8.4rem;
-
-  ${mediaMaxWidth("mobile")`
-    margin-top: 6.4rem;
-  `}
+  margin-top: 6.4rem;
 `;
 
 export const List = styled.nav`

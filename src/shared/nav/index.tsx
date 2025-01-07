@@ -6,10 +6,7 @@ import C from "@/constants";
 export default () => {
   const [open, setOpen] = useState(false);
   const { ref } = useAnimation();
-  const {
-    pages,
-    data: { social_share, navigation },
-  } = C;
+  const { social_share, navigation, services } = C.data;
 
   const handleClick = useCallback(() => {
     setOpen((prev) => !prev);
@@ -19,7 +16,7 @@ export default () => {
     <S.Header ref={ref}>
       <S.Wrapper>
         <S.Logo />
-        <S.Menu onClick={handleClick}>
+        <S.Menu onClick={handleClick} data-fs-link="hover">
           <S.Line />
           <S.Line />
         </S.Menu>
@@ -29,24 +26,24 @@ export default () => {
             <S.WrapperModal>
               <S.HeaderModal>
                 <S.TextMenu>Menu</S.TextMenu>
-                <S.ButtonClose onClick={handleClick} />
+                <S.ButtonClose onClick={handleClick} data-fs-link="hover" />
               </S.HeaderModal>
               <S.MainModal>
                 <S.List>
                   {navigation.slice(0, 1).map(({ title, href }) => (
-                    <S.Item key={title} href={href}>
+                    <S.Item key={title} href={href} data-fs-link="hover">
                       {title} <S.Arrow />
                     </S.Item>
                   ))}
 
-                  {pages.map(({ title, link }) => (
-                    <S.Item key={title} href={`/dienstleistungen/${link}`}>
+                  {services.map(({ title, link }) => (
+                    <S.Item key={title} href={`${link}`} data-fs-link="hover">
                       {title} <S.Arrow />
                     </S.Item>
                   ))}
 
                   {navigation.slice(2, 3).map(({ title, href }) => (
-                    <S.Item key={title} href={href}>
+                    <S.Item key={title} href={href} data-fs-link="hover">
                       {title} <S.Arrow />
                     </S.Item>
                   ))}
@@ -54,7 +51,7 @@ export default () => {
               </S.MainModal>
               <S.FooterModal>
                 {social_share.map(({ title, link, icon: Icon }) => (
-                  <S.Social key={title} href={link} target="_blank">
+                  <S.Social key={title} href={link} target="_blank" data-fs-link="hover">
                     <Icon />
                   </S.Social>
                 ))}

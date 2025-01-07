@@ -20,14 +20,20 @@ export const ButtonSwipe = ({ href, className, children, ...props }: ButtonSwipe
     }
   };
   return href ? (
-    <S.LinkSwipe className={className} {...(props as LinkProps)} href={href} onClick={handleClick}>
+    <S.LinkSwipe
+      className={className}
+      {...(props as LinkProps)}
+      href={href}
+      onClick={handleClick}
+      data-fs-link="hover"
+    >
       <S.Span>{children}</S.Span>
       <S.Icon>
         <ArrowDownIcon />
       </S.Icon>
     </S.LinkSwipe>
   ) : (
-    <S.ButtonSwipe className={className} {...(props as ButtonProps)}>
+    <S.ButtonSwipe className={className} {...(props as ButtonProps)} data-fs-link="hover">
       <S.Span>{children}</S.Span>
       <S.Icon>
         <ArrowDownIcon />

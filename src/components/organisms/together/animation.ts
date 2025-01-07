@@ -32,11 +32,6 @@ export default () => {
           scrub: 1,
           markers: markerSettings,
           id: "together-animation",
-          onUpdate: (self) => {
-            if (isDev) {
-              console.log("Trigger updated:", self);
-            }
-          },
         },
       });
 

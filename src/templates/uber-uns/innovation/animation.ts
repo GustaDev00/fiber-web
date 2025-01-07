@@ -23,8 +23,6 @@ export default () => {
       const Stars = section.querySelector("[data-timeline='stars']");
       const World = section.querySelector("[data-timeline='world']");
 
-      console.log(Title, Text, Stars, World);
-
       const isMobile = window.innerWidth <= 768;
 
       const tl = gsap.timeline({
@@ -35,11 +33,6 @@ export default () => {
           scrub: 1,
           markers: markerSettings,
           id: "innovation-animation",
-          onUpdate: (self) => {
-            if (isDev) {
-              console.log("Trigger updated:", self);
-            }
-          },
         },
       });
 

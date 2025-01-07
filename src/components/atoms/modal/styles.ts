@@ -7,8 +7,8 @@ export const Modal = styled.div<{ $open: boolean }>`
   position: fixed;
   top: 50%;
   left: 50%;
-  width: ${({ $open }) => ($open ? "95vw" : "0")};
-  height: 95vh;
+  width: ${({ $open }) => ($open ? "100vw" : "0")};
+  height: 100vh;
   background: linear-gradient(180deg, #151515 13.5%, #1a1a1a 62%, #000 99.5%);
   border-radius: 0.5rem;
   transform: translate(-50%, -50%);
@@ -45,9 +45,10 @@ export const Subtitle = styled.h3`
 export const Text = styled.p`
   margin-top: 10rem;
   color: #fff;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 500;
   line-height: 4.2rem;
+  opacity: 0.8;
 `;
 
 export const Line = styled.div`
@@ -73,9 +74,31 @@ export const Item = styled.li`
   font-size: 3rem;
   font-weight: 700;
   line-height: 4.2rem;
+  opacity: 0.8;
 `;
 
 export const Container = styled.div``;
+
+export const Close = styled.button`
+  cursor: pointer;
+  position: absolute;
+  top: 8rem;
+  right: 10rem;
+  font-size: 4rem;
+  color: #fff;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 4.8rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    opacity: 0.7;
+  }
+`;
 
 export const Link = styled.a``;
 
@@ -85,11 +108,24 @@ export const Button = styled(ButtonSwipe)`
 `;
 
 export const Img = styled(LazyImage)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale 0.5s ease;
+`;
+
+export const Zoom = styled.div`
   width: 67rem;
   height: 41.2rem;
-  object-fit: cover;
   border-radius: 2rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+
+  &:hover {
+    ${Img} {
+      scale: 1.1;
+    }
+  }
 `;
 
 export const Circle = styled(CircleGreenBlur)`

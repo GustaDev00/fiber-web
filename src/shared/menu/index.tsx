@@ -14,14 +14,11 @@ export const Menu = () => {
     <S.Menu ref={ref}>
       <S.List>
         {navigation.map(({ title, icon: Icon, href }) => {
-          // Verifica se a rota está ativa
-          const isActive =
-            pathname === href || // Match exato
-            (href !== "/" && pathname.startsWith(href)); // Match com prefixo
+          const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
 
           return (
             <S.Item key={title}>
-              <S.Link href={href} title={title} $icon={isActive}>
+              <S.Link href={href} title={title} $icon={isActive} data-fs-link="hover">
                 {isActive ? <Icon className="icon-home" /> : title}
               </S.Link>
             </S.Item>

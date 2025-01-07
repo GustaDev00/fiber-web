@@ -12,9 +12,11 @@ export default ({ link, title, imgs }: ProjectProps) => {
           <S.Title>{title}</S.Title>
           <S.Container>
             {imgs.map(({ title, tags, link, img }, index) => (
-              <S.Card {...link} key={index}>
+              <S.Card {...link} key={index} data-fs-link="service">
                 <S.Content>
-                  <S.Image {...img} />
+                  <S.Zoom>
+                    <S.Image {...img} />
+                  </S.Zoom>
                   <S.Tag>
                     <S.Subtitle>{title}</S.Subtitle>
                     <S.List>
@@ -44,7 +46,7 @@ export default ({ link, title, imgs }: ProjectProps) => {
               </S.Card>
             ))}
           </S.Container>
-          <S.Link data-timeline="link" {...link}>
+          <S.Link data-timeline="link" {...link} data-fs-link="hover">
             {link.title}
           </S.Link>
         </S.Wrapper>

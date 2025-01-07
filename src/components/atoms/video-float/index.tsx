@@ -15,12 +15,13 @@ export const VideoFloat = () => {
     setForceClose(true);
 
     if (videoRef.current) {
-      videoRef.current.muted = open;
+      videoRef.current.muted = true;
     }
   };
 
   const handleOpen = () => {
     setOpen(!open);
+
     if (videoRef.current) {
       videoRef.current.muted = open;
     }
@@ -29,10 +30,10 @@ export const VideoFloat = () => {
   return (
     <S.VideoFloat ref={sectionRef} $isClosed={isClosed} $open={open} $forceClose={forceClose}>
       <S.Controls>
-        <S.Open onClick={handleOpen}>
+        <S.Open onClick={handleOpen} data-fs-link="hover">
           <S.Arrow />
         </S.Open>
-        <S.Close onClick={handleClose}>
+        <S.Close onClick={handleClose} data-fs-link="hover">
           <S.CloseIcon />
         </S.Close>
       </S.Controls>

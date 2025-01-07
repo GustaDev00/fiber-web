@@ -70,6 +70,21 @@ export const List = styled.div`
   `}
 `;
 
+export const Image = styled.img`
+  opacity: 0;
+  visibility: hidden;
+  width: 22.5rem;
+  height: 25.9rem;
+  object-fit: cover;
+  border-radius: 2rem;
+  transform: rotate(15deg);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  ${mediaMaxWidth("mobile")`
+    display: none;
+  `}
+`;
+
 export const Item = styled.div`
   display: flex;
   padding: 3.9rem 4.4rem;
@@ -80,6 +95,11 @@ export const Item = styled.div`
     flex-direction: column;
     padding: 0;
   `}
+
+  &:hover ${Image} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 export const Container = styled.div``;
@@ -87,7 +107,7 @@ export const Container = styled.div``;
 export const Content = styled.div``;
 
 export const Description = styled.p`
-  color: #fff;
+  color: #d6d6d6;
   font-family: Syne;
   font-size: 18px;
   font-style: normal;

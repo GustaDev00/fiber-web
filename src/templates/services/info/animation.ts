@@ -35,11 +35,6 @@ export default () => {
           scrub: 1,
           markers: markerSettings,
           id: "vision-service-animation",
-          onUpdate: (self) => {
-            if (isDev) {
-              console.log("Trigger updated:", self);
-            }
-          },
         },
       });
 

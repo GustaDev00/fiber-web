@@ -33,6 +33,7 @@ export const Title = styled.h2`
 `;
 
 export const Link = styled.a`
+  opacity: 1;
   width: fit-content;
   padding: 2.7rem 4.1rem;
   border-radius: 12.2rem;
@@ -44,7 +45,7 @@ export const Link = styled.a`
   transition: opacity 0.4s ease;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.6 !important;
   }
 
   ${mediaMaxWidth("mobile")`
@@ -83,13 +84,26 @@ export const Content = styled.div`
 export const Image = styled(LazyImage)`
   width: 64.1rem;
   height: 53.2rem;
+  object-fit: cover;
+  transition: scale 0.4s ease;
+`;
+
+export const Zoom = styled.div`
+  width: 64.1rem;
+  height: 53.2rem;
   border-radius: 2rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.15);
-  object-fit: cover;
+  overflow: hidden;
 
   ${mediaMaxWidth("isMobileOrTabletVertical")`
     width: 100%;
   `}
+
+  &:hover {
+    ${Image} {
+      scale: 1.1;
+    }
+  }
 `;
 
 export const Tag = styled.div`

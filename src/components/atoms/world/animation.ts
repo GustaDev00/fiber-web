@@ -30,11 +30,6 @@ const useAnimation = (isLoaded: boolean) => {
             scrub: 2,
             markers: markerSettings,
             id: "magic-sphere",
-            onUpdate: (self) => {
-              if (isDev) {
-                console.log("Trigger updated:", self);
-              }
-            },
           },
         },
       );
