@@ -49,6 +49,10 @@ export const GlobalStyles = createGlobalStyle`
     ${mediaMaxWidth("mobileHorizontal")`
       font-size: calc(100vw / ${400} * 10);
     `}
+
+    &.modal-open {
+      overflow: hidden;
+    }
   }
 
   body {

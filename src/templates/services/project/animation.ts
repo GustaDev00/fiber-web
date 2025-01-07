@@ -4,6 +4,7 @@ import SplitType from "split-type";
 
 export default () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   // Verifica o ambiente
   const isDev = process.env.NODE_ENV === "development";
@@ -32,7 +33,7 @@ export default () => {
         scrollTrigger: {
           trigger: section,
           start: isMobile ? "top 90%" : "top 70%",
-          end: isMobile ? "center-=200px top" : "23% center",
+          end: isMobile ? "center-=200px top+=300px" : "23% center",
           scrub: 1,
           markers: markerSettings,
           id: "vision-service-animation",
@@ -93,19 +94,28 @@ export default () => {
         );
       }
 
-      if (Items.length) {
-        tl.from(
-          Items,
-          {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power3.out",
-          },
-          "-=0.5",
-        );
-      }
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.fromTo(
+            card,
+            { clipPath: "inset(100% 0 0 0)", opacity: 0 },
+            {
+              clipPath: "inset(0% 0 0 0)",
+              opacity: 1,
+              duration: 1.5,
+              delay: index * 0.3,
+              scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "center center+=200px",
+                scrub: 1,
+                markers: markerSettings,
+                id: `card-animation-${index}`,
+              },
+            },
+          );
+        }
+      });
     });
 
     return () => {
@@ -113,5 +123,5 @@ export default () => {
     };
   }, []);
 
-  return { sectionRef };
+  return { sectionRef, cardsRef };
 };

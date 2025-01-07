@@ -3,7 +3,7 @@ import useAnimation from "./animation";
 import { ProjectProps } from "./props";
 
 export default ({ link, title, imgs }: ProjectProps) => {
-  const { sectionRef } = useAnimation();
+  const { sectionRef, cardsRef } = useAnimation();
 
   return (
     <>
@@ -12,7 +12,14 @@ export default ({ link, title, imgs }: ProjectProps) => {
           <S.Title>{title}</S.Title>
           <S.Container>
             {imgs.map(({ title, tags, link, img }, index) => (
-              <S.Card {...link} key={index} data-fs-link="service">
+              <S.Card
+                {...link}
+                key={index}
+                ref={(el) => {
+                  cardsRef.current[index] = el;
+                }}
+                data-fs-link="service"
+              >
                 <S.Content>
                   <S.Zoom>
                     <S.Image {...img} />

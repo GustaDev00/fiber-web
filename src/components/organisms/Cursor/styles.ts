@@ -25,6 +25,22 @@ export const Image = styled.div<{ $src: string }>`
   transition: opacity 0.4s ease, visibility 0.4s ease;
 `;
 
+export const Site = styled.div`
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  color: #151515;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  svg {
+    margin-top: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+  }
+`;
+
 export const Services = styled.div`
   opacity: 0;
   visibility: hidden;
@@ -80,6 +96,25 @@ export const Cursor = styled.div<{ $type?: string | null; $images?: string[] }>`
       return css`
         width: 12rem;
         height: 12rem;
+
+        ${Dot} {
+          opacity: 0;
+          visibility: hidden;
+        }
+      `;
+    }
+
+    if ($type === "site") {
+      return css`
+        scale: 1.5;
+        background: #fff;
+        backdrop-filter: blur(0.3rem);
+        cursor: none;
+
+        ${Site} {
+          opacity: 1;
+          visibility: visible;
+        }
 
         ${Dot} {
           opacity: 0;

@@ -67,7 +67,8 @@ export const Container = styled.div`
     padding: 0 1.8rem;
   `}
 
-  ${mediaMaxWidth("mobile")`
+  ${mediaMaxWidth("mobile")` 
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -75,10 +76,15 @@ export const Container = styled.div`
   `}
 `;
 
-export const Card = styled.a``;
+export const Card = styled.a`
+  ${mediaMaxWidth("mobile")`
+    width: 100%;
+  `}
+`;
 
 export const Content = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const Image = styled(LazyImage)`

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { CircleGreenBlur } from "../circle-green-blur";
 import { LazyImage } from "../lazy-image";
 import { ButtonSwipe } from "../button-swipe";
+import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Modal = styled.div<{ $open: boolean }>`
   position: fixed;
@@ -21,6 +22,11 @@ export const Modal = styled.div<{ $open: boolean }>`
   @supports (-webkit-touch-callout: none) {
     height: 95svh;
   }
+
+  ${mediaMaxWidth("mobile")`
+    z-index: 100;
+    overflow-y: auto;
+  `}
 `;
 
 export const Wrapper = styled.div`
@@ -32,6 +38,13 @@ export const Wrapper = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   z-index: 2;
+
+  ${mediaMaxWidth("mobile")`
+    padding: 3rem 2rem;
+    gap: 4rem;
+    overflow-y: auto;
+    flex-direction: column;
+  `}
 `;
 
 export const Content = styled.article``;
@@ -40,6 +53,10 @@ export const Subtitle = styled.h3`
   color: #fff;
   font-size: 8.4rem;
   font-weight: 700;
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 3rem;
+  `}
 `;
 
 export const Text = styled.p`
@@ -49,6 +66,12 @@ export const Text = styled.p`
   font-weight: 500;
   line-height: 4.2rem;
   opacity: 0.8;
+
+  ${mediaMaxWidth("mobile")`
+    font-size: 2.2rem;
+    margin-top: 3rem;
+    line-height: 3rem;
+  `}
 `;
 
 export const Line = styled.div`
@@ -67,6 +90,10 @@ export const List = styled.ul<{ $list?: boolean }>`
   display: flex;
   flex-direction: ${({ $list }) => ($list ? "row" : "column")};
   gap: ${({ $list }) => ($list ? "2.5rem" : "1.1rem")};
+
+  ${mediaMaxWidth("mobile")`
+    flex-direction: column;
+  `}
 `;
 
 export const Item = styled.li`
@@ -98,6 +125,14 @@ export const Close = styled.button`
   svg {
     opacity: 0.7;
   }
+
+  ${mediaMaxWidth("mobile")`
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    top: 3rem;
+    right: 2rem;
+  `}
 `;
 
 export const Link = styled.a``;
@@ -126,6 +161,11 @@ export const Zoom = styled.div`
       scale: 1.1;
     }
   }
+
+  ${mediaMaxWidth("mobile")`
+    width: 100%;
+    height: 30rem;
+  `}
 `;
 
 export const Circle = styled(CircleGreenBlur)`

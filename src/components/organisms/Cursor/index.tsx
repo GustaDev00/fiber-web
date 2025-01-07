@@ -118,10 +118,31 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
           <S.Image data-fs-image={img.alt} key={img.alt} $src={img.src} />
         ))}
 
-        <S.Services>
-          Ver
+        <S.Site>
+          Webseite
           <br />
-          Serviço
+          ansehen
+          <br />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M3.5 10.5L10.5 3.5M10.5 3.5H5.25M10.5 3.5V8.75"
+              stroke="black"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </S.Site>
+
+        <S.Services>
+          Dienst
+          <br />
+          ansehen
           <br />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -140,9 +161,9 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
         </S.Services>
 
         <S.Project>
-          Ver
+          Projekt
           <br />
-          Projeto
+          ansehen
           <br />
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -307,10 +307,10 @@ export default {
       id: 1,
       img: {
         src: "/imgs/services/noser.png",
-        alt: "webdesign DAC Innenausbau GmbH",
+        alt: "Noser Treuhand GmbH",
       },
       link: {
-        href: "https://trockenbau-dac.ch/",
+        href: "https://noser.vercel.app/",
         title: "trockenbau-dac.ch",
         target: "_blank",
         rel: "noopener noreferrer nofollow",
@@ -371,11 +371,11 @@ export default {
       id: 3,
       img: {
         src: "/imgs/services/burow.png",
-        alt: "webdesign Andrade Gipser + Maler GmbH",
+        alt: "Büro im flow",
       },
       link: {
-        href: "https://andrade-gipser.ch/",
-        title: "andrade-gipser.ch",
+        href: "#",
+        title: "Büro im flow",
         target: "_blank",
         rel: "noopener noreferrer nofollow",
       },

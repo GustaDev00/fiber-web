@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import useAnimation from "./animation";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { ModalProps } from "./props";
 import { IoMdClose } from "react-icons/io";
 
@@ -17,6 +17,16 @@ export const Modal: FC<ModalProps> = ({
   ...props
 }) => {
   const { sectionRef } = useAnimation();
+
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+
+    if (open) {
+      htmlElement.classList.add("modal-open");
+    } else {
+      htmlElement.classList.remove("modal-open");
+    }
+  }, [open]);
 
   return (
     <>
@@ -39,7 +49,7 @@ export const Modal: FC<ModalProps> = ({
           </S.Content>
           <S.Container>
             {client ? (
-              <S.Link {...link} target="_blank" data-fs-link="hover">
+              <S.Link {...link} target="_blank" data-fs-link="site">
                 <S.Zoom>
                   <S.Img {...img} />
                 </S.Zoom>

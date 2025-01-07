@@ -7,7 +7,7 @@ export default () => {
 
   // Verifica o ambiente
   const isDev = process.env.NODE_ENV === "development";
-  const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
+  const markersEnabled = true;
 
   // Configurações dos markers
   const markerSettings =
@@ -32,7 +32,7 @@ export default () => {
         scrollTrigger: {
           trigger: section,
           start: isMobile ? "top 90%" : "top 70%",
-          end: isMobile ? "center-=200px top" : "23% center",
+          end: isMobile ? "center-=200px top+=100px" : "23% center",
           scrub: 1,
           markers: markerSettings,
           id: "vision-service-animation",
