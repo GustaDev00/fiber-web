@@ -591,7 +591,7 @@ export default {
           </>
         ),
         img: {
-          src: "/imgs/services/mobile.pngmobile.png",
+          src: "/imgs/services/mobile.png",
           alt: "Mobile Apps",
         },
         list: [
