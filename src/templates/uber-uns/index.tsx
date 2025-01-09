@@ -13,7 +13,7 @@ export const UberUnsTemplate: FC = () => {
       <Header />
       <Innovation />
       <Story />
-      <Team />
+      {/* <Team /> */}
       <Transform />
     </>
   );

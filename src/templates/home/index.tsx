@@ -12,7 +12,7 @@ export const HomeTemplate: FC = () => {
   return (
     <>
       <Header />
-      <Clients type={true} />
+      <Clients />
       <Philosofie />
       <Vision />
       <Together />
