@@ -5,7 +5,6 @@ import { Transform } from "@/components/organisms/transform";
 import Header from "./header";
 import Innovation from "./innovation";
 import Story from "./story";
-import Team from "./team";
 
 export const UberUnsTemplate: FC = () => {
   return (
