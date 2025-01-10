@@ -81,7 +81,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
     return () => {
       ctx.kill();
     };
-  }, []);
+  }, [handleMouseEnter, handleMouseLeave]);
 
   return (
     <>

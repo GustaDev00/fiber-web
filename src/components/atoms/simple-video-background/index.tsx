@@ -7,16 +7,17 @@ const SimpleVideoBackground = ({ src, type, fallbackImage }: SimpleVideoBackgrou
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
+    const videoNode = videoRef.current; // Copy ref to a variable
     const checkVideo = () => {
-      if (videoRef.current && videoRef.current.readyState >= 3) {
+      if (videoNode && videoNode.readyState >= 3) {
         setVideoLoaded(true);
       }
     };
 
-    videoRef.current?.addEventListener("loadeddata", checkVideo);
+    videoNode?.addEventListener("loadeddata", checkVideo);
 
     return () => {
-      videoRef.current?.removeEventListener("loadeddata", checkVideo);
+      videoNode?.removeEventListener("loadeddata", checkVideo);
     };
   }, []);
 

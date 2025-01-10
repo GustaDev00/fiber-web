@@ -34,7 +34,7 @@ export default ({ setIsClosed }: AnimationProps) => {
     return () => {
       ctx.kill();
     };
-  }, []);
+  }, [setIsClosed]);
 
   return { sectionRef };
 };

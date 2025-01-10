@@ -14,16 +14,19 @@ export default ({ duration, isActive }: { duration: number; isActive: boolean })
   }, [duration]);
 
   useEffect(() => {
+    const progressNode = progressRef.current; // Copy ref to a variable
     if (!isActive) {
-      gsap.killTweensOf(progressRef.current);
-      gsap.set(progressRef.current, { width: "0%" });
+      gsap.killTweensOf(progressNode);
+      gsap.set(progressNode, { width: "0%" });
       return;
     }
 
     resetAnimation();
 
     return () => {
-      gsap.killTweensOf(progressRef.current);
+      if (progressNode) {
+        gsap.killTweensOf(progressNode);
+      }
     };
   }, [isActive, duration, resetAnimation]);
 

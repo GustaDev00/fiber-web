@@ -8,13 +8,12 @@ export default () => {
   const isDev = process.env.NODE_ENV === "development";
   const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
 
-  // Configurações dos markers
-  const markerSettings =
-    isDev && markersEnabled
-      ? { startColor: "yelllow", endColor: "yelllow", fontSize: "12px", indent: 20 }
-      : false; // Em produção, desativa os markers
-
   useEffect(() => {
+    const markerSettings =
+      isDev && markersEnabled
+        ? { startColor: "yelllow", endColor: "yelllow", fontSize: "12px", indent: 20 }
+        : false;
+
     const element = sectionRef.current;
 
     ScrollTrigger.create({
@@ -28,7 +27,7 @@ export default () => {
       markers: markerSettings,
       id: "Process",
     });
-  }, []);
+  }, [isDev, markersEnabled]);
 
   return { sectionRef, isInView };
 };

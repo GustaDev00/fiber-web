@@ -17,6 +17,29 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
     setPercentage(0);
   }, []);
 
+  const getBackgroundImages = useCallback((): string[] => {
+    const array: string[] = [];
+    const backgroundElements = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-lazy="false"]'),
+    );
+
+    backgroundElements.forEach((bg) => {
+      const styles = [
+        bg.style.backgroundImage,
+        window.getComputedStyle(bg, ":before").backgroundImage,
+        window.getComputedStyle(bg, ":after").backgroundImage,
+      ];
+
+      styles.forEach((style) => {
+        if (style && style !== "none") {
+          array.push(extractImageUrl(style));
+        }
+      });
+    });
+
+    return array;
+  }, []);
+
   const handleRouteChangeComplete = useCallback(() => {
     const images = Array.from(document.querySelectorAll<HTMLImageElement>('img[loading="eager"]'));
     const videos = Array.from(document.querySelectorAll<HTMLVideoElement>("video:not(.lazy)"));
@@ -61,30 +84,7 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
     });
 
     threeDModels.forEach((model) => attachLoadEvent(model, "load", false));
-  }, []);
-
-  const getBackgroundImages = useCallback((): string[] => {
-    const array: string[] = [];
-    const backgroundElements = Array.from(
-      document.querySelectorAll<HTMLElement>('[data-lazy="false"]'),
-    );
-
-    backgroundElements.forEach((bg) => {
-      const styles = [
-        bg.style.backgroundImage,
-        window.getComputedStyle(bg, ":before").backgroundImage,
-        window.getComputedStyle(bg, ":after").backgroundImage,
-      ];
-
-      styles.forEach((style) => {
-        if (style && style !== "none") {
-          array.push(extractImageUrl(style));
-        }
-      });
-    });
-
-    return array;
-  }, []);
+  }, [getBackgroundImages]);
 
   useEffect(() => {
     handleRouteChangeComplete();
@@ -92,7 +92,13 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
     return () => {
       handleRouteChangeStart();
     };
-  }, [pathname, searchParams, handleRouteChangeComplete, handleRouteChangeStart]);
+  }, [
+    pathname,
+    searchParams,
+    handleRouteChangeComplete,
+    handleRouteChangeStart,
+    getBackgroundImages,
+  ]);
 
   return percentage;
 };
