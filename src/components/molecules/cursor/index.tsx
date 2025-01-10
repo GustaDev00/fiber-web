@@ -55,6 +55,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
       gsap.to(innerDotRef.current, { duration: 0.01, repeat: -1, onRepeat: updateInnerDot });
 
       interactiveElements.forEach((element) => {
+        console.log("interactiveElements.forEach");
         element.addEventListener("mouseenter", handleMouseEnter as EventListener);
         element.addEventListener("mouseleave", handleMouseLeave);
       });
