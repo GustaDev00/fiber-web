@@ -13,10 +13,8 @@ export default () => {
 
       const tl = gsap.timeline({ paused: true });
       const Title = ref.current.querySelector("h1");
-      const Img = ref.current.querySelector("article img");
-      const Scroll = ref.current.querySelector(
-        `[data-fs-animation-scroll="true"]`,
-      );
+      const Img = ref.current.querySelector("[data-fs-object='true']");
+      const Scroll = ref.current.querySelector(`[data-fs-animation-scroll="true"]`);
       const Text = ref.current.querySelector("p");
       const Link = ref.current.querySelector("a");
 

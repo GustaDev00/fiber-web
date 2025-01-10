@@ -12,6 +12,7 @@ import Nav from "@/shared/nav";
 import { Menu } from "@/shared/menu";
 import { Footer } from "@/shared/footer";
 import { Loading } from "@/components/molecules/loading";
+import { SmoothScroll } from "@/components/atoms/smooth-scroll";
 
 const RootLayout = ({
   children,
@@ -50,6 +51,7 @@ const RootLayout = ({
             </Suspense>
           </ThemeProvider>
         </StyledComponentsRegistry>
+        <SmoothScroll />
       </body>
     </html>
   );
