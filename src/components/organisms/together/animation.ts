@@ -21,7 +21,6 @@ export default () => {
 
       const section = sectionRef.current;
       const Title = section.querySelector("h2");
-      const SliderLogo = section.querySelector("[data-timeline='slilder-logo']");
       const Logos = section.querySelectorAll("[data-timeline='bgList']");
 
       const tl = gsap.timeline({
@@ -49,18 +48,7 @@ export default () => {
         }
       }
 
-      if (Logos.length > 0 && SliderLogo) {
-        tl.from(
-          SliderLogo,
-          {
-            x: 100,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=1",
-        );
-
+      if (Logos.length > 0) {
         Logos.forEach((logo) => {
           const LogoWidth = logo.scrollWidth;
 

@@ -18,7 +18,7 @@ export const Together = () => {
         <S.SliderLogo data-timeline="slilder-logo">
           <S.BgList data-timeline="bgList">
             {logos.map((bg, index) => (
-              <S.Logo key={index} {...bg} data-timeline={`logo`} />
+              <S.Logo notLazy={true} key={index} {...bg} data-timeline={`logo`} />
             ))}
           </S.BgList>
           <S.BgList data-timeline="bgList">
