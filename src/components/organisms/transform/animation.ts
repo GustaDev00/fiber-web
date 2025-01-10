@@ -9,13 +9,13 @@ export default () => {
   const isDev = process.env.NODE_ENV === "development";
   const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
 
-  // Configurações dos markers
-  const markerSettings =
-    isDev && markersEnabled
-      ? { startColor: "blue", endColor: "blue", fontSize: "12px", indent: 20 }
-      : false;
-
   useEffect(() => {
+    // Configurações dos markers
+    const markerSettings =
+      isDev && markersEnabled
+        ? { startColor: "blue", endColor: "blue", fontSize: "12px", indent: 20 }
+        : false;
+
     const ctx = gsap.context(() => {
       if (!sectionRef.current) return;
 
@@ -87,7 +87,7 @@ export default () => {
     return () => {
       ctx.kill();
     };
-  }, []);
+  }, [isDev, markersEnabled]);
 
   return { sectionRef };
 };

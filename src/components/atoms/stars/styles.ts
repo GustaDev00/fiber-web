@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { lazy, Suspense as _Suspense } from "react";
 import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Star = styled.div`
@@ -38,10 +37,6 @@ export const SplineWrapper = styled.div`
     height: 64rem !important;
   }
 `;
-
-export const Spline = lazy(() => import("@splinetool/react-spline"));
-
-export const Suspense = _Suspense;
 
 export const Loading = styled.div`
   display: flex;

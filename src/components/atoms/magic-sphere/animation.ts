@@ -1,21 +1,20 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const useAnimation = (isLoaded: boolean) => {
+const useAnimation = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // Verifica o ambiente
   const isDev = process.env.NODE_ENV === "development";
   const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
 
-  // Configurações dos markers
-  const markerSettings =
-    isDev && markersEnabled
-      ? { startColor: "yellow", endColor: "yellow", fontSize: "12px", indent: 20 }
-      : false; // Em produção, desativa os markers
-
   useEffect(() => {
-    if (isLoaded && wrapperRef.current) {
+    const markerSettings =
+      isDev && markersEnabled
+        ? { startColor: "yellow", endColor: "yellow", fontSize: "12px", indent: 20 }
+        : false; // Em produção, desativa os markers
+
+    if (wrapperRef.current) {
       const animation = gsap.fromTo(
         wrapperRef.current,
         { opacity: 0 },
@@ -38,7 +37,7 @@ const useAnimation = (isLoaded: boolean) => {
         animation.kill();
       };
     }
-  }, [isLoaded]);
+  }, [isDev, markersEnabled]);
 
   return { wrapperRef };
 };

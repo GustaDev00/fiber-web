@@ -2,7 +2,7 @@
 
 import { type FC } from "react";
 import Header from "./header";
-import { Clients } from "@/components/organisms/Clients";
+import { Clients } from "@/components/molecules/clients";
 import { Philosofie } from "@/components/organisms/philosofie";
 import { Vision } from "@/components/organisms/vision";
 import { Together } from "@/components/organisms/together";

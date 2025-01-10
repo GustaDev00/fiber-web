@@ -9,13 +9,12 @@ export default () => {
   const isDev = process.env.NODE_ENV === "development";
   const markersEnabled = process.env.NEXT_PUBLIC_MARKERS_ENABLED === "true";
 
-  // Configurações dos markers
-  const markerSettings =
-    isDev && markersEnabled
-      ? { startColor: "purple", endColor: "purple", fontSize: "12px", indent: 20 }
-      : false; // Em produção, desativa os markers
-
   useEffect(() => {
+    const markerSettings =
+      isDev && markersEnabled
+        ? { startColor: "purple", endColor: "purple", fontSize: "12px", indent: 20 }
+        : false; // Em produção, desativa os markers
+
     const element = ref.current;
 
     ScrollTrigger.create({
@@ -29,7 +28,7 @@ export default () => {
       markers: markerSettings,
       id: "slider-card-animation",
     });
-  }, []);
+  }, [isDev, markersEnabled]);
 
   return {
     ref,

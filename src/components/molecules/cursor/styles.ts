@@ -1,15 +1,16 @@
 import styled, { css } from "styled-components";
 
-export const Dot = styled.div`
-  opacity: 1;
-  visibility: visible;
-  position: relative;
+export const Dot = styled.div<{ $type?: string | null }>`
+  opacity: ${({ $type }) => ($type !== null ? 0 : 1)};
+  visibility: ${({ $type }) => ($type !== null ? "hidden" : "visible")};
+  position: fixed;
   width: 1rem;
   height: 1rem;
   background: #29ff27;
   border-radius: 50%;
   box-shadow: 0 0 0.5rem rgba(43, 178, 42, 0.45), 0 0 1rem rgba(43, 178, 42, 0.25);
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  transform: translate(-50%, -50%) !important;
 `;
 
 export const Image = styled.div<{ $src: string }>`
@@ -74,7 +75,7 @@ export const Project = styled.div`
 `;
 
 export const Cursor = styled.div<{ $type?: string | null; $images?: string[] }>`
-  opacity: 0;
+  opacity: 1;
   width: 6rem;
   height: 6rem;
   border: 0.2rem solid #ffffff26;

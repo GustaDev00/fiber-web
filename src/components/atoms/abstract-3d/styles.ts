@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lazy, Suspense as _Suspense } from "react";
+import { Suspense as _Suspense } from "react";
 import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Abstract = styled.div`
@@ -47,8 +47,6 @@ export const SplineWrapper = styled.div`
     `}
   }
 `;
-
-export const Spline = lazy(() => import("@splinetool/react-spline"));
 
 export const Suspense = _Suspense;
 

@@ -19,7 +19,7 @@ export default () => {
         <S.Content>
           <S.Article>
             <S.Title>{title}</S.Title>
-            <Abstract />
+            <Abstract data-fs-object />
           </S.Article>
           <S.Scroll />
           <S.Description>

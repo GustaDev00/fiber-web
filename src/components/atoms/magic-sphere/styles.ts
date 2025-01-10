@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lazy, Suspense as _Suspense } from "react";
+import { Suspense as _Suspense } from "react";
 import { mediaMaxWidth } from "@/utils/media-query";
 
 export const Magic = styled.div`
@@ -50,8 +50,6 @@ export const SplineWrapper = styled.div`
     height: 54rem !important;
   }
 `;
-
-export const Spline = lazy(() => import("@splinetool/react-spline"));
 
 export const Suspense = _Suspense;
 
