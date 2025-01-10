@@ -14,9 +14,7 @@ export default () => {
       const tl = gsap.timeline({ paused: true });
       const Title = ref.current.querySelector("h1");
       const Img = ref.current.querySelector("article img");
-      const Scroll = ref.current.querySelector(
-        `[data-fs-animation-scroll="true"]`,
-      );
+      const Scroll = ref.current.querySelector(`[data-fs-animation-scroll="true"]`);
       const Text = ref.current.querySelector("p");
       const Link = ref.current.querySelector("a");
 
@@ -32,10 +30,18 @@ export default () => {
         }
       }
 
-      tl.from(Img, { x: 50, opacity: 0, duration: 1 }, "-=0.5")
-        .from(Scroll, { y: 100, opacity: 0, duration: 1 }, "-=0.9")
-        .from(Text, { y: 100, opacity: 0, duration: 1 }, "-=0.9")
-        .from(Link, { y: 100, opacity: 0, duration: 1 }, "-=0.9");
+      if (Img) {
+        tl.from(Img, { x: 50, opacity: 0, duration: 1 }, "-=0.5");
+      }
+      if (Scroll) {
+        tl.from(Scroll, { y: 100, opacity: 0, duration: 1 }, "-=0.9");
+      }
+      if (Text) {
+        tl.from(Text, { y: 100, opacity: 0, duration: 1 }, "-=0.9");
+      }
+      if (Link) {
+        tl.from(Link, { y: 100, opacity: 0, duration: 1 }, "-=0.9");
+      }
 
       if (progress) {
         gsap.delayedCall(1.3, () => tl.play());

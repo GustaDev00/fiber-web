@@ -1,25 +1,26 @@
 import * as S from "./styles";
 import useAnimation from "./animation";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
+import { Application } from "@splinetool/runtime";
 
 export const MagicSphere = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const { wrapperRef } = useAnimation(isLoaded);
+  const Canvas = useRef<HTMLCanvasElement>(null);
+  const { wrapperRef } = useAnimation();
 
-  const handleLoad = () => {
-    setIsLoaded(true);
-  };
+  useEffect(() => {
+    if (Canvas.current) {
+      const spline = new Application(Canvas.current);
+      spline.load("https://prod.spline.design/ejJaRlQiCHqjXKtH/scene.splinecode").then(() => {
+        spline.play();
+      });
+    }
+  }, [Canvas]);
 
   return (
     <S.Magic>
       <S.Wrapper ref={wrapperRef}>
         <S.SplineWrapper>
-          <S.Suspense>
-            <S.Spline
-              scene="https://prod.spline.design/ejJaRlQiCHqjXKtH/scene.splinecode"
-              onLoad={handleLoad}
-            />
-          </S.Suspense>
+          <canvas ref={Canvas}></canvas>
         </S.SplineWrapper>
       </S.Wrapper>
     </S.Magic>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const useAnimation = (isLoaded: boolean) => {
+const useAnimation = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // Verifica o ambiente
@@ -14,7 +14,7 @@ const useAnimation = (isLoaded: boolean) => {
         ? { startColor: "yellow", endColor: "yellow", fontSize: "12px", indent: 20 }
         : false; // Em produção, desativa os markers
 
-    if (isLoaded && wrapperRef.current) {
+    if (wrapperRef.current) {
       const animation = gsap.fromTo(
         wrapperRef.current,
         { opacity: 0 },
@@ -37,7 +37,7 @@ const useAnimation = (isLoaded: boolean) => {
         animation.kill();
       };
     }
-  }, [isLoaded, isDev, markersEnabled]);
+  }, [isDev, markersEnabled]);
 
   return { wrapperRef };
 };

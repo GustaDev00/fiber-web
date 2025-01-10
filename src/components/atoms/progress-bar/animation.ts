@@ -5,19 +5,23 @@ export default ({ duration, isActive }: { duration: number; isActive: boolean })
   const progressRef = useRef<HTMLDivElement>(null);
 
   const resetAnimation = useCallback(() => {
-    gsap.to(progressRef.current, {
-      width: "100%",
-      duration,
-      ease: "linear",
-      onComplete: resetAnimation,
-    });
+    if (progressRef.current) {
+      gsap.to(progressRef.current, {
+        width: "100%",
+        duration,
+        ease: "linear",
+        onComplete: resetAnimation,
+      });
+    }
   }, [duration]);
 
   useEffect(() => {
-    const progressNode = progressRef.current; // Copy ref to a variable
+    const progressNode = progressRef.current;
     if (!isActive) {
-      gsap.killTweensOf(progressNode);
-      gsap.set(progressNode, { width: "0%" });
+      if (progressNode) {
+        gsap.killTweensOf(progressNode);
+        gsap.set(progressNode, { width: "0%" });
+      }
       return;
     }
 
