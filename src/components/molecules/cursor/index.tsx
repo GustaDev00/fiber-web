@@ -31,6 +31,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
 
   useEffect(() => {
     const interactiveElements = document.querySelectorAll<HTMLElement>("a, button, [data-fs-link]");
+    console.log("interactiveElements", interactiveElements);
 
     const ctx = gsap.context(() => {
       let posX = 0,
