@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
+import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 import * as S from "./styles";
@@ -14,73 +14,71 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
   const [linkType, setLinkType] = useState<string | null>(null);
   const { items } = C.services;
 
+  const handleMouseEnter = useCallback((event: MouseEvent) => {
+    console.log("function handleMouseEnter");
+    const target = event.target as HTMLElement;
+    const linkType = target.getAttribute("data-fs-link");
+    if (linkType) {
+      console.log("linkType", linkType);
+      setLinkType(linkType);
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    console.log("function handleMouseLeave");
+    setLinkType(null);
+  }, []);
+
   useEffect(() => {
-    const handleMouseEnter = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-
-      if (target) {
-        setLinkType(target.getAttribute("data-fs-link"));
-      }
-    };
-
-    const handleMouseLeave = () => {
-      setLinkType(null);
-    };
     const ctx = gsap.context(() => {
-      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
+      const interactiveElements = document.querySelectorAll<HTMLElement>(
+        "a, button, [data-fs-link]",
+      );
       let posX = 0,
         posY = 0;
-
       let mouseX = 0,
         mouseY = 0;
 
-      gsap.to(cursorRef.current, {
-        duration: 0.018,
-        repeat: -1,
-        onRepeat: function () {
-          posX += (mouseX - posX) / 400;
-          posY += (mouseY - posY) / 400;
+      const updateCursor = () => {
+        posX += (mouseX - posX) / 400;
+        posY += (mouseY - posY) / 400;
+        gsap.set(cursorRef.current, { css: { left: posX - 1, top: posY - 2 } });
+      };
 
-          gsap.set(cursorRef.current, {
-            css: {
-              left: posX - 1,
-              top: posY - 2,
-            },
-          });
-        },
-      });
+      const updateInnerDot = () => {
+        posX += (mouseX - posX) / 2;
+        posY += (mouseY - posY) / 2;
+        gsap.set(innerDotRef.current, { css: { left: posX - 1, top: posY - 2 } });
+      };
 
-      gsap.to(innerDotRef.current, {
-        duration: 0.01,
-        repeat: -1,
-        onRepeat: function () {
-          posX += (mouseX - posX) / 2;
-          posY += (mouseY - posY) / 2;
+      gsap.to(cursorRef.current, { duration: 0.018, repeat: -1, onRepeat: updateCursor });
+      gsap.to(innerDotRef.current, { duration: 0.01, repeat: -1, onRepeat: updateInnerDot });
 
-          gsap.set(innerDotRef.current, {
-            css: {
-              left: posX - 1,
-              top: posY - 2,
-            },
-          });
-        },
-      });
-
-      interactiveElements.forEach((element: Element) => {
+      interactiveElements.forEach((element) => {
         element.addEventListener("mouseenter", handleMouseEnter as EventListener);
         element.addEventListener("mouseleave", handleMouseLeave);
       });
 
-      document.addEventListener("mousemove", (e) => {
+      const handleMouseMove = (e: MouseEvent) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-      });
+      };
+
+      document.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        interactiveElements.forEach((element) => {
+          element.removeEventListener("mouseenter", handleMouseEnter as EventListener);
+          element.removeEventListener("mouseleave", handleMouseLeave);
+        });
+        document.removeEventListener("mousemove", handleMouseMove);
+      };
     });
 
     return () => {
       ctx.kill();
     };
-  }, []);
+  }, [handleMouseEnter, handleMouseLeave]);
 
   return (
     <>
@@ -90,7 +88,6 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
         {items.map(({ img }) => (
           <S.Image data-fs-image={img.alt} key={img.alt} $src={img.src} />
         ))}
-
         <S.Site>
           Webseite
           <br />
@@ -111,7 +108,6 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
             />
           </svg>
         </S.Site>
-
         <S.Services>
           Dienst
           <br />
@@ -132,7 +128,6 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
             />
           </svg>
         </S.Services>
-
         <S.Project>
           Projekt
           <br />

@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   compiler: {
     styledComponents: true,
-    removeConsole: true,
+    // removeConsole: true,
   },
   assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX,
   trailingSlash: true,

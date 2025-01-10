@@ -52,7 +52,6 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
 
     if (mediaCount === 0) {
       setPercentage(1);
-      console.log("Percentage: 100%");
       return;
     }
 
@@ -62,7 +61,6 @@ export const useRouterLoadingHandler: RouterLoadingHandler = () => {
       loadedMedia++;
       const newPercentage = loadedMedia / mediaCount;
       setPercentage(newPercentage);
-      console.log(`Percentage: ${Math.round(newPercentage * 100)}%`);
     };
 
     const attachLoadEvent = (element: HTMLElement, event: string, isLoaded: boolean) => {
