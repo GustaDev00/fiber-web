@@ -68,19 +68,18 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
         },
       });
 
-      // interactiveElements.forEach((element: Element) => {
-      //   element.addEventListener("mouseenter", handleMouseEnter as EventListener);
-      //   element.addEventListener("mouseleave", handleMouseLeave);
-      // });
+      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
+
+      interactiveElements.forEach((element: Element) => {
+        element.addEventListener("mouseenter", handleMouseEnter as EventListener);
+        element.addEventListener("mouseleave", handleMouseLeave);
+      });
 
       document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
       });
     });
-
-    const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
-    console.log(interactiveElements, "teste");
 
     return () => {
       ctx.kill();
