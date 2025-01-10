@@ -1,7 +1,7 @@
 "use client";
 
 import { type FC } from "react";
-import { Clients } from "@/components/organisms/Clients";
+import { Clients } from "@/components/organisms/clients";
 import { Together } from "@/components/organisms/together";
 import { Transform } from "@/components/organisms/transform";
 import { Header } from "@/components/organisms/header";

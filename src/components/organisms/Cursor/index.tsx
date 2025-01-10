@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
+import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 import * as S from "./styles";
@@ -11,109 +11,83 @@ interface CursorProps {
 export const Cursor: FC<CursorProps> = ({ children }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const innerDotRef = useRef<HTMLDivElement>(null);
-  const [, setIsLink] = useState(false);
   const [linkType, setLinkType] = useState<string | null>(null);
   const { items } = C.services;
 
-  const lastX = useRef(0);
-  const lastY = useRef(0);
+  const handleMouseEnter = useCallback((event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+
+    if (target) {
+      setLinkType(target.getAttribute("data-fs-link"));
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setLinkType(null);
+  }, []);
 
   useEffect(() => {
-    const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
+    const ctx = gsap.context(() => {
+      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
+      let posX = 0,
+        posY = 0;
 
-    const handleMouseEnter = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (target) {
-        console.log("caiu aqui dentro", target.getAttribute("data-fs-link"));
-        setIsLink(true);
-        setLinkType(target.getAttribute("data-fs-link"));
-      }
-    };
+      let mouseX = 0,
+        mouseY = 0;
 
-    const handleMouseLeave = () => {
-      setIsLink(false);
-      setLinkType(null);
-    };
+      gsap.to(cursorRef.current, {
+        duration: 0.018,
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 400;
+          posY += (mouseY - posY) / 400;
 
-    const handleMouseMove = (event: MouseEvent) => {
-      if (cursorRef.current) {
-        const { clientX, clientY } = event;
-        gsap.to(cursorRef.current, {
-          opacity: 1,
-          duration: 0,
-          left: clientX,
-          top: clientY,
-        });
+          gsap.set(cursorRef.current, {
+            css: {
+              left: posX - 1,
+              top: posY - 2,
+            },
+          });
+        },
+      });
 
-        const deltaX = clientX - lastX.current;
-        const deltaY = clientY - lastY.current;
+      gsap.to(innerDotRef.current, {
+        duration: 0.01,
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 2;
+          posY += (mouseY - posY) / 2;
 
-        const translateX = Math.max(-20, Math.min(20, deltaX / 1));
-        const translateY = Math.max(-20, Math.min(20, deltaY / 1));
+          gsap.set(innerDotRef.current, {
+            css: {
+              left: posX - 1,
+              top: posY - 2,
+            },
+          });
+        },
+      });
 
-        gsap.to(innerDotRef.current, {
-          x: translateX,
-          y: translateY,
-          duration: 0.1,
-          ease: "power2.out",
-        });
+      interactiveElements.forEach((element: Element) => {
+        element.addEventListener("mouseenter", handleMouseEnter as EventListener);
+        element.addEventListener("mouseleave", handleMouseLeave);
+      });
 
-        lastX.current = clientX;
-        lastY.current = clientY;
-
-        gsap.to(innerDotRef.current, {
-          x: 0,
-          y: 0,
-          delay: 0.3,
-          duration: 0.3,
-          ease: "elastic.out(1, 0.3)",
-        });
-      }
-    };
-
-    const handleMouseLeaveWindow = () => {
-      if (cursorRef.current) {
-        gsap.to(cursorRef.current, { opacity: 0, duration: 0.1 });
-      }
-    };
-
-    const handleMouseEnterWindow = () => {
-      if (cursorRef.current) {
-        gsap.to(cursorRef.current, { opacity: 1 });
-      }
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeaveWindow);
-    document.addEventListener("mouseenter", handleMouseEnterWindow);
-
-    interactiveElements.forEach((element: Element) => {
-      element.addEventListener("mouseenter", handleMouseEnter as EventListener);
-      element.addEventListener("mouseleave", handleMouseLeave);
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
     });
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeaveWindow);
-      document.removeEventListener("mouseenter", handleMouseEnterWindow);
-
-      interactiveElements.forEach((element: Element) => {
-        element.removeEventListener("mouseenter", handleMouseEnter as EventListener);
-        element.removeEventListener("mouseleave", handleMouseLeave);
-      });
-
-      // Cleanup gsap animations
-      gsap.killTweensOf(cursorRef.current);
-      gsap.killTweensOf(innerDotRef.current);
+      ctx.kill();
     };
   }, []);
 
   return (
     <>
       {children}
+      <S.Dot ref={innerDotRef} $type={linkType} />
       <S.Cursor ref={cursorRef} $type={linkType} $images={items.map(({ img }) => img.alt)}>
-        <S.Dot ref={innerDotRef} />
-
         {items.map(({ img }) => (
           <S.Image data-fs-image={img.alt} key={img.alt} $src={img.src} />
         ))}
