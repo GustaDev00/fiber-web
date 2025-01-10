@@ -19,10 +19,14 @@ function convertToWebp(directory) {
         if (/\.(jpe?g|png)$/i.test(entry.name)) {
           const outputFilePath = path.join(directory, `${path.parse(entry.name).name}.webp`);
 
-          sharp(entryPath)
-            .toFile(outputFilePath)
-            .then(() => console.log(`${entry.name} convertido para WEBP`))
-            .catch((err) => console.error("Erro ao converter arquivo", entry.name, err));
+          fs.access(outputFilePath, fs.constants.F_OK, (err) => {
+            if (err) {
+              sharp(entryPath)
+                .toFile(outputFilePath)
+                .then(() => console.log(`${entry.name} convertido para WEBP`))
+                .catch((err) => console.error("Erro ao converter arquivo", entry.name, err));
+            }
+          });
         }
       }
     });
