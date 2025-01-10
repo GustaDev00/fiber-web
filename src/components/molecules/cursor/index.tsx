@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 import * as S from "./styles";
@@ -14,19 +14,18 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
   const [linkType, setLinkType] = useState<string | null>(null);
   const { items } = C.services;
 
-  const handleMouseEnter = useCallback((event: MouseEvent) => {
-    const target = event.target as HTMLElement;
-
-    if (target) {
-      setLinkType(target.getAttribute("data-fs-link"));
-    }
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setLinkType(null);
-  }, []);
-
   useEffect(() => {
+    const handleMouseEnter = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      if (target) {
+        setLinkType(target.getAttribute("data-fs-link"));
+      }
+    };
+
+    const handleMouseLeave = () => {
+      setLinkType(null);
+    };
     const ctx = gsap.context(() => {
       const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
       let posX = 0,
@@ -81,7 +80,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
     return () => {
       ctx.kill();
     };
-  }, [handleMouseEnter, handleMouseLeave]);
+  }, []);
 
   return (
     <>
