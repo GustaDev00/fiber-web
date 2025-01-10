@@ -17,68 +17,70 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
   const { items } = C.services;
 
   const handleMouseEnter = useCallback((event: MouseEvent) => {
-    console.log("function handleMouseEnter");
     const target = event.target as HTMLElement;
-    const linkType = target.getAttribute("data-fs-link");
-    if (linkType) {
-      console.log("linkType", linkType);
-      setLinkType(linkType);
+
+    if (target) {
+      setLinkType(target.getAttribute("data-fs-link"));
     }
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    console.log("function handleMouseLeave");
     setLinkType(null);
   }, []);
 
   useEffect(() => {
-    const interactiveElements = document.querySelectorAll<HTMLElement>("a, button, [data-fs-link]");
-    console.log("interactiveElements", interactiveElements);
-
     const ctx = gsap.context(() => {
+      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
       let posX = 0,
         posY = 0;
+
       let mouseX = 0,
         mouseY = 0;
 
-      const updateCursor = () => {
-        posX += (mouseX - posX) / 400;
-        posY += (mouseY - posY) / 400;
-        gsap.set(cursorRef.current, { css: { left: posX - 1, top: posY - 2 } });
-      };
+      gsap.to(cursorRef.current, {
+        duration: 0.018,
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 400;
+          posY += (mouseY - posY) / 400;
 
-      const updateInnerDot = () => {
-        posX += (mouseX - posX) / 2;
-        posY += (mouseY - posY) / 2;
-        gsap.set(innerDotRef.current, { css: { left: posX - 1, top: posY - 2 } });
-      };
+          gsap.set(cursorRef.current, {
+            css: {
+              left: posX - 1,
+              top: posY - 2,
+            },
+          });
+        },
+      });
 
-      gsap.to(cursorRef.current, { duration: 0.018, repeat: -1, onRepeat: updateCursor });
-      gsap.to(innerDotRef.current, { duration: 0.01, repeat: -1, onRepeat: updateInnerDot });
+      gsap.to(innerDotRef.current, {
+        duration: 0.01,
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 2;
+          posY += (mouseY - posY) / 2;
 
-      const handleMouseMove = (e: MouseEvent) => {
+          gsap.set(innerDotRef.current, {
+            css: {
+              left: posX - 1,
+              top: posY - 2,
+            },
+          });
+        },
+      });
+
+      interactiveElements.forEach((element: Element) => {
+        element.addEventListener("mouseenter", handleMouseEnter as EventListener);
+        element.addEventListener("mouseleave", handleMouseLeave);
+      });
+
+      document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-      };
-
-      document.addEventListener("mousemove", handleMouseMove);
-
-      return () => {
-        document.removeEventListener("mousemove", handleMouseMove);
-      };
-    });
-
-    interactiveElements.forEach((element) => {
-      console.log("interactiveElements.forEach");
-      element.addEventListener("mouseenter", handleMouseEnter);
-      element.addEventListener("mouseleave", handleMouseLeave);
+      });
     });
 
     return () => {
-      interactiveElements.forEach((element) => {
-        element.removeEventListener("mouseenter", handleMouseEnter);
-        element.removeEventListener("mouseleave", handleMouseLeave);
-      });
       ctx.kill();
     };
   }, [handleMouseEnter, handleMouseLeave]);
@@ -91,6 +93,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
         {items.map(({ img }) => (
           <S.Image data-fs-image={img.alt} key={img.alt} $src={img.src} />
         ))}
+
         <S.Site>
           Webseite
           <br />
@@ -111,6 +114,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
             />
           </svg>
         </S.Site>
+
         <S.Services>
           Dienst
           <br />
@@ -131,6 +135,7 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
             />
           </svg>
         </S.Services>
+
         <S.Project>
           Projekt
           <br />
