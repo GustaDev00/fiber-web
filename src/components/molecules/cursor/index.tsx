@@ -30,7 +30,6 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
       let posX = 0,
         posY = 0;
 
@@ -68,6 +67,8 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
           });
         },
       });
+
+      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
 
       interactiveElements.forEach((element: Element) => {
         element.addEventListener("mouseenter", handleMouseEnter as EventListener);
