@@ -30,10 +30,9 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    const interactiveElements = document.querySelectorAll<HTMLElement>("a, button, [data-fs-link]");
+
     const ctx = gsap.context(() => {
-      const interactiveElements = document.querySelectorAll<HTMLElement>(
-        "a, button, [data-fs-link]",
-      );
       let posX = 0,
         posY = 0;
       let mouseX = 0,
@@ -54,12 +53,6 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
       gsap.to(cursorRef.current, { duration: 0.018, repeat: -1, onRepeat: updateCursor });
       gsap.to(innerDotRef.current, { duration: 0.01, repeat: -1, onRepeat: updateInnerDot });
 
-      interactiveElements.forEach((element) => {
-        console.log("interactiveElements.forEach");
-        element.addEventListener("mouseenter", handleMouseEnter as EventListener);
-        element.addEventListener("mouseleave", handleMouseLeave);
-      });
-
       const handleMouseMove = (e: MouseEvent) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
@@ -68,15 +61,21 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
       document.addEventListener("mousemove", handleMouseMove);
 
       return () => {
-        interactiveElements.forEach((element) => {
-          element.removeEventListener("mouseenter", handleMouseEnter as EventListener);
-          element.removeEventListener("mouseleave", handleMouseLeave);
-        });
         document.removeEventListener("mousemove", handleMouseMove);
       };
     });
 
+    interactiveElements.forEach((element) => {
+      console.log("interactiveElements.forEach");
+      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseleave", handleMouseLeave);
+    });
+
     return () => {
+      interactiveElements.forEach((element) => {
+        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseleave", handleMouseLeave);
+      });
       ctx.kill();
     };
   }, [handleMouseEnter, handleMouseLeave]);
