@@ -24,33 +24,31 @@ const RootLayout = ({
       <body className={fontNames}>
         <StyledComponentsRegistry>
           <ThemeProvider theme={theme}>
-            <Cursor>
-              <GlobalStyles />
-              <GSAPInitializer />
-              <Suspense
-                fallback={
-                  <div
-                    style={{
-                      width: "100vw",
-                      height: "100vh",
-                      background: "#000",
-                      position: "fixed",
-                      top: 0,
-                      left: 0,
-                      zIndex: 9999,
-                    }}
-                  ></div>
-                }
-              >
-                <Loading />
-                <main>
-                  <Nav />
-                  {children}
-                  <Menu />
-                  <Footer />
-                </main>
-              </Suspense>
-            </Cursor>
+            <GlobalStyles />
+            <GSAPInitializer />
+            <Suspense
+              fallback={
+                <div
+                  style={{
+                    width: "100vw",
+                    height: "100vh",
+                    background: "#000",
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    zIndex: 9999,
+                  }}
+                ></div>
+              }
+            >
+              <Loading />
+              <main>
+                <Nav />
+                <Cursor>{children}</Cursor>
+                <Menu />
+                <Footer />
+              </main>
+            </Suspense>
           </ThemeProvider>
         </StyledComponentsRegistry>
         <SmoothScroll />
