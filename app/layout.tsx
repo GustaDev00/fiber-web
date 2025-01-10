@@ -7,7 +7,7 @@ import { StyledComponentsRegistry } from "@/lib/registry";
 import { theme } from "@/styles/theme";
 import { GlobalStyles } from "@/styles/global";
 import { GSAPInitializer } from "@/components/atoms/gsap-initializer";
-import { Cursor } from "@/components/organisms/cursor";
+import { Cursor } from "@/components/molecules/cursor";
 import Nav from "@/shared/nav";
 import { Menu } from "@/shared/menu";
 import { Footer } from "@/shared/footer";

@@ -18,7 +18,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["react-icons/*"],
     nextScriptWorkers: true,
-    forceSwcTransforms: true,
   },
 };
 
