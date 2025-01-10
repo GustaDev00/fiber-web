@@ -68,18 +68,19 @@ export const Cursor: FC<CursorProps> = ({ children }) => {
         },
       });
 
-      const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
-
-      interactiveElements.forEach((element: Element) => {
-        element.addEventListener("mouseenter", handleMouseEnter as EventListener);
-        element.addEventListener("mouseleave", handleMouseLeave);
-      });
+      // interactiveElements.forEach((element: Element) => {
+      //   element.addEventListener("mouseenter", handleMouseEnter as EventListener);
+      //   element.addEventListener("mouseleave", handleMouseLeave);
+      // });
 
       document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
       });
     });
+
+    const interactiveElements = document.querySelectorAll<HTMLElement>("a, button");
+    console.log(interactiveElements, "teste");
 
     return () => {
       ctx.kill();
