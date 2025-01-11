@@ -38,6 +38,7 @@ export const VideoFloat = () => {
         </S.Close>
       </S.Controls>
       <S.Video ref={videoRef} src={video.src} muted loop playsInline>
+        <source src={video.src.replace(".mp4", ".webm")} type="video/webm" />
         <source {...video} />
       </S.Video>
     </S.VideoFloat>

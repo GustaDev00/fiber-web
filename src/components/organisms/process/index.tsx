@@ -78,6 +78,7 @@ export const Process = () => {
             ))}
           </S.Slider>
           <S.Video autoPlay loop muted playsInline controls={false} preload="auto">
+            <source src={video.src.replace(".mp4", ".webm")} type="video/webm" />
             <source {...video} />
             Seu navegador não suporta vídeos.
           </S.Video>

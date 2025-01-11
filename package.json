@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "convert-medias": "node ./script/convert-to-webp.js",
+    "convert-video": "node ./script/process-video.js",
     "atoms": "node ./script/folder.js atoms",
     "molecules": "node ./script/folder.js molecules",
     "organisms": "node ./script/folder.js organisms",
     "dev": "next dev --turbopack",
-    "build": "yarn convert-medias && next build",
+    "build": "yarn convert-medias && yarn convert-video && next build",
     "analyze": "ANALYZE=true yarn build",
     "start": "next start",
     "lint": "next lint"
@@ -23,6 +24,7 @@
     "axios": "^1.7.7",
     "dat.gui": "^0.7.9",
     "dotenv": "^16.4.5",
+    "ffmpeg-static": "^5.2.0",
     "formik": "^2.4.6",
     "global": "^4.4.0",
     "gsap": "^3.12.5",

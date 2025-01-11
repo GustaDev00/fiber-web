@@ -1,5 +1,3 @@
-"use client";
-
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 

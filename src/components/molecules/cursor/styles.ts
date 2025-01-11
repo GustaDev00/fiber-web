@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Dot = styled.div<{ $type?: string | null }>`
   opacity: ${({ $type }) => ($type !== null ? 0 : 1)};
-  visibility: ${({ $type }) => ($type !== null ? "hidden" : "visible")};
+  visibility: ${({ $type }) => ($type !== null ? "visible" : "visible")};
   position: fixed;
   width: 1rem;
   height: 1rem;

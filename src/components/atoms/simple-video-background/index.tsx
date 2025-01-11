@@ -40,6 +40,7 @@ const SimpleVideoBackground = ({ src, type, fallbackImage }: SimpleVideoBackgrou
           objectFit: "cover",
         }}
       >
+        <source src={src.replace(".mp4", ".webm")} type="video/webm" />
         <source src={src} type={type} />
         Seu navegador não suporta vídeos.
       </S.Video>

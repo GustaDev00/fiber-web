@@ -12,11 +12,13 @@ export default () => {
         <S.Content>
           <S.Title>{title}</S.Title>
           <S.Video1 id="video1" autoPlay loop muted playsInline controls={false} preload="auto">
+            <source src={video1.src.replace(".mp4", ".webm")} type="video/webm" />
             <source {...video1} />
             Seu navegador não suporta vídeos.
           </S.Video1>
           <S.Container>
             <S.Video2 id="video2" autoPlay loop muted playsInline controls={false} preload="auto">
+              <source src={video2.src.replace(".mp4", ".webm")} type="video/webm" />
               <source {...video2} />
               Seu navegador não suporta vídeos.
             </S.Video2>
