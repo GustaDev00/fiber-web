@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["react-icons/*"],
     nextScriptWorkers: true,
+    turbo: {
+      resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+    },
   },
 };
 
