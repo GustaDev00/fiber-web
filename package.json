@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sitemap": "node ./script/generate-sitemap.js",
     "convert-medias": "node ./script/convert-to-webp.js",
     "convert-video": "node ./script/process-video.js",
     "atoms": "node ./script/folder.js atoms",
@@ -34,6 +35,7 @@
     "react-dom": "19.0.0-rc-69d4b800-20241021",
     "react-icons": "^5.4.0",
     "react-responsive": "^10.0.0",
+    "sitemap": "^8.0.0",
     "split-type": "^0.3.4",
     "styled-components": "^6.1.13",
     "swiper": "^11.1.15",

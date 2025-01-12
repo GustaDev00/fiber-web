@@ -64,7 +64,7 @@ export default {
     services: [
       {
         title: "Webdesign",
-        link: "/dienstleistungen/webdesign/",
+        link: "/dienstleistungen/webdesign",
       },
       {
         title: "Marketing",
