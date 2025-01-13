@@ -12,6 +12,20 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  main::before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    opacity: .05;
+    pointer-events: none;
+    background-image: url("https://cdn.prod.website-files.com/668beaea39acac73ec462b01/668bfc3c0a4e299c4b42b9ee_65847300eaee898abba0ca89_grain-slow.gif");
+    background-position: 0 0;
+    background-size: auto;
+    position: fixed;
+    z-index: -1;
+}
+
   ::-webkit-scrollbar {
     width: 0px;
     color: ${theme.black};
