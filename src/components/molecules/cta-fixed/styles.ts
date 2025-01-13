@@ -16,7 +16,7 @@ export const Modal = styled.div`
   display: flex;
   flex-direction: column;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  background: #f8f8f8;
+  background: rgba(0, 0, 0, 0.43);
   box-shadow: 0 1.2rem 1.6rem 0 rgba(0, 0, 0, 0.08);
   padding: 4.4rem 4.5rem;
 
@@ -26,7 +26,7 @@ export const Modal = styled.div`
 `;
 
 export const Text = styled.p`
-  color: ${({ theme }) => theme.titles};
+  color: ${({ theme }) => theme.primary};
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 3.55rem;

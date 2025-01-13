@@ -1,4 +1,4 @@
-import { api } from "..";
+import api from "..";
 import type { SendMailRequest } from "./request";
 import type { SendMailResponse } from "./response";
 

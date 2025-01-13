@@ -1651,13 +1651,8 @@ export default {
   ],
   blog: {
     home: {
-      title: "Blog Büro im Flow",
-      description: (
-        <>
-          Einfacher Zugang zu präzisen Ergebnissen und persönlicher
-          <CustomBr byViewport="desktop" /> Betreuung – digital, effizient und verlässlich.
-        </>
-      ),
+      title: "Blog Fiber Web",
+      description: <>Creative Webseiten Effektives Marketing Smarte KI Lösungen</>,
     },
     copy: {
       copy: "Link kopieren",
@@ -1668,9 +1663,9 @@ export default {
       title: "Neueste Artikel",
     },
     cta: {
-      title: "Mehr dazu",
+      title: "Kontakt aufnehmen",
       text: "Noch Fragen? Kontaktieren Sie uns noch heute.",
-      href: "#",
+      href: "https://web.whatsapp.com/send?phone=+41%2076%20539%2087%2050",
     },
   },
 };

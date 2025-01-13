@@ -1,15 +1,15 @@
 import "styled-components";
 
 export const theme = {
-  primary: "#3e7049",
-  titles: "#123f35",
+  primary: "#5eca83",
+  titles: "#FFF",
   descriptions: "#737373",
-  texts: "#123f35",
+  texts: "rgba(255, 255, 255, 0.8)",
   navigation: "#FFF",
-  date: "#123f35",
+  date: "#fff",
 
   header: "#123f35",
-  background: "#F2F2F2",
+  background: "#000",
 
   black: "#000",
   black01: "rgba(0, 0, 0, 0.1)",

@@ -183,7 +183,7 @@ export const Item = styled.a`
   width: fit-content;
   position: relative;
   color: #fff;
-  font-size: 4.2rem;
+  font-size: 4rem;
 
   &::before {
     content: "";

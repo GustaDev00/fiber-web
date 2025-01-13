@@ -30,17 +30,15 @@ export default () => {
               </S.HeaderModal>
               <S.MainModal>
                 <S.List>
-                  {navigation.slice(0, 1).map(({ title, href }) => (
-                    <S.Item key={title} href={href} data-fs-link="hover">
-                      {title} <S.Arrow />
-                    </S.Item>
-                  ))}
-
                   {services.map(({ title, link }) => (
                     <S.Item key={title} href={`${link}`} data-fs-link="hover">
                       {title} <S.Arrow />
                     </S.Item>
                   ))}
+
+                  <S.Item href={`/blog`} data-fs-link="hover">
+                    Blog <S.Arrow />
+                  </S.Item>
 
                   {navigation.slice(2, 3).map(({ title, href }) => (
                     <S.Item key={title} href={href} data-fs-link="hover">

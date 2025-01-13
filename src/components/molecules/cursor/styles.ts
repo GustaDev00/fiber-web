@@ -11,6 +11,7 @@ export const Dot = styled.div<{ $type?: string | null }>`
   box-shadow: 0 0 0.5rem rgba(43, 178, 42, 0.45), 0 0 1rem rgba(43, 178, 42, 0.25);
   transition: opacity 0.4s ease, visibility 0.4s ease;
   transform: translate(-50%, -50%) !important;
+  z-index: -1;
 `;
 
 export const Image = styled.div<{ $src: string }>`

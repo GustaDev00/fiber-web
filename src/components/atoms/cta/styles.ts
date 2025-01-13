@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Cta = styled.a`
-  padding: 2rem 6rem;
+  padding: 2rem 4rem;
   border-radius: 5rem;
   background: ${({ theme }) => theme.primary};
   transition: box-shadow 0.4s ease;

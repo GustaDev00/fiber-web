@@ -4,14 +4,14 @@ import C from "@/constants";
 import * as S from "./styles";
 
 const ShareButton = () => {
-  const [text, setText] = useState(C.copy.copy);
+  const [text, setText] = useState(C.blog.copy.copy);
 
   const handleClick = () => {
     navigator.clipboard.writeText(window.location.href);
-    setText(C.copy.copied);
+    setText(C.blog.copy.copied);
 
     setTimeout(() => {
-      setText(C.copy.copy);
+      setText(C.blog.copy.copy);
     }, 1000);
   };
 

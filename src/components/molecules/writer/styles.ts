@@ -6,6 +6,11 @@ export const WriterContainer = styled.section`
   display: flex;
   margin-bottom: 3rem;
   gap: 4rem;
+  color: white;
+
+  svg path {
+    stroke: white;
+  }
 
   ${mediaMaxWidth("mobile")`
     flex-direction: column;

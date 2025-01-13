@@ -14,7 +14,7 @@ const Writer: FC<WriterProps> = ({ timer }) => {
       </S.User>
       <S.Timer>
         <IconTime />
-        {timer} {C.time}
+        {timer} {C.blog.time}
       </S.Timer>
       <S.Share>
         <ShareButton />
