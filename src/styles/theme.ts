@@ -1,6 +1,16 @@
 import "styled-components";
 
 export const theme = {
+  primary: "#3e7049",
+  titles: "#123f35",
+  descriptions: "#737373",
+  texts: "#123f35",
+  navigation: "#FFF",
+  date: "#123f35",
+
+  header: "#123f35",
+  background: "#F2F2F2",
+
   black: "#000",
   black01: "rgba(0, 0, 0, 0.1)",
   black03: "rgba(0, 0, 0, 0.3)",

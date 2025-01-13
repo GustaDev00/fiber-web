@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "imgs": "NODE_ENV=development node ./script/post-imgs.js",
+    "img-donwload:prod": "NODE_ENV=production node ./script/post-imgs.js",
     "sitemap": "node ./script/generate-sitemap.js",
     "convert-medias": "node ./script/convert-to-webp.js",
     "convert-video": "node ./script/process-video.js",
@@ -10,7 +12,7 @@
     "molecules": "node ./script/folder.js molecules",
     "organisms": "node ./script/folder.js organisms",
     "dev": "next dev --turbopack",
-    "build": "yarn convert-medias && yarn convert-video && next build",
+    "build": "yarn img-donwload:prod && yarn convert-medias && yarn convert-video && next build",
     "analyze": "ANALYZE=true yarn build",
     "start": "next start",
     "lint": "next lint"

@@ -1649,4 +1649,28 @@ export default {
       },
     },
   ],
+  blog: {
+    home: {
+      title: "Blog Büro im Flow",
+      description: (
+        <>
+          Einfacher Zugang zu präzisen Ergebnissen und persönlicher
+          <CustomBr byViewport="desktop" /> Betreuung – digital, effizient und verlässlich.
+        </>
+      ),
+    },
+    copy: {
+      copy: "Link kopieren",
+      copied: "Link kopiert",
+    },
+    time: "Leseminuten",
+    latest: {
+      title: "Neueste Artikel",
+    },
+    cta: {
+      title: "Mehr dazu",
+      text: "Noch Fragen? Kontaktieren Sie uns noch heute.",
+      href: "#",
+    },
+  },
 };

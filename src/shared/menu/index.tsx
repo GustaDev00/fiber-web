@@ -8,7 +8,7 @@ import C from "@/constants";
 export const Menu = () => {
   const { ref } = useAnimation();
   const { navigation } = C.data;
-  const pathname = usePathname();
+  const pathname = usePathname() || "";
 
   return (
     <S.Menu ref={ref}>
