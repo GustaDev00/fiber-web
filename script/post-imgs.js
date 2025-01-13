@@ -55,7 +55,11 @@ const getImageAndDownload = async () => {
 
         if (imageUrl && jsonImageName) {
           const destinationPath = path.join("public", "", jsonImageName);
-          await downloadImage(imageUrl, destinationPath);
+          if (!fs.existsSync(destinationPath)) {
+            await downloadImage(imageUrl, destinationPath);
+          } else {
+            console.log(`Image already exists: ${jsonImageName}`);
+          }
         } else {
           console.log("No image URL or image name found in the API response.");
         }

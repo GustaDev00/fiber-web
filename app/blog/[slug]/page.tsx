@@ -1,6 +1,5 @@
 import listPosts from "@/api/list-posts";
 import BlogContent from "@/templates/blog-content";
-import { VisitorData } from "@/components/atoms/visitor-data";
 import { Metadata } from "next";
 
 type PageProps = {
